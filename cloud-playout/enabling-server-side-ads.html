@@ -1,17 +1,27 @@
 ﻿<!doctype html>
-<html lang="de">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="In diesem Thema erfahren Sie, wie eine Sammlung von VOD-Videos und Live-Events als linearer Live-Kanal gestreamt werden kann.">
   
-  <title>Verwenden von Cloud Playout zum Streamen von Videos</title>
+  <title>Cloud-Playout monetarisieren</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
@@ -21,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -39,74 +57,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 /* ]]> */
 </script>
 
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Weitere Brightcove Docs</option>
-      
-        
-          <option value="https://support.brightcove.com">Dokumentation Home</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove Social</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
+    
 
 
     <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
@@ -119,15 +70,84 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/general/">Allgemeine Informationen</a></li>
+      <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud-Playout</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Verwenden von Cloud Playout zum Streamen von Videos</li>
+      <li class="breadcrumb-item active" aria-current="page">Cloud-Playout monetarisieren</li>
     </ol>
   </nav>
 </header>
 <div class="container">
     <div class="row">
-      <div class="col-sm-3 left-side-bar">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Weitere Brightcove Docs</option>
+          
+            
+              <option value="https://support.brightcove.com">Dokumentation Home</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
         <nav class="sidenav" id="side_nav">
           
             
@@ -479,8 +499,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Verwalten von Cloud-Playout-Kanälen <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Übersicht: Cloud-Playout</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Spieler verwalten <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Thumbnail Seeking hinzufügen</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Konfigurieren eines Player-Overlays</a></li>
@@ -688,6 +743,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Überprüfen von Spielereignissen in Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Referenz zum Bericht „Jetzt Trends“</a></li>
+                  
+                
               </ul>
             
           
@@ -720,10 +779,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Erstellen von Legacy-Ingest-Profilen</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Best Practices für Profile aufnehmen</a></li>
                   
                 
@@ -753,10 +808,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard-Ingest-Profile (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard-Ingest-Profile (Vermächtnis)</a></li>
                   
                 
                   
@@ -867,168 +918,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<h1>Verwenden von Cloud Playout zum Streamen von Videos</h1>
+<h1>Cloud-Playout monetarisieren</h1>
 <article class="bcls-article">
   <summary>In diesem Thema erfahren Sie, wie eine Sammlung von VOD-Videos und Live-Events als linearer Live-Kanal gestreamt werden kann.</summary>
   <section class="bcls-section">
-    <p>Mit dem Cloud Playout-Modul können Rundfunkveranstalter und Medienverlage eine Sammlung von VoD-Videos und Live-Streams verwenden und diese dann als linearen Kanal streamen. Der Kanal kann an Brightcove Live, Amazon S3 oder eine bestimmte RTMP-URL gestreamt werden.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Diese Funktion befindet sich derzeit in begrenzter Verfügbarkeit. Weitere Informationen erhalten Sie von Ihrem Brightcove-Kontomanager.</aside>
-    <p>Klicken Sie auf, um auf das Cloud Playout-Modul zuzugreifen <strong>Cloud-Playout</strong> im Navigationsmenü. Eine Liste aller erstellten Cloud Playout-Kanäle wird angezeigt (falls vorhanden).</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-channel-list.png"/></figure>
-    <p>Auf der Seite werden die folgenden Informationen angezeigt:</p>
+    <h2 id="requirements">Anforderungen</h2>
+    <p>Um die serverseitige Anzeigeneinfügung (SSAI) mit Cloud Playout zu verwenden, sind folgende Voraussetzungen erforderlich:</p>
     <ul>
-      <li><strong>Kanal Name</strong> - Name des Kanals</li>
-      <li><strong>Startzeit</strong> - Startzeit für den Kanal</li>
-      <li><strong>Endzeit</strong> - Endzeit für den Kanal</li>
-      <li><strong>Schleifen</strong> - Gibt an, ob das Programm eine Schleife ausführen soll</li>
-      <li><strong>Ziel</strong> - Ziel für den Kanal</li>
-      <li><strong>Datum erstellt</strong> - Datum, an dem der Kanal erstellt wurde</li>
-      <li><strong>Zuletzt aktualisiert</strong> - Datum, an dem der Kanal zuletzt aktualisiert wurde</li>
-      <li><strong>Status</strong> - Kanalstatus
-        <ul>
-          <li><strong>ENTWURF</strong> - Kanal wurde erstellt, aber nicht aktiviert</li>
-          <li><strong>ERSTELLEN</strong> - Der Kanal wird gerade aktiviert</li>
-          <li><strong>GEPLANT</strong> - Der Kanal ist aktiv und bereit zum Streamen</li>
-          <li><strong>BEGINNEND</strong> - Kanalstartvorgang, um mit dem Streaming zu beginnen</li>
-          <li><strong>LAUFEN</strong> - Der Kanal wird aktiv gestreamt</li>
-          <li><strong>STOPPEN</strong> - Das Channel-Streaming wird gestoppt</li>
-          <li><strong>LEERLAUF</strong> - Der Kanal wurde erfolgreich ausgeführt und wurde gestoppt</li>
-          <li><strong>LÖSCHEN</strong> - Kanal wird gelöscht</li>
-          <li><strong>ERROR</strong> - Beim Erstellen oder Streamen des Kanals ist ein Fehler aufgetreten</li>
-        </ul>
-      </li>
+      <li>Das Konto muss für Brightcove Live und Live mit SSAI aktiviert sein.</li>
+      <li>Brightcove Live und / oder S3 müssen als Ziel für den Kanal verwendet werden.</li>
     </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="channel">Kanal erstellen</h2>
-    <p>Führen Sie die folgenden Schritte aus, um einen neuen Cloud Playout-Kanal zu erstellen. </p>
-    <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken <strong>Cloud-Playout</strong> im Navigationsheader.</li>
-      <li>
-        Klicken <strong>Neue hinzufügen</strong>::
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/cloudplayout-new-channel-dialog.png" alt="Neuer Channel"/>
-          <figcaption class="bcls-caption--image">Neuer Channel</figcaption>
-        </figure>
-      </li>
-      <li>Geben Sie den Kanal ein <strong>Identifizierung</strong> Einzelheiten:
-        <ul>
-          <li><strong>Name</strong> - Name für den Kanal. Der Name muss englische Zeichen haben und die folgenden Sonderzeichen sind zulässig: &nbsp;&nbsp; _. : / = + -&nbsp;</li>
-          <li><strong>Beschreibung</strong> - Kanal Beschreibung</li>
-          <li><strong>Bild URL</strong> - URL zu einer Bilddatei für den Kanal; soll ein Kanalbild sein, das als Teil der Metadaten des Kanals abgerufen werden kann</li>
-        </ul>
-      </li>
-      <li>Geben Sie den Kanal ein <strong>Zeitplan</strong> Einzelheiten.
-        <ul>
-          <li><strong>Loop-Playout-Inhalt</strong> - Wenn <strong>Auf</strong> wird das Programm in einer Schleife abgespielt und die <strong>Enddatum / -zeit</strong> wird aktiviert. Das Programm kann jederzeit noch geändert werden und die Änderungen werden im aktuellen Programm und in den folgenden Schleifen wiedergegeben. Siehe die <a href="#looping">Erstellen eines Schleifenprogramms</a> Abschnitt unten.</li>
-          <li><strong>Anzeigeneinfügung</strong> - Wenn diese Option aktiviert ist, können Anzeigen während der Kanalwiedergabe angezeigt werden. Wenn diese Option ausgewählt ist, sind Live-Eingaben nicht zulässig, und Sie können nur auf a ausgeben <strong>Brightcove Live Event oder</strong> <strong>Amazon S3 Eimer</strong>. Siehe die <a href="#ads">Aktivieren von serverseitigen Anzeigen</a> Abschnitt unten.</li>
-          <li><strong>Startdatum / -zeit</strong> - Zeitpunkt, zu dem der Kanal abgespielt wird. Die Startzeit für alle Assets wird berechnet, indem ihre Dauer zu dieser Startzeit addiert wird. Diese Zeit kann nur aktualisiert werden, wenn sich der Kanal nicht im laufenden Zustand befindet.</li>
-          <li><strong>Enddatum / -zeit</strong> - Wenn kein Wert eingegeben wird und <strong>Loop-Playout-Inhalt</strong> Wenn diese Option nicht ausgewählt ist, wird der Stream beendet, sobald die Wiedergabe abgeschlossen ist. Wenn <strong>Loop-Playout-Inhalt</strong> ist ausgewählt und es gibt keine <strong>Enddatum / -zeit</strong> wird das Playout gestreamt, bis der Kanal gestoppt wird. Diese Zeit kann jederzeit aktualisiert werden.</li>
-        </ul>
-      </li>
-      <li>Wenn Sie Live-Eingänge verwenden, stellen Sie ein <strong>Live-Eingabe</strong> auf Ein und geben Sie eine Slate-URL ein, es sei denn, Sie verwenden den Standard-Brightcove MP4 für Ihren Slate. Der Slate MP4 wird immer dann abgespielt, wenn der Live-Eingang gestoppt wird, weil der Encoder gestoppt ist oder ein technisches Problem den Live-Stream blockiert. <strong>Beachten Sie, dass <strong>Die Slate-URL muss eine statische URL sein, die immer verfügbar ist</strong> (kurzlebige CDN-URLs sind nicht erlaubt).</strong></li>
-      <li>Geben Sie den Kanal ein <strong>Ziel</strong> Einzelheiten. Cloud Playout unterstützt 2 Ausgänge gleichzeitig. Beispielsweise können Sie HLS in einen S3-Bucket und einen RTMP-Feed an einen Brightcove Live-Kanal oder einen Aufnahmepunkt eines Drittanbieters ausgeben. Beachten Sie, dass <strong>Brightcove Live-Ereignis</strong> und <strong>RTMP</strong> wird nicht unterstützt.
-        <ul>
-          <li><strong>Anzeige optimieren für</strong> - Steuert die Bitrate und Abmessungen für die Ausgabe
-            <ul>
-              <li><strong>Mobile &amp; Web</strong> - Wenn aktiviert, HD-Ausgang (RTMP- oder HLS-Einzelbitrate)</li>
-              <li><strong>Smart TV</strong> - Wenn aktiviert, Full-HD-Ausgang (RTMP- oder HLS-Einzelbitrate)</li>
-            </ul>
-          </li>
-          <li><strong>Ausgabebereich</strong> - Die Region, in der der Kanal erstellt wird. Brightcove empfiehlt, eine Region auszuwählen, die geografisch am nächsten an der Stelle liegt, an der die Mehrheit Ihres Publikums erwartet wird.</li>
-          <li><strong>Ausgabe an</strong> - Wählen Sie eine Ausgabemethode für den Kanal
-            <ul>
-              <li><strong>Brightcove Live-Ereignis</strong> - Erstellen oder verwenden Sie einen zuvor erstellten Brightcove Live-Kanal. Beim Erstellen eines neuen Kanals wird der Bereich des Kanals basierend auf dem optimiert <strong>Ausgabebereich</strong> das wurde ausgewählt.</li>
-              <li><strong>RTMP</strong> - Wählen Sie diese Option, um den Stream an einen RTMP- oder RTP-Aufnahmepunkt auszugeben. RTP ist nur dann für Aufnahmepunkte von Drittanbietern verfügbar, wenn <strong>Anzeigeneinfügung</strong> und <strong>Brightcove Live-Ereignis</strong> aktiviert. Wenn ausgewählt, wird ein <strong>RTMP-URL</strong> Das Feld wird angezeigt. Geben Sie die RTMP-Eingabe-URL für Ihren Live-Streaming-Dienst ein.</li>
-              <li><strong>Amazon S3 Eimer </strong> - Wählen Sie diese Option, um eine HLS-Ausgabe in einen Amazon S3-Bucket zu übertragen. Sie müssen den Bucket-Namen, die Region, den Zugriffsschlüssel und den geheimen Schlüssel eingeben. Der Eimer sollte öffentlich und beschreibbar sein.</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>Klicken <strong>Kanal erstellen</strong>. Der neue Kanal wird mit dem Status erstellt <strong>ENTWURF</strong>.</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="add_videos">Hinzufügen von Videos und Live-Events zu einem Kanal</h2>
-    <p>Nachdem Sie Ihren Kanal erstellt haben, werden auf dem Bildschirm die Kanaleinstellungen angezeigt:</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/cloudplayout-channel-details.png" alt="Channel-Einstellungen"/>
-      <figcaption class="bcls-caption--image">Channel-Einstellungen</figcaption>
-    </figure>
-    <p>Sie können Details bearbeiten, aber der nächste Hauptschritt besteht darin, dem Kanal Videos und / oder Live-Ereignisse (sofern Sie Live-Eingaben aktiviert haben) hinzuzufügen.</p>
-    <h3>Videos hinzufügen (VOD)</h3>
-    <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Klicken <strong>+ Videos hinzufügen</strong>. (Wenn Sie sich auf der Seite mit der Kanalliste befinden, klicken Sie auf den Kanalnamen, um die Seite mit den Kanaleinstellungen zu öffnen, und klicken Sie dann auf <strong>+ Videos hinzufügen</strong>).
-      </li>
-      <li>Aktivieren Sie das Kontrollkästchen neben den Videos, die Sie dem Kanal hinzufügen möchten.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-select-videos.png"/></figure>
-      </li>
-      <li>Klicken Sie auf „ <strong>Videos hinzufügen</strong>“</li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
-      <li>
-        Die Programmliste für den Kanal wird angezeigt:
-        <figure class="bcls-figure">
-          <img class="bcls-image" src="/assets/images/general/cloudplayout-vod-program-list.png" alt="Liste der Programme"/>
-          <figcaption class="bcls-caption--image">Liste der Programme</figcaption>
-        </figure>
-        <p>Beachten Sie, dass Start- und Endzeiten automatisch aus der Videodauer berechnet werden. Sie können Videos per Drag &amp; Drop in die Liste ziehen, um sie neu zu ordnen. Die Start- / Endzeiten werden automatisch angepasst.</p>
-      </li>
-    </ol>
-    <h3>Live-Events hinzufügen</h3>
-    <ol class="bcls-tasklist">
-        <li>Drücke den <strong>+ Live-Event hinzufügen</strong> Taste.</li>
-        <li>
-          Geben Sie im Dialogfeld "Live-Ereignis hinzufügen" die Option ein <strong>Name</strong> , <strong>Dauer</strong> , und <strong>Beschreibung</strong> für das Live-Event:
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/cloudplayout-add-live-event.png" alt="Live-Ereignis hinzufügen"/>
-            <figcaption class="bcls-caption--image">Live-Ereignis hinzufügen</figcaption>
-          </figure>
-          <p>Beachten Sie, dass die Mindestdauer für ein Live-Ereignis 5 Minuten beträgt und die Dauer nur in Intervallen von 5 Minuten erhöht oder verringert werden kann. Bei Bedarf kann die Dauer im Textfeld inline bearbeitet werden, um die Granularität der Zeit anzupassen. Die Dauer eines Live-Events kann jederzeit geändert werden, auch während es gerade abgespielt wird.</p>
-        </li>
-        <li>
-          Nachdem Sie Live-Ereignisse hinzugefügt haben, werden diese zusammen mit den VoD-Elementen in der Programmliste angezeigt:
-          <figure class="bcls-figure">
-            <img class="bcls-image" src="/assets/images/general/cloudplayout-live-event-program-list.png" alt="Liste der Programme"/>
-            <figcaption class="bcls-caption--image">Liste der Programme</figcaption>
-          </figure>
-        </li>
-        <li>Sie können Live-Ereignisse ziehen, um die Liste genau wie Videos neu zu ordnen. Sie können auch die verwenden <strong>Schnelle Bearbeitung</strong> Schaltfläche, um die Dauer eines Live-Ereignisses zu ändern.</li>
-    </ol>
-    <p>Nachdem Sie einem Kanal Videos und Live-Events hinzugefügt haben, klicken Sie auf <strong>aktivieren Sie</strong> um den Kanal zu aktivieren. Ein Kanal muss aktiviert sein, bevor das Streaming beginnen kann. Siehe die <a href="#actions">Kanalaktionen verwenden</a> Abschnitt unten für weitere Informationen.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Um die Reihenfolge der Videos in einem Programm zu ändern, klicken Sie auf ein Video und ziehen Sie es an eine neue Position.</aside>
-    <p>Wenn einem Kanal Videos hinzugefügt werden, wird eine vom System generierte Wiedergabeliste erstellt und im Medienmodul angezeigt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-playlist-created.png"/></figure>
-    <p>Wir empfehlen dringend, dass Sie Änderungen am Kanal im Cloud Playout-Modul vornehmen <strong>Bearbeiten Sie die generierte Wiedergabeliste in keiner Weise</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="getting_the_rtmp_ingest_point">Abrufen des RTMP-Aufnahmepunkts</h2>
-    <p>Für Ihren Live-Encoder benötigen Sie den RTMP-Aufnahmepunkt für Ihren Kanal. Sie finden es in der <strong> Kanaleinstellungen</strong>::</p>
-    <figure class="bcls-figure">
-      <img class="bcls-image" src="/assets/images/general/cloudplayout-rtmp-ingest-point.png" alt="Ingest-Punkt"/>
-      <figcaption class="bcls-caption--image">Ingest-Punkt</figcaption>
-    </figure>
-    <p>Abhängig vom verwendeten Encoder müssen Sie möglicherweise sowohl den RTMP-Aufnahmepunkt als auch den Streamnamen eingeben. Der Streamname für den Kanal lautet <strong>Kanal ID</strong> Dies ist auch der letzte Teil der Ingest Point-Adresse.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="edit_delete">Kanal bearbeiten und löschen</h2>
-    <p>Um einen Cloud Playout-Kanal zu bearbeiten, klicken Sie auf den Kanalnamen und dann auf <strong>Bearbeiten</strong>. Nehmen Sie die entsprechenden Änderungen vor und klicken Sie dann auf <strong>Kanal aktualisieren</strong>. Beachten Sie, dass die Zieleigenschaften nach dem Erstellen eines Kanals nicht mehr bearbeitet werden können.</p>
-    <p>Um einen Cloud Playout-Kanal zu löschen, aktivieren Sie das Kontrollkästchen neben dem Kanalnamen und klicken Sie dann auf <strong>Löschen</strong>.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="looping">Erstellen eines Schleifenprogramms</h2>
-    <p>Um ein Programm zu erstellen, das Schleifen erstellt, legen Sie beim Erstellen des Kanals Folgendes fest: <strong>Loop-Playout-Inhalt</strong> Einstellung auf <strong>Auf</strong>. Wenn dem Programm Videos hinzugefügt werden, wird die Programmliste aktualisiert, um die Videoserie mit den zugehörigen Start- / Endzeiten anzuzeigen und die gesamte geplante Kanalzeit auszufüllen. Wenn Sie die Dauer eines Live-Ereignisses ändern, bleibt die Dauer der bereits verstrichenen Ereignisse unverändert. Bei zukünftigen Spielen des Ereignisses wird jedoch die neue Dauer verwendet.</p>
-    <p>Im folgenden Beispiel enthält der Kanal VoD- und Live-Ereignisse in einer Schleife.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/cloudplayout-looping-channel.png"/></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="actions">Kanalaktionen verwenden</h2>
-    <p>Abhängig vom Status des Kanals stehen auf der Seite mit den Kanaleinstellungen verschiedene Schaltflächen für Kanalaktionen zur Verfügung. Greifen Sie auf die Schaltflächen für Kanalaktionen zu, indem Sie auf den Kanalnamen klicken, um die Kanaleinstellungen anzuzeigen. Die folgenden Schaltflächen für Kanalaktionen sind verfügbar:</p>
-    <ul>
-      <li><strong>aktivieren Sie</strong> - Durch Aktivieren eines Kanals wird dieser für das Streaming verfügbar. Kanäle müssen Videos haben, bevor sie aktiviert werden können.</li>
-      <li><strong>Jetzt spielen</strong> - Klicken <strong>Jetzt spielen</strong> um den Kanal zu streamen. Diese Option ist nur für Kanäle mit einer bevorstehenden Startzeit verfügbar.</li>
-      <li><strong>Hör jetzt auf</strong> - Klicken <strong>Hör jetzt auf</strong> um einen Streaming-Kanal zu stoppen. Dadurch wird der Kanal gestoppt und der Live-Stream beendet.</li>
-    </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-channel-actions.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="ads">Aktivieren von serverseitigen Anzeigen</h2>
@@ -1048,11 +947,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Sie müssen angeben, welche Videos als "Platzhalter" -Videos verwendet werden sollen. "Platzhalter" -Videos werden in die Programmliste eingefügt, um anzugeben, dass eine Anzeige geschaltet werden soll, und die Länge der Anzeige. Dies muss erfolgen, da bei Verwendung der serverseitigen Anzeigeneinfügung mit Brightcove Live das "Platzhalter" -Video durch Anzeigeninhalte ersetzt wird. Wenn Sie kein "Platzhalter" -Video für eine Anzeige einfügen, werden Teile des tatsächlichen Videos durch Anzeigeninhalte ersetzt. Wenn die Anzeigedauer kürzer als die zurückgegebene Anzeige ist, zeigt SSAI die Anzeigenliste an. Wenn die Anzeigedauer länger ist als die zurückgegebenen Anzeigen, werden die Anzeigen gefolgt von der Anzeigenliste angezeigt. </p>
     <p>Möglicherweise müssen Sie Videoquelldateien erstellen / hochladen, deren Videolängen der gewünschten Werbeunterbrechungsdauer entsprechen (z. B. 2 Minuten, 4 Minuten usw.). Der Inhalt dieser Videos spielt keine Rolle, da sie nicht als Teil eines Programms abgespielt werden. </p>
     <p>Um ein Video als "Platzhalter" -Video zu markieren, bearbeiten Sie mit dem Medienmodul die Videoeigenschaften für diese Videos und kennzeichnen Sie sie mit <code translate="No">cp-ad-holder</code>.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-ad-tag-video.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-ad-tag-video.png"/></figure>
     </p>
     <h3>Aktivieren von serverseitigen Anzeigen für einen Kanal</h3>
     <p>Stellen Sie beim Erstellen eines Kanals die ein <strong>Anzeigeneinfügung</strong> Option zu <strong>Auf</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-ad-insertion-option.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-ad-insertion-option.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">Hinweis: Für vorhandene Kanäle kann die Einstellung zum Einfügen von Anzeigen nicht geändert werden.</aside>
     <h3>Einfügen von Anzeigenplatzhaltern in ein Programm</h3>
     <p>Sie müssen Anzeigenplatzhalter in die Programmliste einfügen, in der Anzeigen geschaltet werden sollen. Befolgen Sie diese Schritte, um Anzeigenplatzhalter einzufügen.</p>
@@ -1060,78 +959,34 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Klicken Sie auf einen Kanalnamen, um ihn zu bearbeiten.</li>
       <li>Aktivieren Sie in der Programmliste das Kontrollkästchen neben dem Video <strong>nach</strong> welche Sie möchten, dass eine Anzeige abgespielt wird.</li>
       <li>Klicken <strong>Anzeigen einfügen</strong> und wählen Sie eine <strong>Anzeigendauer</strong>. Die Liste der Anzeigenzeiten wird basierend auf der Länge aller "Platzhalter" -Videos für Werbeunterbrechungen (mit Tags versehen) erstellt <code translate="No">cp-ad-holder</code>).
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-insert-ads-button.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-insert-ads-button.png"/></figure>
       </li>
       <li>Klicken <strong>In Ordnung</strong>. Das "Platzhalter" -Video mit der ausgewählten Länge wird nach dem ausgewählten Video in das Programm eingefügt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-ad-break-inserted.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-ad-break-inserted.png"/></figure>
         <aside class="bcls-aside bcls-aside--information">Hinweis: Das Video, das als "Platzhalter" eingefügt wird <strong>wird nicht</strong> als Teil des Programms gespielt werden. Dieses Video wird nur verwendet, um anzugeben, wo eine Anzeigenanfrage gestellt wird und wie lange die Anzeige dauert.</aside>
       </li>
       <li>Klicken <strong>sparen</strong> um die Änderungen am Programm zu speichern.</li>
     </ol>
     <h3>Auswahl der Anzeigenkonfiguration</h3>
     <p>Sobald das Programm abgespielt wird, klicken Sie auf <strong>In Brightcove Live anzeigen</strong> um den Kanal im Live-Modul anzuzeigen. In der Dropdown-Liste unter dem Player können Sie die Anzeigenkonfiguration auswählen, die verwendet werden soll.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-live-select-ad-config.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-live-select-ad-config.png"/></figure>
     <figure class="bcls-figure"></figure>
     <p>Ausführliche Informationen zum Einfügen von serverseitigen Anzeigen finden Sie in der <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html">Video Cloud SSAI Übersicht</a> Thema.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="publish">Generieren des Einbettungscodes für einen Cloud Playout-Kanal</h2>
-    <p>Um den Einbettungscode für einen Cloud Playout-Kanal zu generieren, verwenden Sie das Live-Modul. Ausführliche Informationen zur Verwendung des Live-Moduls finden Sie unter <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Ereignissen mit dem Live-Modul</a>.</p>
-    <p>Es stehen zwei Arten von Einbettungscode zur Verfügung:</p>
+    <h2 id="Related_topics">Verwandte Themen</h2>
     <ul>
-      <li><strong>Standard</strong> - iframe Einbettungscode. Für die meisten Fälle empfohlen. Dieser Typ platziert den Player in ein &lt; &gt; iframe-Tag.</li>
-      <li><strong>Advanced</strong> - Einbettungscode für In-Page. Ermöglicht dem Player, direkt auf der HTML-Seite zu existieren, nicht in einem iframe. So haben Entwickler einfachen Zugriff auf den Player und die entsprechenden Eigenschaften und Ereignisse.</li>
-    </ul>
-    <p>Sie haben auch die Möglichkeit, die URL zum veröffentlichten Player abzurufen. Dies ist nützlich, um das Ereignis in einem Browser anzuzeigen.</p>
-    <p>Um den Einbettungscode für ein Live-Event zu generieren, führen Sie die folgenden Schritte aus:</p>
-    <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Öffnen Sie das Live-Modul.</li>
-      <li>Suchen Sie das Live-Ereignis, zu dem der Kanal streamen soll. In der Regel befindet sich die Veranstaltung in der <strong>Bereithalten</strong> Tab und haben einen Namen von <strong>Kanal</strong> es sei denn, Sie haben ein bestimmtes Ereignis ausgewählt, zu dem bei der Erstellung des Kanals gestreamt werden soll.</li>
-      <li>Klicken Sie auf den Ereignisnamen, um das zu öffnen <strong>Kontrollraum</strong> Seite.</li>
-      <li>Klicken <strong>Veröffentlichen und einbetten&gt; Player-Konfiguration</strong> in der linken Navigation.
-        <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn der Kanal so konfiguriert ist, dass serverseitige Anzeigen (SSAI) aktiviert werden, muss Brightcove Player Version 6.18.3 und höher verwendet werden. Nur Spieler der Version 6.18.3 und höher werden in der Dropdown-Liste angezeigt.</aside>
-      </li>
-      <li>Klicken Sie auf die <strong>Player-URL</strong> , um eine Vorschau des Ereignisses in einem Browser anzuzeigen oder den entsprechenden zu verwendenden Einbettungscode zu kopieren.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/playout-embed-code.png"/></figure>
-      </li>
-    </ol>
-    <p>Wenn das Programm mit erstellt wurde <strong>Anzeigeneinfügung</strong> Option auf gesetzt <strong>Auf</strong> Die Veröffentlichungsoptionen umfassen a <strong>Wählen Sie Anzeigenkonfiguration</strong> Dropdown-Liste, in der die zu verwendende Anzeigenkonfiguration ausgewählt werden kann.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/general/playout-embed-code-ads.png"/></figure>
-  </section>
-  <section class="bcls-section">
-    <h2 id="analytics">Anzeigen der Kanalausgabe und -analyse</h2>
-    <p>Während der Kanal in einem ist <strong>LAUFEN</strong> Zustand ist es möglich, Kanalausgabe und Analyse anzuzeigen. Klicken Sie auf den Kanal auf der <strong>Kanäle</strong> Seite, um die Kanaldetails zu öffnen.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/general/cloudplayout-program-analytics.png"/></figure>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Das Vorschaubild wird alle drei Sekunden aktualisiert.</aside>
-    <p>Klicken <strong>In Brightcove Live anzeigen</strong> um die Seite Kontrollraum des Live-Moduls mit dem aktuell ausgeführten Programm zu öffnen. Das aktuell im Programm abgespielte Video wird mit einem hervorgehoben <strong>Jetzt spielen</strong> Banner. Beachten Sie auch die <strong>Status</strong> Benachrichtigung oben rechts und die <img src="/assets/images/general/cloudplayout-video-icon.png" alt="Live-Symbol"/> Das ist grün, wenn ein Live-Feed verfügbar ist. Andernfalls ist es rot, wenn gerade ein Live-Ereignis abgespielt wird, oder grau, wenn VOD-Inhalte abgespielt werden.</p>
-    <p>Die folgenden Analysewerte werden angezeigt:</p>
-    <ul>
-      <li><strong>Netzwerk In</strong> - Durchschnittliche Bytes pro Sekunde in letzter Minute</li>
-      <li><strong>Netzwerkausgang</strong> - Durchschnittliche Bytes pro Sekunde in letzter Minute</li>
-      <li><strong>Frames fallen gelassen</strong> - Prozent der Frames sind in letzter Minute gefallen</li>
-    </ul>
-  </section>
-  <section class="bcls-section">
-    <h2 id="epg">Arbeiten mit einem elektronischen Programmführer</h2>
-    <p>Eine API steht zur Verfügung, um einen elektronischen Programmführer für den Cloud Playout-Kanal zu erstellen. Weitere Informationen finden Sie in der <a href="https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html">Überblick: EPG API</a> Thema.</p>
-  </section>
-  <section class="bcls-section">
-    <h2 id="limitations">Einschränkungen</h2>
-    <p>Es gelten die folgenden Annahmen und Einschränkungen.</p>
-    <ul>
-      <li> Deine Videos müssen mit einem Dynamic Delivery-Profil aufgenommen und mit einer MP4-Wiedergabe versehen sein</li>
-      <li>Die maximale Eingangsbitrate und Auflösung, die für Cloud Playout unterstützt wird, beträgt 20 MBit / s / 1080p. Dies gilt sowohl für VoD-Inhalte als auch für Live-Eingaben.</li>
-      <li>Brightcove empfiehlt die Verwendung von Videos mit einer Dauer von mindestens 2 Minuten, um einen korrekten Übergang zwischen Videos und der Genauigkeit der elektronischen Programmführung sicherzustellen</li>
-      <li>Die Mindestdauer für Live-Events beträgt 5 Minuten.</li>
-      <li>Jedes Live-Ereignis in Cloud Playout hat eine 1: 1-Beziehung zu einem Video Cloud-Remote-Asset. Dieses Remote-Asset kann nicht in anderen Kanälen wiederverwendet werden. Wenn das Live-Ereignis aus dem Kanal entfernt wird, wird das zugehörige Remote-Asset automatisch gelöscht. Wenn ein Kanal gelöscht wird, werden auch alle zugehörigen Remote-Assets automatisch gelöscht.</li>
-      <li>Wenn gerade ein Live-Event abgespielt wird, aber kein aktiver Feed verfügbar ist, wird der Slate-Inhalt in einer Schleife abgespielt, bis der Live-Feed fortgesetzt wird oder das Event endet. Es dauert ungefähr 30 Sekunden, bis der Slate MP4 abgespielt wird.</li>
-      <!--<li><strong>Input Looper : if the asset URL is duplicated, then input looper rely on order for switching; if the order is changes during the course of the switching , then subsequent N+1 switch it attempt to create would rely on the order. </strong></li>-->
-      <li>Wenn das Video Cloud-Konto für die Geobeschränkung konfiguriert ist, wird der Kanal <strong>Ausgabebereich</strong> sollte in einer Region erstellt werden, die mit der Geobeschränkungsrichtlinie von Video Cloud kompatibel ist.</li>
-      <li>Für die beste Erfahrung empfiehlt Brightcove die Verwendung des Google Chrome-Browsers.</li>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Übersicht: Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Übersicht: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG-API-Referenz</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Kanal-API-Referenz</a></li>
     </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -1146,7 +1001,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Seite zuletzt aktualisiert am 01. Februar 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1208,7 +1070,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1219,8 +1081,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

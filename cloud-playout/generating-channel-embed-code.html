@@ -1,12 +1,12 @@
 ﻿<!doctype html>
-<html lang="de">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In diesem Thema erfahren Sie, wie Sie den Einbettungscode zum Abspielen eines Cloud-Playout-Kanals im Brightcove-Player erhalten. Der Einbettungscode kann auf jeder Webseite platziert werden.">
   
-  <title>Erstellen von Legacy-Ingest-Profilen</title>
+  <title>Generieren des Channel Embed Codes</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -49,74 +57,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 /* ]]> */
 </script>
 
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Weitere Brightcove Docs</option>
-      
-        
-          <option value="https://support.brightcove.com">Dokumentation Home</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove Social</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
+    
 
 
     <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
@@ -129,15 +70,84 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/admin/">Verwalten von Konten</a></li>
+      <li class="breadcrumb-item"><a href="/cloud-playout/">Cloud-Playout</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Erstellen von Legacy-Ingest-Profilen</li>
+      <li class="breadcrumb-item active" aria-current="page">Generieren des Channel Embed Codes</li>
     </ol>
   </nav>
 </header>
 <div class="container">
     <div class="row">
-      <div class="col-sm-3 left-side-bar">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Weitere Brightcove Docs</option>
+          
+            
+              <option value="https://support.brightcove.com">Dokumentation Home</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
         <nav class="sidenav" id="side_nav">
           
             
@@ -489,8 +499,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Verwalten von Cloud-Playout-Kanälen <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Übersicht: Cloud-Playout</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">Spieler verwalten <strong>+</strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Thumbnail Seeking hinzufügen</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Konfigurieren eines Player-Overlays</a></li>
@@ -698,6 +743,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Überprüfen von Spielereignissen in Google Analytics</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">Referenz zum Bericht „Jetzt Trends“</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +779,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">Erstellen von Legacy-Ingest-Profilen</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">Best Practices für Profile aufnehmen</a></li>
                   
                 
@@ -763,10 +808,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard-Ingest-Profile (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">Standard-Ingest-Profile (Vermächtnis)</a></li>
                   
                 
                   
@@ -877,78 +918,47 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
+<h1>Generieren des Channel Embed Codes</h1>
 <article class="bcls-article">
-  <h1>Erstellen von Legacy-Ingest-Profilen</h1>
-  <summary>Dieses Thema bietet einen Überblick über das Erstellen benutzerdefinierter Aufnahmeprofile zur Verwendung mit der Legacy-Transcodierung.</summary>
+  <summary>In diesem Thema erfahren Sie, wie Sie den Einbettungscode zum Abspielen eines Cloud-Playout-Kanals im Brightcove-Player erhalten. Der Einbettungscode kann auf jeder Webseite platziert werden.</summary>
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4413807549001">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-    <p>Auf der Seite zur Verwaltung von Aufnahmeprofilen können neue ältere Aufnahmeprofile erstellt werden. Ingest-Profile werden mit JSON definiert. Wenn Sie ein neues Legacy-Profil erstellen, ist es hilfreich, das zu überprüfen <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Standard-Aufnahmeprofile für die Legacy-Transcodierung</a> dokumentieren und suchen Sie ein Profil, das Ihren Anforderungen entspricht. In Studio können Sie das Profil dann einfach duplizieren und dann mit Ihren Änderungen bearbeiten.</p>
-    <p >Hinweis: Informationen zum Erstellen von Aufnahmeprofilen, die DRM verwenden, finden Sie in der <a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">MPEG-DASH-Video</a> Entwicklerdokument.</p>
-    <p >Hinweis: Jedes Profil kann maximal 25 Ausgabeformate erstellen. &nbsp;Poster- und Miniaturbilder zählen maximal 25.&nbsp;</p>
-    <p>So erstellen Sie ein neues Legacy-Aufnahmeprofil:</p>
-    <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie im Studio-Header auf den Link <strong>ADMIN</strong>.</li>
-      <li>Klicken Sie auf den Link <strong>Profile aufnehmen</strong> .</li>
-      <li>Suchen Sie ein Legacy-Profil zum Duplizieren. Klicken Sie auf den Profilnamen, um den Profileditor zu öffnen.</li>
-      <li>Klicken <strong>Profil duplizieren</strong>. Der Profileditor wird mit dem neuen Profil geöffnet.</li>
-      <li>Scrollen Sie zum Anfang des Profils. Bearbeiten Sie das <code translate="No"><strong>name</strong></code> Element, um dem Profil einen sinnvollen Namen zu geben. Dieser Name wird in Video Cloud Studio angezeigt.</li>
-      <li>Bearbeiten Sie das <code translate="No"><strong>description</strong></code> Element, um dem Profil eine aussagekräftige Beschreibung zu geben.
-        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png"/></figure>
+    <h2 id="publish">Generieren des Einbettungscodes für einen Cloud Playout-Kanal</h2>
+    <p>Um den Einbettungscode für einen Cloud Playout-Kanal zu generieren, verwenden Sie das Live-Modul. Ausführliche Informationen zur Verwendung des Live-Moduls finden Sie unter <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Erstellen und Verwalten von Live-Ereignissen mit dem Live-Modul</a>.</p>
+    <p>Es stehen zwei Arten von Einbettungscode zur Verfügung:</p>
+    <ul>
+      <li><strong>Standard</strong> - iframe Einbettungscode. Für die meisten Fälle empfohlen. Dieser Typ platziert den Player in ein &lt; &gt; iframe-Tag.</li>
+      <li><strong>Advanced</strong> - Einbettungscode für In-Page. Ermöglicht dem Player, direkt auf der HTML-Seite zu existieren, nicht in einem iframe. So haben Entwickler einfachen Zugriff auf den Player und die entsprechenden Eigenschaften und Ereignisse.</li>
+    </ul>
+    <p>Sie haben auch die Möglichkeit, die URL zum veröffentlichten Player abzurufen. Dies ist nützlich, um das Ereignis in einem Browser anzuzeigen.</p>
+    <p>Um den Einbettungscode für ein Live-Event zu generieren, führen Sie die folgenden Schritte aus:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Öffnen Sie das Live-Modul.</li>
+      <li>Suchen Sie das Live-Ereignis, zu dem der Kanal streamen soll. In der Regel befindet sich die Veranstaltung in der <strong>Bereithalten</strong> Tab und haben einen Namen von <strong>Kanal</strong> es sei denn, Sie haben ein bestimmtes Ereignis ausgewählt, zu dem bei der Erstellung des Kanals gestreamt werden soll.</li>
+      <li>Klicken Sie auf den Ereignisnamen, um das zu öffnen <strong>Kontrollraum</strong> Seite.</li>
+      <li>Klicken <strong>Veröffentlichen und einbetten&gt; Player-Konfiguration</strong> in der linken Navigation.
+        <aside class="bcls-aside bcls-aside--information">Notiz: Wenn der Kanal so konfiguriert ist, dass serverseitige Anzeigen (SSAI) aktiviert werden, ist Brightcove Player Version 6.18.3 und höher verfügbar <strong>Muss</strong> verwendet werden. Nur Spieler der Version 6.18.3 und höher werden in der Dropdown-Liste angezeigt.</aside>
       </li>
-      <li>Bearbeiten Sie die Formatvarianteninformationen nach Bedarf. Die Standardgröße für die Poster- und Miniaturbilder befindet sich am Ende des Profils.</li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken Sie auf die <strong>Player-URL</strong> , um eine Vorschau des Ereignisses in einem Browser anzuzeigen oder den entsprechenden zu verwendenden Einbettungscode zu kopieren.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloud-playout/playout-embed-code.png"/></figure>
+      </li>
     </ol>
-    <div class="BCL-subsection">
-      <h3>Hinzufügen eines Wasserzeichens zu einem Profil</h3>
-      <p>Zu jeder Wiedergabe kann ein Wasserzeichen hinzugefügt werden, indem Sie das hinzufügen <code translate="No">watermarks</code> Element zu jedem <code translate="No">rendition</code>::</p>
-      <pre>
-       Wasserzeichen ": [{" y ": -20," x ": -10," width ": "20%", "url": "http://www.mysite.com/companylogo.png"}]
-       </pre>
-      <p>Das <code translate="No">watermarks</code> Element hat die folgenden Parameter.</p>
-      <table class="bcls-table">
-        <thead class="bcls-table__head">
-          <tr>
-            <th width="13%">Parameter</th>
-            <th width="14%">Art</th>
-            <th width="73%">Beschreibung</th>
-          </tr>
-        </thead>
-        <tbody class="bcls-table__body">
-          <tr>
-            <td ><code translate="No">url</code></td>
-            <td >string</td>
-            <td >URL für das Wasserzeichenbild</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">width</code></td>
-            <td >string</td>
-            <td >Breite in Pixel oder Prozent der Rahmenbreite; zB 20 oder 10%</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">height</code></td>
-            <td >string</td>
-            <td >Höhe in Pixel oder Prozent der Rahmenbreite; zB 20 oder 10%</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">x</code></td>
-            <td >string</td>
-            <td >Abstand vom linken Rand zur Bildmitte als Pixel oder Prozent der Rahmenbreite; zB 20 oder 10% (verwenden Sie negative Werte wie -10, um das Wasserzeichen relativ zum rechten Rand zu positionieren)</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">y</code></td>
-            <td >string</td>
-            <td >Abstand von der Oberkante zur Mitte, wenn das Bild als Pixel oder Prozent der Rahmenhöhe vorliegt; zB 20 oder 10% (verwenden Sie negative Werte wie -10, um das Wasserzeichen relativ zur Unterkante zu positionieren)</td>
-          </tr>
-        </tbody>
-      </table>
-      &nbsp;
-      <p>Ein Beispielprofil mit einem Wasserzeichen ist unten dargestellt:</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png"/></figure>
-    </div>
+    <p>Wenn das Programm mit erstellt wurde <strong>Anzeigeneinfügung</strong> Option auf gesetzt <strong>Auf</strong> Die Veröffentlichungsoptionen umfassen a <strong>Wählen Sie Anzeigenkonfiguration</strong> Dropdown-Liste, in der die zu verwendende Anzeigenkonfiguration ausgewählt werden kann.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Report Umschalter" src="/assets/images/cloud-playout/playout-embed-code-ads.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Verwandte Themen</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Übersicht: Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Aktivieren von serverseitigen Anzeigen (SSAI)</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Übersicht: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG-API-Referenz</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Kanal-API-Referenz</a></li>
+    </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -963,7 +973,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Seite zuletzt aktualisiert am 01. Februar 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1025,7 +1042,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1036,8 +1053,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({
