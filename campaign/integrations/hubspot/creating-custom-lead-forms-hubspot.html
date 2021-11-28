@@ -1,0 +1,118 @@
+---
+title: Erstellen benutzerdefinierter Lead-Formulare für die HubSpot-
+description: In diesem Thema erfahren Sie, wie Sie mithilfe eines HubSpot-Formulars Leaddaten in einem Brightcove Player erfassen.
+parent: HubSpot 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul bietet die Möglichkeit, benutzerdefinierte Lead-Formulare zu erstellen, mit denen Sie Zuschauerinformationen erfassen können, während Videos in Brightcove-Playern abgespielt werden. Die Lead-Daten werden an HubSpot gesendet und von HubSpot verarbeitet.</p>
+    <p>Um ein benutzerdefiniertes Lead-Formular zu erstellen, müssen die folgenden Schritte ausgeführt werden.</p>
+    <ol>
+      <li><a href="#form">Erstellen Sie ein Formular in HubSpot</a></li>
+      <li><a href="#edit">Kopieren und bearbeiten Sie den Einbettungscode des Formulars</a></li>
+      <li><a href="#leadform">Erstellen Sie ein benutzerdefiniertes Lead-Formular im Kampagnenmodul</a></li>
+      <li><a href="#player">Weisen Sie einem Spieler das Lead-Formular zu</a></li>
+      <li><a href="#formdata">Überprüfen Sie die Formulardaten in HubSpot</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Informationen zu Standard-Lead-Formularen, die Zuschauerinformationen erfassen und die Daten in Video Cloud speichern, finden Sie unter <a href="/campaign/general/creating-campaign-lead-form.html">Erstellen eines Kampagnen-Lead-Formulars</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">Erstellen eines Formulars in HubSpot</h2>
+    <p>HubSpot-Formulare können verwendet werden, um Lead-Informationen von Website-Besuchern zu generieren. Diese Formulare können auch in Brightcove-Playern angezeigt werden. Mit den folgenden Schritten wird ein einfaches Formular zum Erfassen von Viewer-Informationen erstellt. Ausführliche Informationen zu HubSpot-Formularen finden Sie in der <a href="https://knowledge.hubspot.com/landing-page-user-guide-v2/how-to-create-a-form-for-your-landing-page">HubSpot-Dokumentation</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem HubSpot-Konto an.</li>
+      <li>Klicken <strong>Marketing &gt; Formulare</strong>. Wenn Sie das Menü Klassisch verwenden, klicken Sie auf <strong>Kontakte</strong> &gt; <strong>Formen</strong>.</li>
+      <li>Klicken <strong>Formular erstellen</strong>.</li>
+      <li>Klicken <strong>Eingebettetes Formular</strong> und dann klick <strong>Nächste</strong>. Standardmäßig enthält das Formular eine <strong>Email</strong> Feld und a <strong>einreichen</strong> Taste.</li>
+      <li>Stellen Sie sicher <strong>Leere Vorlage</strong> ist ausgewählt. Klicken <strong>Start</strong>.</li>
+      <li>Klicken Sie in der Kopfzeile auf den Standardnamen und benennen Sie das Formular. Drücken Sie <strong>Eingeben</strong> um die Änderungen zu speichern. </li>
+      <li>Klicken Sie in der Kopfzeile auf den Standardnamen und benennen Sie das Formular. Drücken Sie <strong>Eingeben</strong> um die Änderungen zu speichern.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-name-form.png" /></figure>
+      </li>
+      <li>Die linke Seite der Seite enthält eine Liste von Feldern, die dem Formular hinzugefügt werden können. Ziehen Sie die <strong>Vorname</strong> und <strong>Nachname</strong> Felder, die Sie im Formular rechts auf der Seite haben möchten.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-drag-field.png" /></figure>
+      </li>
+      <li>Bewegen Sie den Mauszeiger darüber und klicken Sie auf, um ein Feld erforderlich zu machen <strong>Mehr&gt; Erforderlich machen</strong>. Erforderliche Felder zeigen ein * neben der Feldbezeichnung an.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-req-field.png" /></figure>
+      </li>
+      <li>Drücke den <strong>Optionen</strong> Link oben auf der Seite.</li>
+      <li>Für <strong>Was passiert, nachdem ein Besucher dieses Formular abgesendet hat</strong>, klicken Sie auf Dankesnachricht <strong>anzeigen</strong>. Behalten Sie die Standardnachricht bei, da sie niemals angezeigt wird.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-submit-form-options.png" /></figure>
+      </li>
+      <li>Drücke den <strong>Stil &amp; Vorschau</strong> Link oben auf der Seite. Standardmäßig a <strong>Desktop</strong> Die Vorschau wird angezeigt.</li>
+      <li>Klicken <strong>Veröffentlichen </strong>oben auf der Seite, um die Änderungen am Formular zu veröffentlichen.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Kopieren und Bearbeiten des Formulareinbettungscodes</h2>
+    <p>Um das Formular im Campaign-Modul zu verwenden, müssen Sie den Formulareinbettungscode kopieren und bearbeiten. Möglicherweise möchten Sie das Formular auch grundlegend gestalten. In den folgenden Schritten kopieren wir den Code zum Einbetten von Formularen in einen HTML-Editor und nehmen dann einige Stiländerungen am Formular vor.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken <strong>Teilen</strong> Kopieren Sie den Einbettungscode oben rechts auf der Seite in die Zwischenablage.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/hubspot/node16772-copy-form-embed.png" /></figure>
+      </li>
+      <li>Fügen Sie den Einbettungscode in den HTML-Editor Ihrer Wahl ein.</li>
+      <li>Der Einbettungscode erfordert eine kleine Änderung, damit Campaign weiß, dass das Formular beim Senden geschlossen werden muss. Suchen Sie die Zeile, die hat <strong><code translate="No"> formId:</code></strong> Fügen Sie am Ende der Zeile ein Komma hinzu.</li>
+      <li>Fügen Sie diese Zeile unter dem hinzu <strong><code translate="No"> formId:</code></strong> Linie.
+        <pre>
+<code translate="No">onFormSubmit: bcLeadForm.submit</code></pre>
+      </li>
+      <li>Wenn das Formular in einem Brightcove-Player angezeigt wird, wird das Formular standardmäßig auf einem transparenten Hintergrund über dem Player angezeigt. Fügen Sie dem Einbettungscode das folgende CSS hinzu, um die Hintergrundfarbe in Grau zu ändern.<br />
+        <code translate="No">&lt;style&gt;<br />
+        body {<br />
+        background-color: rgba(204,204,204,0.9);<br />
+        margin: 0;<br />
+        padding: 20px;<br />
+        height: 100%;<br />
+        }<br />
+        &lt;/style&gt;</code></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">Erstellen eines benutzerdefinierten Lead-Formulars im Campaign-Modul</h2>
+    <p>Nachdem der Formulareinbettungscode bearbeitet wurde, erstellen Sie ein benutzerdefiniertes Lead-Formular im Campaign-Modul und verknüpfen Sie das Lead-Formular mit einem Campaign-fähigen Player.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>Bleiformulare</strong> in der linken Navigation. Wenn Lead-Formulare erstellt wurden, werden diese angezeigt.</li>
+      <li>Klicken <strong>Lead-Formular erstellen</strong>.</li>
+      <li>Geben Sie dem Lead-Formular eine Beschreibung <strong>Name</strong>.</li>
+      <li>Wählen Sie a <strong>Formularsprache</strong>.</li>
+      <li>Wähle aus <strong>Formular-Timing</strong>. Das Formular-Timing bestimmt, wann das Lead-Formular angezeigt wird.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/campaign/integrations/hubspot/node16772-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>Setzen Sie den Formulartyp auf <strong>Benutzerdefiniertes Lead-Formular</strong>.</li>
+      <li>Einfügen in die <strong>Formular-Einbettungscode</strong>.</li>
+      <li><strong>(Optional)</strong> Einfügen in die <strong>Bestätigungs-HTML</strong>. Die Bestätigungsansicht wird 5 Sekunden lang angezeigt und das Video wird dann wieder abgespielt. Wenn kein Bestätigungs-HTML enthalten ist, wird das Video nach dem Absenden des Formulars wieder abgespielt. <aside class="bcls-aside bcls-aside--information">Hinweis: Sie sollten das Bestätigungs-HTML so gestalten, dass Sie am Ende keinen schwarzen Text auf schwarzem Hintergrund haben.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (2)" src="/assets/images/campaign/integrations/hubspot/node16772-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>(Optional)</strong> Klicken <strong>Vorschau des Formulars</strong> um eine Vorschau des Formulars zu öffnen.</li>
+      <li>Klicken <strong>speichern</strong> um das Lead-Formular zu speichern.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Zuweisen eines Lead-Formulars zu einem Spieler</h2>
+    <p>Sobald das Lead-Formular erstellt wurde, muss es einem Spieler zugewiesen werden. Befolgen Sie diese Schritte, um einem Spieler ein Lead-Formular zuzuweisen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken <strong>Kampagnenspieler</strong> in der linken Navigation.</li>
+      <li>Suchen Sie Ihren Player und verwenden Sie die <strong>Lead Form</strong> Dropdown-Liste zur Auswahl des Lead-Formulars.</li>
+    </ol>
+    <p>Das Setup ist jetzt abgeschlossen und Sie können Lead-Informationen erfassen. Wenn ein Video mit einem kampagnenfähigen Player veröffentlicht wird, wird das Lead-Formular gemäß den Formular-Timing-Einstellungen angezeigt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">Überprüfen der Formulardaten in HubSpot</h2>
+    <p>Mit dem benutzerdefinierten Lead-Formular erfasste Leads werden als Kontakte in Ihrem HubSpot-Konto hinzugefügt. Eine einfache Möglichkeit, die vom Lead-Formular erfassten Daten anzuzeigen, besteht darin, eine intelligente Liste in HubSpot zu erstellen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem HubSpot-Konto an.</li>
+      <li>Klicken <strong>Marketing</strong> &gt; <strong>Formen</strong>.</li>
+      <li>Wenn Sie mit der Maus über ein Formular fahren, wird ein <strong>Aktionen</strong> Menü wird angezeigt. Klicken <strong>Aktionen&gt; Beiträge anzeigen</strong>. Eine Liste der Formularübermittlungen wird angezeigt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/campaign/integrations/hubspot/node16772-form-submissions.png" /></figure>
+      </li>
+      <li>Wenn Sie mit der Maus über eine Zeile fahren, klicken Sie auf <strong>Einreichung ansehen</strong> um die Formulardaten anzuzeigen.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="assign-lead-form-to-player" src="/assets/images/campaign/integrations/hubspot/node16772-submission-details.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

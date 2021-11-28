@@ -1,0 +1,64 @@
+---
+title: Analyse für soziale Ansichten überprüfen
+description: In diesem Thema erfahren Sie, wie Sie die Leistung Ihrer Videos in sozialen Netzwerken mithilfe von Brightcove Social überwachen.
+parent: Analytics
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Social bietet verschiedene Berichte, mit denen Sie die Leistung Ihrer Videos überwachen können, die auf Ihren Social Media-Konten veröffentlicht werden:</p>
+    <ul>
+      <li><strong>Instrumententafel</strong> - Bietet einen allgemeinen Überblick über die Videoleistung in Social Media-Konten. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-analytics.html">Überprüfen von Social Analytics</a>.</li>
+      <li><strong>Soziale Ansichten</strong> - Bietet einen Überblick über die soziale Ansicht für Videos, die für Social Media-Konten freigegeben wurden. In diesem Thema behandelt.</li>
+      <li><strong>Soziales Engagement</strong> - Bietet einen Überblick über das soziale Engagement (Likes, Shares, Retweets usw.) für Videos, die für Social Media-Konten freigegeben wurden. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-engagement-analytics.html">Überprüfung der Analyse des sozialen Engagements</a>.</li>
+    </ul>
+    <p>Beginnen Sie mit <a href="reviewing-social-analytics.html#timespan">Auswahl einer Zeitspanne</a> für den Bericht. Klicken Sie auf, um den Social Views Analytics-Bericht anzuzeigen <strong>Soziale Ansichten</strong> Registerkarte oben auf der Seite.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report tabs" src="/assets/images/social/node16679-report-tabs.png" /></figure>
+    <p>Der Social View Analytics-Bericht ist in folgende Abschnitte unterteilt:</p>
+    <ul>
+      <li><a href="#socialviews">Soziale Ansichten</a></li>
+      <li><a href="#viewsdetail">Details zu sozialen Ansichten</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="socialviews">Soziale Ansichten</h2>
+    <p>Das Diagramm "Soziale Ansichten" zeigt die Anzahl der Videoansichten für die Videos an, die für den ausgewählten Zeitraum auf Ihren Social Media-Konten veröffentlicht wurden. Das Aktualisierungsdatum ist das späteste Datum, für das Video Cloud über Social Analytics-Daten verfügt. In der Regel gibt es eine Verzögerung von mehr als 24 bis 48 Stunden, bevor soziale Plattformen die Ansichten und Engagement-Daten in ihren APIs aktualisieren.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die Twitter Insights-APIs melden keine Medienansichten, daher ist das Anzeigen von Daten im Rahmen der Social Analytics nicht verfügbar.</aside>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="social views graph" src="/assets/images/social/node16679-video-views-graph.png" /></figure>
+    <p>Mit der Legende rechts neben dem Diagramm können Sie den anzuzeigenden Detaillierungsgrad auswählen:</p>
+    <ul>
+      <li><strong>Meine Websites und Apps</strong> - Zeigen Sie die Anzahl der Videoansichten von Video Cloud-Playern und -Apps an</li>
+      <li><strong>Facebook</strong> - Zeigen Sie die Anzahl der Videoaufrufe auf Facebook an</li>
+      <li><strong>Youtube</strong> - Zeigt die Anzahl der Videoaufrufe auf YouTube an</li>
+      <li><strong>Gesamt</strong> - Zeigen Sie die Gesamtzahl der Videoansichten auf allen Plattformen an</li>
+    </ul>
+    <p>Wenn Sie den Mauszeiger über eine Linie im Diagramm bewegen, werden die Daten für dieses Datum angezeigt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewsdetail">Details zu sozialen Ansichten</h2>
+    <p>Im Abschnitt Details zu sozialen Ansichten können Sie Details zur Videoansicht anzeigen, indem Sie:</p>
+    <ul>
+      <li>Ansichten (Standard)</li>
+      <li>Durchschnittliche Beobachtungszeit</li>
+      <li>Durchschnittlich% beobachtet</li>
+    </ul>
+    <p>Nachdem eine Auswahl getroffen wurde, werden im Bericht die detaillierten Daten für jedes Video angezeigt.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die Twitter Insights-APIs melden keine Medienansichten, daher ist das Anzeigen von Daten im Rahmen der Social Analytics nicht verfügbar.</aside>
+    <p>Die in den Analyseberichten angezeigten YouTube-Ansichten werden von der gesammelt <a href="https://youtube.com/analytics">YouTube Analytics-Übersicht</a> Bericht. YouTube garantiert nicht, dass es sich bei diesen Daten um Echtzeitdaten handelt. Daher kann es zu Verzögerungen von mehreren Tagen kommen, bevor die Ansichten und das Engagement in diesem Bericht angezeigt werden. Sobald die Daten in YouTube Analytics enthalten sind, werden sie von den nächtlichen Datensammlern für Brightcove Social Analytics erfasst.</p>
+    <p>Wenn Sie neuere Echtzeit-Anzeigedaten benötigen, bietet YouTube diese ebenfalls an <a href="https://support.google.com/youtube/answer/6096647">Echtzeitberichte</a> mit Schätzungen zum Anzeigen von Daten in den letzten 48 Stunden für Ihre 25 zuletzt veröffentlichten Videos. Sie finden den Echtzeitbericht für Ihren YouTube-Kanal <a href="https://www.youtube.com/analytics?o=U#r=realtime">Hier</a>. Brightcove Social Analytics sammelt diese Echtzeitdaten nicht, da es geschätzte Ansichten (im Gegensatz zu tatsächlichen) liefert und nur für aktuelle Videos gilt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="social views by video" src="/assets/images/social/node16679-video-views-detail.png" /></figure>
+    <p>Im unteren Bereich des Berichts befinden sich Steuerelemente, mit denen Sie auswählen können, wie viele Zeilen angezeigt werden sollen, und mit denen Sie zu anderen Seiten navigieren können. Wenn Sie auf den Link für einen der Videotitel klicken, wird die Analyse der sozialen Ansichten für das ausgewählte Video angezeigt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="faq">Häufige Fragen</h2>
+    <p>1. Wenn das Social-Modul zum Veröffentlichen eines Videos auf YouTube verwendet wird und dieses Video dann in einen YouTube-Player auf einer anderen Website eingebettet wird, werden dann weiterhin Wiedergabe- / Engagement-Daten gesammelt und an die Analyse des Social-Moduls weitergeleitet?</p>
+    <p>Social Analytics sammelt alle von YouTube gemeldeten Ansichtsdaten, wie sie in Ihren Creator Studio- und / oder Analyseseiten auf YouTube angezeigt werden. Wenn die Ansichten des eingebetteten YouTube-Players für Ihre Analyse berücksichtigt werden, erfasst das Social-Modul dies und meldet es. Verwenden Sie den Einbettungscode von YouTube <strong>Teilen&gt; Einbetten</strong> Die Funktion genau wie angegeben bewirkt, dass Ansichten von diesem eingebetteten Player für Ihre Analysen in YouTube gezählt werden. Das Bearbeiten des Einbettungscodes kann jedoch dazu führen, dass YouTube keine Ansichtsdaten sammelt. Insbesondere das Einstellen des eingebetteten Players für die automatische Wiedergabe des Videos scheint dazu zu führen, dass YouTube die Ansichten dieses Players nicht zählt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">Daten exportieren</h2>
+    <p>Berichtsdaten können sowohl als durch Kommas getrennte Werte als auch als Excel-Formate heruntergeladen werden. Beachten Sie, dass die Exportfunktion die Daten direkt von einem <span translate="No">Analytics-API</span> Anruf. Die exportierten Daten werden nicht wie die UI-Daten manipuliert und enthalten derzeit alle zugrunde liegenden Daten im Bericht, nicht nur die Teilmenge der Felder, die auf der UI angezeigt werden. Wenn Sie alle Daten im Originalformat der API haben, können Sie die Daten auf andere Weise als in der Benutzeroberfläche angegeben bearbeiten.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export data" src="/assets/images/social/node16680-export.png" /></figure>
+  </section>
+</article>

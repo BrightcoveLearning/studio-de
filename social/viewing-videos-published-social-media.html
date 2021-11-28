@@ -1,0 +1,71 @@
+---
+title: Anzeigen von Videos, die in sozialen Medien veröffentlicht wurden 
+description: In diesem Thema erfahren Sie, wie Sie den Status von Videos überwachen, die mit Brightcove Social in Ihren Social-Media-Konten veröffentlicht wurden oder geplant sind.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5018179071001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Wenn Sie Brightcove Social öffnen oder klicken <strong>Veröffentlicht</strong> In der linken Navigation wird eine Liste der mit Brightcove Social veröffentlichten Videos angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16343-publish-streams.png" /></figure>
+    <p>Beachten Sie, dass bei Verwendung der automatischen Synchronisierung und der Konfiguration der Synchronisierungsregeln zum Aktualisieren von Videometadaten auf der sozialen Plattform möglicherweise mehrere Einträge für dasselbe Video in der Liste angezeigt werden. Beispielsweise wird ein Eintrag angezeigt, wenn das Video zum ersten Mal synchronisiert wird, und dann werden zusätzliche Einträge angezeigt, wenn die Videometadaten aktualisiert und mit einer sozialen Plattform synchronisiert werden.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">Anzeigen des Veröffentlichungsstatus</h2>
+    <p>Im Hauptteil der Seite werden alle Videos aufgelistet, die in einem Social-Media-Ziel veröffentlicht wurden. Für jedes Video wird Folgendes angezeigt:</p>
+    <ul>
+      <li>Status</li>
+      <li>Zeitpunkt der Veranstaltung</li>
+      <li>Video-Miniaturansicht</li>
+      <li>Videoname und Kurzbeschreibung</li>
+      <li>Link zum Social Media-Konto und zur Website, auf der das Video veröffentlicht wurde</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="filter">Filtern der veröffentlichten Liste</h2>
+    <p>Oben auf der Seite können Sie die Liste nach Veröffentlichungsstatus oder Ziel filtern. Folgende Veröffentlichungsstatus sind verfügbar:</p>
+    <ul>
+      <li><strong>Alle Statustypen</strong> - Zeigt alle Statustypen an</li>
+      <li><strong>Gelöscht</strong> - Zeigt Videos an, die von einer sozialen Plattform veröffentlicht und gelöscht wurden</li>
+      <li><strong>Error</strong> - Zeigt Beiträge an, die zu einem Fehler geführt haben</li>
+      <li><strong>Versteckt</strong> - Zeigt Beiträge an, bei denen das Video privat ist, nicht aufgeführt ist oder in sozialen Medien abgelaufen ist</li>
+      <li><strong>Verarbeitung</strong> - Zeigt Videos an, die gerade auf einer sozialen Plattform veröffentlicht werden</li>
+      <li><strong>Veröffentlicht</strong> - Zeigt Videos an, die erfolgreich auf einer sozialen Plattform veröffentlicht wurden</li>
+      <li><strong>Geplant</strong> - Zeigt Videos an, die auf einer sozialen Plattform veröffentlicht werden sollen</li>
+      <li><strong>Synchronisiert</strong> - Zeigt Videos an, die mit der automatischen Synchronisierung synchronisiert wurden</li>
+      <li><strong>Verlassen</strong> - Zeigt Videos an, die automatisch mit einer sozialen Plattform synchronisiert wurden, und dann entweder:
+        <ul>
+          <li>Aus der Video Cloud gelöscht, wobei das Video auf der sozialen Plattform verbleibt, da die automatische Synchronisierung so konfiguriert ist, dass beim Löschen eines Videos keine Aktionen ausgeführt werden</li>
+          <li>Ohne Tags, damit es nicht mehr mit der automatischen Synchronisierung übereinstimmt, sondern auf der sozialen Plattform verbleibt, da die automatische Synchronisierung so konfiguriert ist, dass bei Änderungen der Videometadaten keine Aktionen ausgeführt werden</li>
+        </ul>
+      </li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16343-filter-streams.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="search">Nach Videos suchen</h2>
+    <p>Über das Suchfeld können Sie die Videos in Ihrem Konto durchsuchen. Bei der Suche werden folgende Felder durchsucht:</p>
+    <ul>
+      <li>Video ID</li>
+      <li>Name</li>
+      <li>Kurze Beschreibung</li>
+      <li>Lange Beschreibung</li>
+      <li>Stichworte</li>
+      <li>Referenz ID</li>
+      <li>Benutzerdefinierte Felder</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="errors">Häufige Veröffentlichungsfehler</h2>
+    <p>Unten finden Sie eine Liste der häufig auftretenden Veröffentlichungsfehler.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Youtube - <strong>Ablehnung hochladen: Video war ein Duplikat</strong>. YouTube lässt nicht zu, dass dasselbe Video (wie durch Vergleichen der digitalen Fingerabdrücke der hochgeladenen Video-Binärdatei, nicht anhand der Video Cloud-Video-ID) mehr als einmal auf einen Kanal hochgeladen wird, und schlägt Versuche nach dem ersten mit diesem Fehler fehl.</li>
+      <li><strong>NO_RENDITION_FOR_SOCIAL_PLATFORM_ERROR</strong>. Das Social-Modul konnte keine Video Cloud-Videowiedergabe finden, die den Videoanforderungen der Plattform entspricht. Die mit Abstand häufigste Ursache hierfür sind Publisher, bei denen Twitter das automatische Markieren von Videos mit einer Länge von mehr als 140 Sekunden synchronisiert (maximal zulässige Dauer von Twitter).</li>
+      <li>Youtube - <strong>Die Anforderungsmetadaten geben einen ungültigen oder leeren Videotitel an (als Teil einer längeren Fehlermeldung).</strong>. YouTube hat eine maximale Titellänge von 100 Zeichen. Wenn also bei Verwendung der automatischen Synchronisierung die Video Cloud-Videometadaten, die dem YouTube-Titel zugeordnet werden, zu lang sind, tritt dieser Fehler auf.</li>
+    </ol>
+  </section>
+</article>

@@ -1,0 +1,115 @@
+---
+title: Kampagnenfelder und Datendefinitionen
+description: Dieses Thema bietet eine Übersicht über die Felder, die vom Campaign-Modul ausgefüllt werden können.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Campaign liefert eine Reihe von Videoanzeigedaten für bestimmte Felder in Ihrer integrierten Plattform. Unten finden Sie ein Beispiel für diese Felder und eine Beschreibung der Daten, mit denen die einzelnen Felder gefüllt werden</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="standard">Standardfelder</h2>
+    <p>Diese Felder werden immer von Brightcove Campaign ausgefüllt.</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">Feld</th>
+          <th width="88%" style="width: 33%;"><strong>Beschreibung</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>video_id</td>
+          <td valign="top"><p>Die ID des Brightcove-Videos, das dem Anzeigeereignis zugeordnet ist</p></td>
+        </tr>
+        <tr>
+          <td>video_name</td>
+          <td valign="top"><p>Der Name des Videos in der Video Cloud</p></td>
+        </tr>
+        <tr>
+          <td>tracking_id</td>
+          <td valign="top">Sie können eine hinzufügen <a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html#trackingid">benutzerdefinierte Tracking-ID</a> zu einer URL</td>
+        </tr>
+        <tr>
+          <td>external_id</td>
+          <td valign="top">Die globale Benutzer-ID (GUID), mit der der Benutzer identifiziert wird</td>
+        </tr>
+        <tr>
+          <td>player_id</td>
+          <td valign="top">Die ID des Brightcove-Players, der das Ansichtsereignis erstellt hat</td>
+        </tr>
+        <tr>
+          <td>page_url</td>
+          <td valign="top">Die URL der Seite, auf der das Video angezeigt wurde</td>
+        </tr>
+        <tr>
+          <td>schaute</td>
+          <td valign="top">Prozent beobachtet - Wie weit unten auf der Zeitachse sie gesehen haben</td>
+        </tr>
+        <tr>
+          <td>time_watched</td>
+          <td valign="top">Sekunden des angesehenen Videos - Die Gesamtzeit, die sie tatsächlich mit diesem Video verbracht haben</td>
+        </tr>
+        <tr>
+          <td>hergestellt in</td>
+          <td valign="top">Erstellungsdatum</td>
+        </tr>
+        <tr>
+          <td>aktualisiert am</td>
+          <td valign="top">Datum der letzten Aktualisierung</td>
+        </tr>
+        <tr>
+          <td>is_synced</td>
+          <td valign="top">Ein Boolescher Wert, der angibt, ob das Ansichtsereignis mit der Plattform eines Drittanbieters synchronisiert wurde oder nicht.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="additional">Weitere Felder</h2>
+    <p>Diese Felder werden nicht automatisch ausgefüllt. Sie sind gewöhnt an <a href="/campaign/general/using-custom-metrics-and-events.html">Verfolgen Sie zusätzliche benutzerdefinierte Daten</a>. Standardmäßig sind sie so konfiguriert, dass sie die Interaktivität aus der Galerie erfassen <a href="https://gallery.support.brightcove.com/experiences/inpage/adding-interactions-page-experience.html">In-Page-Erfahrungen</a>. Wenn Sie keine Interaktivität verwenden, sind diese Felder leer.</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">Feld</th>
+          <th width="88%" style="width: 33%;"><strong>Beschreibung</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>event_1, event_2, event_3</td>
+          <td valign="top"><p>Benutzerdefinierte Ereignisse</p></td>
+        </tr>
+        <tr>
+          <td>metric_1, metric_2, metric_3</td>
+          <td valign="top"><p>Benutzerdefinierte Metriken</p></td>
+        </tr>
+        <tr>
+          <td><strong>UTM-Felder</strong> - utmSource, utmMedium, utmCampaign, utmTerm und utmContent</td>
+          <td valign="top">Informationen zum Arbeiten mit UTM-Feldern finden Sie unter <a href="/campaign/general/working-utm-fields-campaign-module.html">Arbeiten mit UTM-Feldern im Campaign-Modul</a>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="custom">Benutzerdefinierte Felder</h2>
+    <p>Diese Felder werden nicht automatisch ausgefüllt. Über diese Felder haben Sie die Möglichkeit, Referenz-IDs, Tags oder benutzerdefinierte Felder mit Ihrem MAP oder CRM zu synchronisieren. Um dies einzurichten, bitte <a href="https://supportportal.brightcove.com/s/login/?language=en_US/create">Kontaktieren Sie Support</a> und Anfrage zum Beispiel: „Bitte ordnen Sie mein Video Cloud-Feld „tags“ dem Feld „custom_1“ der Kampagne zu.“</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">Feld</th>
+          <th width="88%" style="width: 33%;"><strong>Beschreibung</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>custom_1, custom_2, custom_3</td>
+          <td valign="top"><p>Benutzerdefinierte Ereignisse</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

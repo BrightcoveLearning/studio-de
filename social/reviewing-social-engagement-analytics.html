@@ -1,0 +1,57 @@
+---
+title: Überprüfung der Social Engagement Analytics
+description: In diesem Thema erfahren Sie, wie Sie die Leistung Ihrer Videos zum sozialen Engagement mit Brightcove Social überwachen.
+parent: Analytics
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Social bietet verschiedene Berichte, mit denen Sie die Leistung Ihrer Videos überwachen können, die auf Ihren Social Media-Konten veröffentlicht werden:</p>
+    <ul>
+      <li><strong>Instrumententafel</strong> - Bietet einen allgemeinen Überblick über die Videoleistung in Social Media-Konten. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-analytics.html">Überprüfen von Social Analytics</a>.</li>
+      <li><strong>Soziale Ansichten</strong> - Bietet einen Überblick über die soziale Ansicht für Videos, die für Social Media-Konten freigegeben wurden. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-views-analytics.html">Überprüfen von Social Views Analytics</a>.</li>
+      <li><strong>Soziales Engagement</strong> - Bietet einen Überblick über das soziale Engagement (Likes, Shares, Retweets usw.) für Videos, die für Social Media-Konten freigegeben wurden. In diesem Thema behandelt.</li>
+    </ul>
+    <p>Beginnen Sie mit <a href="reviewing-social-analytics.html#timespan">Auswahl einer Zeitspanne</a> für den Bericht. Klicken Sie auf, um den Social Engagement Analytics-Bericht anzuzeigen <strong>Soziales Engagement</strong> Registerkarte oben auf der Seite.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report tabs" src="/assets/images/social/node16680-report-tabs.png" /></figure>
+    <p>Der Social Engagement Analytics-Bericht ist in folgende Abschnitte unterteilt:</p>
+    <ul>
+      <li><a href="#socialengagement">Soziales Engagement</a></li>
+      <li><a href="#viewsbyvideo">Soziales Engagement per Video</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="socialviews">Soziales Engagement</h2>
+    <p>Das Diagramm "Soziales Engagement" zeigt das soziale Engagement für die Videos an, die für den ausgewählten Zeitraum auf Ihren Social Media-Konten veröffentlicht wurden. Das Aktualisierungsdatum ist das späteste Datum, für das Video Cloud über Social Analytics-Daten verfügt. In der Regel gibt es eine Verzögerung von mehr als 24 bis 48 Stunden, bevor soziale Plattformen die Ansichten und Engagement-Daten in ihren APIs aktualisieren. Wenn Sie den Mauszeiger über eine Linie im Diagramm bewegen, werden die Daten für dieses Datum angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="social engagement graph" src="/assets/images/social/node16680-video-engagement-graph.png" /></figure>
+    <p>Mit der Legende rechts neben dem Diagramm können Sie den anzuzeigenden Detaillierungsgrad auswählen:</p>
+    <ul>
+      <li><strong>Facebook</strong> - Zeigen Sie die Anzahl der Likes, Kommentare und Shares an</li>
+      <li><strong>Twitter</strong> - Zeigen Sie die Anzahl der Retweets und Favoriten an</li>
+      <li><strong>Youtube</strong> - Zeigen Sie die Anzahl der Kommentare, Likes, Abneigungen und Shares an</li>
+    </ul>
+    <p>Die in den Analyseberichten angezeigten YouTube-Ansichten werden von der gesammelt <a href="http://youtube.com/analytics">YouTube Analytics-Übersicht</a> Bericht. YouTube garantiert nicht, dass es sich bei diesen Daten um Echtzeitdaten handelt. Daher kann es zu Verzögerungen von mehreren Tagen kommen, bevor die Ansichten und das Engagement in diesem Bericht angezeigt werden. Sobald die Daten in YouTube Analytics enthalten sind, werden sie von den nächtlichen Datensammlern für Brightcove Social Analytics erfasst.</p>
+    <p>Wenn Sie neuere Echtzeit-Anzeigedaten benötigen, bietet YouTube diese ebenfalls an <a href="https://support.google.com/youtube/answer/6096647">Echtzeitberichte</a> mit Schätzungen zum Anzeigen von Daten in den letzten 48 Stunden für Ihre 25 zuletzt veröffentlichten Videos. Sie finden den Echtzeitbericht für Ihren YouTube-Kanal <a href="https://www.youtube.com/analytics?o=U#r=realtime">Hier</a>. Brightcove Social Analytics sammelt diese Echtzeitdaten nicht, da es geschätzte Ansichten (im Gegensatz zu tatsächlichen) liefert und nur für aktuelle Videos gilt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewsbyvideo">Soziales Engagement per Video</h2>
+    <p>Im Abschnitt "Soziale Ansicht nach Video" werden die detaillierten Ansichtsdaten für jedes Video angezeigt. Die Spaltenauswahl (<img alt="column selector" src="/assets/images/social/node16680-column-selector.png" />) kann verwendet werden, um die anzuzeigenden Spalten auszuwählen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select columns to display" src="/assets/images/social/node16680-select-columns.png" /></figure>
+    <p>Für jedes Video wird Folgendes angezeigt:</p>
+    <ul>
+      <li>Videoname und Dauer</li>
+      <li>Video ID</li>
+      <li>Erstellungsdatum</li>
+      <li>Ausgewählte Spalten</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video engagement" src="/assets/images/social/node16680-video-engagement-detail.png" /></figure>
+    <p>Im unteren Bereich des Berichts befinden sich Steuerelemente, mit denen Sie auswählen können, wie viele Zeilen angezeigt werden sollen, und mit denen Sie zu anderen Seiten navigieren können.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">Daten exportieren</h2>
+    <p>Berichtsdaten können sowohl als durch Kommas getrennte Werte als auch als Excel-Formate heruntergeladen werden. Beachten Sie, dass die Exportfunktion die Daten direkt von einem <span translate="No">Analytics-API</span> Anruf. Die exportierten Daten werden nicht wie die UI-Daten manipuliert und enthalten derzeit alle zugrunde liegenden Daten im Bericht, nicht nur die Teilmenge der Felder, die auf der UI angezeigt werden. Wenn Sie alle Daten im Originalformat der API haben, können Sie die Daten auf andere Weise als in der Benutzeroberfläche angegeben bearbeiten.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export data" src="/assets/images/social/node16680-export.png" /></figure>
+  </section>
+</article>

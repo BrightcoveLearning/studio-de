@@ -1,0 +1,91 @@
+---
+title: Eloqua Integration Testing Guide
+description: In diesem Thema erfahren Sie, wie Sie eine Integration zwischen Video Cloud und Eloqua überprüfen.
+parent: Eloqua 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Beim Einrichten einer neuen Eloqua-Integration kann es schwierig sein, zu testen und zu bestätigen, dass Videoanzeigedaten tatsächlich an Eloqua geliefert werden. In diesem Thema erfahren Sie, wie Sie systematisch testen und bestätigen, dass die Integration funktioniert und dass das Anzeigen von Daten und Leads an Eloqua gesendet wird.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Informationen zur Konfiguration des Campaign-Moduls für die Verwendung mit Eloqua finden Sie unter&nbsp;<a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Integration von Video Cloud mit Oracle Eloqua</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="start">Bevor Sie anfangen</h2>
+    <p>Vor der Validierung der Integration wird davon ausgegangen, dass Sie:</p>
+    <ul>
+      <li>Erfolgreich abgeschlossen <a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Brightcove Campaign-Integration mit Eloqua</a></li>
+      <li>Mindestens eins erstellt <a href="/campaign/general/creating-campaign-enabled-player.html">Kampagnenaktivierter Player</a> und für die Verwendung der Eloqua-Verbindung konfiguriert</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="lead_form">Konfigurieren eines Testleitungsformulars und Veröffentlichen eines Videos</h2>
+    <p>Zu Testzwecken müssen Sie in Campaign ein benutzerdefiniertes Lead-Formular erstellen und konfigurieren. Dies ist ein Eloqua-Formular, dessen Einbettungscode Sie in Campaign eingefügt haben. Auch wenn Sie in Ihrer Produktionsumgebung keine Lead-Formulare verwenden, wird dieses Lead-Formular verwendet, um sicherzustellen, dass Sie in Ihrer Datenbank und auf der Seite bekannt sind. Gehen Sie wie folgt vor, um ein Eloqua-Formular zu erstellen und Campaign für dessen Verwendung zu konfigurieren.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem Eloqua-Konto an.</li>
+      <li>Erstellen und gestalten Sie ein Eloqua-Formular. Informationen zum Erstellen eines Eloqua-Formulars finden Sie unter <a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Erstellen von benutzerdefinierten Lead-Formularen für Oracle Eloqua</a>.</li>
+      <li>Klicken <strong>Aktionen&gt; Formular-HTML anzeigen</strong> oben auf der Seite.</li>
+      <li>Kopieren Sie den Formulareinbettungscode in die Zwischenablage.</li>
+      <li>Kehren Sie zum Modul Kampagne zurück.</li>
+      <li>Erstellen Sie ein neues Lead-Formular mit dem Einbettungscode für Eloqua-Formulare.</li>
+      <li>Stellen Sie Ihr benutzerdefiniertes Formular so ein, dass das Formular an der 5-Sekunden-Marke angezeigt wird. Auf diese Weise wissen Sie genau, wann es erscheinen soll.</li>
+      <li>Aktivieren Sie das Kontrollkästchen zu <strong>Zeigen Sie immer die Lead-Form, auch wenn die Lead bereits bekannt ist</strong>. Dadurch wird sichergestellt, dass das Formular nach dem Ausfüllen während des Tests weiterhin angezeigt wird.</li>
+      <li><strong>Speichern Sie</strong> das Formular.</li>
+      <li>Konfigurieren Sie den Brightcove-Player mit der Eloqua-Verbindung so, dass das gerade erstellte Eloqua-Lead-Formular verwendet wird.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview_video">Generieren eines Vorschau-Links zum Anzeigen des Videos</h2>
+    <p>Führen Sie die folgenden Schritte aus, um einen Vorschau-Link zum Video zu erstellen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffne das Medien Modul.</li>
+      <li>Wählen Sie ein Video aus und veröffentlichen Sie es auf einem Webplayer. Achten Sie darauf, den für die Kampagne aktivierten Player mit dem Lead-Formular auszuwählen.</li>
+      <li>Klicken Sie auf den Vorschau-Link, um das Video in einem neuen Browserfenster zu öffnen. Wenn Sie auf diese Weise testen, werden alle potenziellen Variablen eliminiert, die von Spielern eingeführt werden könnten, die in HTML-Seiten eingebettet sind.</li>
+      <li>Vergewissern Sie sich, dass das Video abgespielt wird und das Lead-Formular an der 5-Sekunden-Marke angezeigt wird.</li>
+      <li>Füllen Sie das Lead-Formular mit eindeutigen Kontaktinformationen und E-Mail-Adresse aus (z. B. einem Prominenten-Namen oder einem Namen mit den Worten „bctest“), damit es später in Eloqua leicht gefunden werden kann. Dadurch werden alle Variablen auf Browser-, Player- oder Datenbankebene eliminiert. Wenn Sie das Formular als neuer Benutzer ausfüllen, können Sie sicher sein, dass Sie jetzt ein bekannter Benutzer in Eloqua sind.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_data">Bestätigung, dass Campaign die Daten erfolgreich erfasst</h2>
+    <p>Bevor Sie in Eloqua nach Videoanzeigedaten suchen, überprüfen Sie zunächst, ob Campaign die Videoanzeige tatsächlich erfasst hat. Beachten Sie, dass es bis zu 3 Stunden dauern kann, bis die Daten auf der Campaign-Benutzeroberfläche angezeigt werden. Führen Sie die folgenden Schritte aus, um zu bestätigen, dass Campaign die Daten erfolgreich erfasst.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>Alle letzten Aktivitäten</strong> in der linken Navigation.</li>
+      <li>Bestätigen Sie, dass es ein Ereignis mit einem aktuellen Zeitstempel gibt, der den Namen des gerade angesehenen Videos anzeigt. Der Ereignisstatus sollte sein <strong>unverarbeitet</strong>. Dies zeigt an, dass Campaign die Ansicht erfasst, aber noch nicht versucht hat, sie mit Eloqua zu synchronisieren.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-unprocessed.png" /></figure>
+      </li>
+      <li>Um eine Synchronisierung zwischen Campaign und Eloqua manuell auszulösen, klicken Sie auf <strong>Synchronisierungsaktivität</strong> in der linken Navigation.</li>
+      <li>Von dem <strong>Wählen Sie Verbindung</strong> Wählen Sie in der Dropdown-Liste Ihre Eloqua-Integration aus. EIN <strong>Test Sync</strong> Schaltfläche sollte erscheinen.</li>
+      <li>Klicken<strong> Test Sync</strong> um eine manuelle Synchronisierung auszulösen. Beachten Sie, dass Sie nur so oft eine manuelle Synchronisierung auslösen können. Standardmäßig synchronisiert Campaign Ansichten einmal pro Stunde mit Eloqua.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-test-sync.png" /></figure>
+      </li>
+      <li>Klicken <strong>Alle letzten Aktivitäten</strong> in der linken Navigation.</li>
+      <li>Der Status Ihres Ansichtsereignisses lautet <strong>In Warteschlange</strong>. Es kann ungefähr 15 Minuten dauern, bis die Daten tatsächlich mit Eloqua synchronisiert sind. Sobald die Daten synchronisiert sind, ändert sich der Status in einen von zwei Status:
+        <ul>
+          <li><strong>synchronisiert</strong> - Zeigt an, dass der Benutzer ein bekannter Benutzer war und Daten erfolgreich in sein Aktivitätsprotokoll übertragen wurden. Die Daten sollten auch innerhalb weniger Minuten in Eloqua sichtbar sein.</li>
+          <li><strong>unbekannter_Kontakt</strong> - Zeigt an, dass der Benutzer als unbekannt eingestuft wurde und Eloqua die Daten nicht akzeptieren konnte. Wenn Sie eine bekommen <strong>unbekannter_Kontakt</strong> Status, überprüfen Sie, ob Sie das Video mit dem richtigen Player veröffentlicht haben, über ein Eloqua-Formular verfügen und testen Sie über den Vorschau-Link, der nicht in eine Seite eingebettet ist.
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-synced.png" /></figure>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_marketo">Bestätigen, dass sich die Videoansichtsdaten in Eloqua befinden</h2>
+    <p>Sobald die Kampagne a . angezeigt hat <strong>synchronisiert</strong> befolgen Sie diese Schritte, um zu überprüfen, ob sich die Daten in Eloqua befinden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Es dauert 5-10 Minuten, bis die Eloqua-Benutzeroberfläche mit den neuen Daten aktualisiert wird, die sie von Campaign erhalten hat.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem Eloqua-Konto an.</li>
+      <li>Navigieren Sie zu <strong>Benutzerdefinierte Objekte</strong>.</li>
+      <li>Suchen Sie die <strong>BrightcoveVideoView</strong> benutzerdefiniertes Objekt.</li>
+      <li>Klicken Sie auf den Dropdown-Pfeil daneben und dann auf <strong>Benutzerdefinierte Objektdatensätze, die der Aufschlüsselung der Kontakte zugeordnet sind</strong>. Eine Liste der Kontakte mit Videoanzeigedaten in diesem benutzerdefinierten Objekt wird angezeigt.</li>
+      <li>Suchen Sie den eindeutigen Namen oder die E-Mail-Adresse, die Sie beim Ausfüllen des Lead-Formulars verwendet haben.</li>
+      <li>Klicken Sie auf den Kontakt, um die Detailseite zu öffnen. Eine Liste aller Videoansichtsdatensätze für den Kontakt wird angezeigt. Dies sind die Videoansichtsdaten, die von Campaign an Eloqua übermittelt werden. Felder wie Videoname, Video-ID, Player-ID, Beobachtete Zeit, Angezeigter Prozentsatz und mehr sind enthalten.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-eloqua-info.png" /></figure>
+      </li>
+    </ol>
+    <p>Eloqua erfordert, dass Daten, die in ein benutzerdefiniertes Datenobjekt geliefert werden, einem bekannten Kontakt zugewiesen werden. Eloqua akzeptiert nur Daten bekannter Kontakte. Daten unbekannter Kontakte werden nicht synchronisiert. Wenn Sie keine Lead-Formulare verwenden, kann ein unbekannter Benutzer nicht in einen bekannten Benutzer konvertieren, sodass keine Daten synchronisiert werden.</p>
+  </section>
+</article>

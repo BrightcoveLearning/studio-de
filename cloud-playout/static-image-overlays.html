@@ -1,0 +1,188 @@
+---
+title: Statische Bildüberlagerungen
+description: 'In diesem Thema wird erläutert, wie Sie Ihren Cloud Playout-Kanälen statische Bild-Overlays hinzufügen.'
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Einführung</h2>
+    <p>Sie können die statische Bild-Overlay-Funktion verwenden, um ein statisches Bild über ein Video in einem Cloud Playout-Kanal zu überlagern. Ein statisches Bild ist ein Standbild ohne Bewegung. Sie bereiten das Bild vor, speichern es außerhalb von Cloud Playout und stellen es uns als öffentlich zugängliche, nicht authentifizierte http/https-URL zur Verfügung.</p>
+    <h3>Beispiele</h3>
+    <ul>
+      <li>Sie möchten zu einem bestimmten Zeitpunkt während der Laufzeit des Kanals ein statisches Bild-Overlay einfügen und für 10 Sekunden ausführen. Sie möchten, dass die Bildüberlagerung in der unteren rechten Ecke des Videoframes angezeigt wird. Sie möchten, dass die Bildüberlagerung eine Deckkraft von 50 % hat.</li>
+      <li>Sie möchten zwei statische Bildüberlagerungen einfügen, sodass sie beide entweder gleichzeitig oder mit einer gewissen Überlappung im Videobild erscheinen. Sie möchten, dass sich die Anzeige der Bildüberlagerungen leicht überlappt, sodass eine Bildüberlagerung an einer Stelle angezeigt wird und während diese Bildüberlagerung noch angezeigt wird, eine andere Bildüberlagerung an einer anderen Stelle angezeigt wird.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Implementation">Implementierung</h2>
+    <ul>
+      <li>Das Bild, das Sie einem Video überlagern, sollte a <a href="https://en.wikipedia.org/wiki/Truevision_TGA">.tga</a> oder eine .png-Datei.</li>
+      <li>
+        Erstellen und verwalten Sie statische Overlay-Bilder für ein Konto mit dem neuen seitlichen Menüelement:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-menu-item.png" alt="Overlays">
+          <figcaption class="bcls-caption--image">Überlagerungen</figcaption>
+        </figure>
+      </li>
+      <li>
+        Die Overlay-Bilder können dann einem Kanal zugeordnet werden:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-associate-with-channel.png" alt="Associate Overlay with Channel">
+          <figcaption class="bcls-caption--image">Overlay mit Kanal verknüpfen</figcaption>
+        </figure>
+        <br>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-draft-channel.png" alt="Overlays in Draft Channel">
+          <figcaption class="bcls-caption--image">Überlagerungen im Entwurfskanal</figcaption>
+        </figure>
+        <br>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-for-running-channel.png" alt="Overlays in Running Channel">
+          <figcaption class="bcls-caption--image">Überlagerungen im laufenden Kanal</figcaption>
+        </figure>
+      </li>
+      <li>
+        Sie können bis zu zwei einfügen <strong>Schichten</strong> auf einmal. Jedes Bild sollte a . sein <strong>separate Schicht</strong>. Wenn verschiedene Images für dieselbe Zeit auf demselben Layer geplant sind oder wenn sie sich in einem Zeitfenster überlappen, entfernt das später bereitgestellte Image das vorhandene Image auf demselben Layer.
+          <ul>
+            <li>Die Schichten sind in Z-Reihenfolge, was bedeutet, dass <strong>Overlays mit höheren Layerwerten werden über Overlays mit niedrigeren Layerwerten eingefügt</strong>.</li>
+          </ul>
+      </li>
+      <li>Sie können die Überlagerungen so einrichten, dass alle gleichzeitig im zugrunde liegenden Video angezeigt werden (oder nicht), und Sie können sie so einrichten, dass sie sich physisch überlappen (oder nicht).</li>
+      <li>
+        Sie können jedes Bild-Overlay mit einer Startzeit und Dauer konfigurieren:
+        <ul>
+          <li>Wenn die Dauer eingestellt ist, beträgt die maximale Dauer 24 Stunden</li>
+          <li>Wenn die Dauer nicht eingestellt ist, wird das Overlay solange angezeigt, bis es deaktiviert wird</li>
+          <li>Die Startzeit muss eine zukünftige Zeit sein</li>
+        </ul>
+      </li>
+      <li>Sie können mit einer Deckkraft von 0 - 100 konfigurieren. <strong>0</strong> ist transparent und <strong>100</strong> ist völlig undurchsichtig.</li>
+      <li>
+        Sie können die Bildüberlagerung auf dem Videoframe positionieren, wie durch die x/y-Koordinaten angegeben. Standardmäßig werden die X-, Y-Koordinaten als 0, 0 (<strong>die obere linke Ecke eines Videoframes</strong>):
+        <ul>
+          <li><strong>Position X</strong> : die Position des linken Rands des Overlays relativ zum linken Rand des Videoframes in Pixeln. Wenn durch die Platzierung die Überlagerung über den rechten Rand des darunterliegenden Videos hinausragt, wird die Überlagerung rechts abgeschnitten.</li>
+          <li><strong>Position Y</strong> : die Position des oberen Rands des Overlays relativ zum oberen Rand des Videoframes in Pixeln. Wenn das Overlay durch die Platzierung über den unteren Rand des darunter liegenden Videos hinausragt, wird das Overlay unten abgeschnitten.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Größe:</strong> das <strong>Original verwenden</strong> Option kann für Auflösung verwendet werden, um die Originalauflösung des gelieferten Bildes zu verwenden:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-use-original-size.png" alt="Use Original Image Size">
+          <figcaption class="bcls-caption--image">Originalbildgröße verwenden</figcaption>
+        </figure>
+        <ul>
+          <li>
+            Sie können eine benutzerdefinierte <strong>Breite</strong> und <strong>Höhe</strong> für die Auflösung, damit das System das Bild skalieren kann, bevor es auf das Quellvideo angewendet wird:
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/cloud-playout/overlay-custom-width-height.png" alt="Set Width and Height">
+              <figcaption class="bcls-caption--image">Breite und Höhe einstellen</figcaption>
+            </figure>
+          </li>
+          <li>Etwas verlassen <strong>Breite</strong> und <strong>Höhe</strong> leer und <strong>Original verwenden</strong> Wenn das Kontrollkästchen deaktiviert ist, verwendet das System die Ausgabeauflösung des Kanals. Beispielsweise: Bei der Mobil- und Webausgabe wird die Overlay-Auflösung auf 720p eingestellt, und ein Smart-TV-Profil legt die Overlay-Auflösung auf 1080p fest. <strong>Die Verwendung dieser Option wird nicht empfohlen</strong> da es möglicherweise nicht immer auf die MP4-Quellauflösung ausgerichtet ist.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="State_transitions">Zustandsübergänge</h2>
+    <p>Zustandsübergänge für Overlay-Zeitpläne</p>
+    <ul>
+      <li>
+        <strong>INAKTIV</strong>
+        <ul>
+          <li>Ein neu erstellter Zeitplan (oder)</li> 
+          <li>Ein Zeitplan, der den Lauf bereits abgeschlossen hat (oder)</li>
+          <li>Ein Zeitplan, der bereits deaktiviert ist.</li> 
+          <li>Sie können die Startzeit ändern, um sie mit der gleichen oder aktualisierten Overlay-Konfiguration wieder in den Status SCHEDULED zu versetzen.</li>
+          <li>Löschen - wenn Sie diese Konfiguration nicht mehr verwenden.</li>
+          <li>Ändern Sie für alle Konfigurationsänderungen.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>GEPLANT</strong>
+        <ul>
+          <li>Geplanter Start zur angegebenen Startzeit.</li> 
+          <li>Löschen Sie, wenn Sie diesen Zeitplan nicht mehr benötigen.</li>
+          <li>Ändern Sie für alle Konfigurationsänderungen.</li> 
+        </ul>
+      </li>
+      <li>
+        <strong>AKTIV</strong>
+        <ul>
+          <li>Ein Zeitplan, der gerade in Bearbeitung ist.</li> 
+          <li>Deaktivieren Sie diese Option, wenn Sie das Overlay stoppen müssen.</li>
+          <li>Ändern Sie jede Konfiguration außer Layer und start_time.</li> 
+          <li>Löschen nicht erlaubt. Sie müssen zuerst deaktivieren.</li>
+        </ul>
+      </li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information language-editable">Sie können die Overlays jederzeit bearbeiten. jedoch <strong>Schicht</strong> und <strong>Startzeit</strong> kann nicht für ein geändert werden <strong>AKTIV</strong> überlagern. Sie können weiterhin die Auflösung, die x/y-Koordinaten, die Deckkraft oder sogar das Bild selbst in einem aktiven Overlay-Zeitplan ändern.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Contextual_Overlay_Launch">Kontextuelles Overlay-Start</h2>
+    <p>Wenn Sie möchten, dass das Overlay für ein bestimmtes Video in der Wiedergabeliste angezeigt wird, können Sie den Zugriff mit der Maus über das Video in der Wiedergabeliste halten und auf das klicken <strong>Overlay-Symbol hinzufügen</strong> ( <img src="/assets/images/cloud-playout/overlay-icon.svg" alt="overlay icon"> ) startet die Benutzeroberfläche das Modal "Overlays hinzufügen" mit der Startzeit und Dauer des ausgewählten Videos.</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-add-particular-video.png" alt="Contextual Overlay Launch">
+      <figcaption class="bcls-caption--image">Kontextuelles Overlay-Start</figcaption>
+    </figure>
+    <h3>Anmerkungen</h3>
+    <ol>
+      <li>Dadurch wird ein Zeitplan für die Startzeit des ausgewählten Videos erstellt, der nicht an das Video selbst angehängt wird. Mit anderen Worten, wenn das Video neu geordnet (oder) gelöscht (oder) die Startzeit aufgrund verschiedener Änderungen am EPG-Plan geändert wird, bleibt der Overlay-Plan immer noch auf der ursprünglich geplanten Startzeit.</li>
+      <li>Es wird empfohlen, dieses Overlay im Kontext zum Video hinzufügen auf einem laufenden Kanal statt auf einem Kanal im Zustand ENTWURF oder GEPLANT zu verwenden - da der laufende Kanal zeitgenauer ist (mit EPG betrieben) als die Kanäle in anderen Zuständen.</li>
+      <li>Auf einem laufenden Kanal ist diese Option für alle Videos verfügbar, die dem aktuell wiedergegebenen Video folgen.</li>
+      <li>Diese Option ist für Anzeigenplatzhaltervideos auf dem SSAI-Kanal nicht verfügbar.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Image_handling">Bildbearbeitung</h2>
+    <p>Das Bild wird Pixel für Pixel dem zugrunde liegenden Quellvideo überlagert.</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">Wenn das Overlay größer als das darunterliegende Video ist oder eine Kante des darunterliegenden Videos überläuft, wird das Overlay nicht vollständig auf das Quellvideo angewendet (es wird beschnitten). Dies gilt sowohl für VoD-Vermögenswerte als auch für Live-Segmente.</aside>
+    <p>Im Folgenden finden Sie einige mögliche Korrekturen/Problemumgehungen für den Fall, dass das Overlay größer als das Video ist.</p>
+    <h3>Problemfall</h3>
+    <p>Das folgende Diagramm zeigt ein zu großes Overlay, mit einem Firmenlogo in der unteren rechten Ecke und daher ausgeblendet:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-problem-case.png" alt="Problem Case">
+      <figcaption class="bcls-caption--image">Problemfall</figcaption>
+    </figure>
+    <h4>Lösung 1</h4>
+    <p>Sie können die Breiten- und Höhenfelder verwenden, um die Größe des Bildes an die Größe des Videobildschirms anzupassen. Der Nachteil dabei ist, dass die Größenänderung eines Bildes die Bildqualität verschlechtert und das Logo selbst kleiner macht:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-1.png" alt="Solution 1">
+      <figcaption class="bcls-caption--image">Lösung 1</figcaption>
+    </figure>
+    <h4>Lösung 2</h4>
+    <p>Wenn Sie das Logo in die obere linke Ecke verschieben, ist die Sichtbarkeit zumindest gewährleistet, hat jedoch möglicherweise keine wünschenswerte Platzierung:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-2.png" alt="Solution 2">
+      <figcaption class="bcls-caption--image">Lösung 2</figcaption>
+    </figure>
+    <h4>Lösung 3</h4>
+    <p>Die <strong>ideale Lösung</strong> besteht darin, die Größe Ihres Overlays so zu gestalten, dass es genau der Auflösung des Videos entspricht (und überprüfen Sie <strong>Original verwenden</strong> für die Größenangabe):</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-3.png" alt="Solution 3">
+      <figcaption class="bcls-caption--image">Lösung 3</figcaption>
+    </figure>
+    <h5>Anmerkungen</h5>
+    <ol>
+      <li>Das Bild wird überlagert, bevor einzelne Ausgabecodierungen (mit ihren unterschiedlichen Auflösungen und Videoqualitäten) erstellt werden. Dies bedeutet, dass das Bild ähnlich skaliert wird, wenn das zugrunde liegende Video für eine bestimmte Ausgabecodierung skaliert wird.</li>
+      <li>Das Overlay-Bild wird in alle Ausgaben eingefügt, dh die Overlays sind auch auf Vorschaubildern sichtbar, die auf der Cloud Playout-Benutzeroberfläche angezeigt werden. </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Verwandte Themen</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Überblick: Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Hinzufügen von Stoßstangen zum Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Überblick: EPG-API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG-API-Referenz</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Kanal-API-Referenz</a></li>
+    </ul>
+  </section>
+</article>

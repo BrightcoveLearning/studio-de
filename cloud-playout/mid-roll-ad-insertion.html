@@ -1,0 +1,102 @@
+---
+title: Hinzufügen von Mid-Roll-Anzeigen zu einer Kanal
+description: In diesem Thema wird das Hinzufügen von Mid-Roll-Anzeigen zu VOD-Inhalten in Cloud Playout-Kanälen behandelt.
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">Einführung</h2>
+		<p>Bevor Sie dieses Thema lesen, sollten Sie sich ansehen <a href="/cloud-playout/enabling-server-side-ads.html">Monetarisieren von Cloud-Playout</a> , das die Aktivierung eines Cloud Playout-Kanals für SSAI und die Einrichtung von Pre-Roll- und Post-Roll-Anzeigeneinfügungen behandelt.</p>
+		<p>Wie Sie unten sehen werden, funktionieren Mid-Roll-Anzeigen etwas anders.</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="overview">Überblick</h2>
+		<p>Das Einfügen von Mid-Roll-Anzeigen hängt von Cuepoints ab, die für das Video entweder über Studio oder die CMS-API erstellt wurden. Cloud Playout importiert die Cuepoint-Daten für die Videos im Kanal und legt basierend darauf Mid-Roll-Anzeigeneinfügepunkte fest. Informationen zum Hinzufügen von Cuepoints finden Sie unter <a href="/media/working-cue-points-media-module.html">Arbeiten mit Cue-Punkten im Medienmodul</a> </p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Enabling_mid-roll_ad_cuepoints">Aktivieren von Mid-Roll-Anzeigen-Cuepoints</h2>
+		<p>Der Import von Cuepoints für Mid-Roll-Anzeigen kann beim Erstellen des Kanals oder jederzeit danach aktiviert oder deaktiviert werden, unabhängig vom Status des Kanals:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/midroll-ads-enable-disable.png" alt="Enable Mid-Roll Ads">
+			<figcaption class="bcls-caption--image">Mid-Roll-Anzeigen aktivieren</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+		<h2 id="How_mid-rolls_work_in_Cloud_Playout">So funktionieren Mid-Rolls in Cloud Playout</h2>
+		<ul>
+			<li>Cloud Playout legt Anzeigenpositionen nur basierend auf Anzeigen-Cuepoints fest (Code-Cuepoints werden ignoriert).</li>
+			<li>Die von Video Cloud automatisch erstellten Pre-Roll- und Post-Roll-Anzeigen-Cuepoints werden ignoriert, da Pre-Roll- und Post-Roll-Anzeigen in Cloud Playout unterschiedlich verwaltet werden – siehe <a href="/cloud-playout/enabling-server-side-ads.html#ads">Serverseitige Werbung aktivieren</a>.</li>
+			<li>Nur die Zeitstempel für die Anzeigen-Cue-Points werden verwendet, um das Timing von Mid-Roll-Anzeigen zu bestimmen. Cuepoint-Metadaten werden ignoriert.</li>
+			<li>
+				Die Standarddauer für Mid-Roll beträgt 30 Sekunden. Dies kann in den Kanaleinstellungen geändert werden: Mindestdauer: 30 Sekunden; maximale Dauer: 10 Minuten.
+				<p>Die Dauer von Mid-Roll-Slots kann unabhängig vom Kanalstatus jederzeit geändert werden:</p>
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-cuepoints-running-state.png" alt="Edit Mid-Roll Slot Duration (RUNNING State)">
+					<figcaption class="bcls-caption--image">Dauer des Mid-Roll-Slots bearbeiten (Status RUNNING)</figcaption>
+				</figure>
+				<aside class="bcls-aside bcls-aside--information">Anmerkungen:
+					<ul>
+						<li>Die geänderte Dauer gilt nicht für die aktuell wiedergegebene Anzeigenfläche. Nachfolgende Anzeigenflächen (innerhalb desselben und nachfolgenden Videos) verwenden die geänderte Dauer der Anzeigenfläche.</li>
+						<li>Das Cloud Playout EPG wird dynamisch und möglichst realitätsnah generiert. Das Ändern der Mid-Roll-Dauer kann dazu führen, dass der EPG für eine Weile ungenaue Zeitpläne anzeigt, aber er korrigiert sich nach kurzer Zeit automatisch.</li>
+						<li>Wenn Cloud Playout gerade eine Anzeige abspielt (Mid-Roll oder Post-Roll) und wenn ein Nutzer versucht, <strong>Jetzt spielen</strong> Option, zu einem anderen Asset zu springen, wird die Anzeige weiterhin bis zur programmierten Dauer der Anzeigenfläche abgespielt. Während dieser Zeit wird das Video, das der Nutzer jetzt abzuspielen versucht hat, mit der Anzeige für den Rest der Anzeigenflächendauer überschrieben. Wir empfehlen, den Abschluss der Anzeige abzuwarten, bevor Sie die <strong>Jetzt spielen</strong> Schalter.</li>
+					</ul>
+					</aside>
+			</li>
+			<li>Mid-Roll-Anzeigen können nur in VOD-Inhalte eingefügt werden, nicht in Anzeigenplatzhalter für <a href="/cloud-playout/adding-bumpers-to-vod.html">Stoßstangen</a> oder <a href="/cloud-playout/enabling-server-side-ads.html">Pre-Roll- und Post-Roll-Anzeigen</a>.</li>
+			<li>Die Start- und Endzeiten sowie die Dauer der Assets im Programm in der Cloud Playout-Benutzeroberfläche und im EPG spiegeln den Mid-Roll-Anzeigeninhalt wider.</li>
+			<li>
+				Der Import von Cuepoint-Daten für Mid-Roll-Anzeigen kann unabhängig vom aktuellen Status des Kanals jederzeit aktiviert oder deaktiviert werden.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-cuepoints-running-state.png" alt="Enable/Disable Mid-Rolls while Running">
+					<figcaption class="bcls-caption--image">Aktivieren/Deaktivieren von Mid-Rolls während der Ausführung</figcaption>
+				</figure>
+				<p><strong>Anmerkungen</strong></p>
+				<ol>
+					<li>
+						Wenn für einen Kanal die Mid-Roll-Importoption deaktiviert ist und Asset A gerade wiedergegeben wird und es Mid-Roll-Cue-Points hat und wenn die Mid-Roll-Importoption jetzt in den Kanaleinstellungen aktiviert ist – die Anzeigenflächen im aktuell wiedergegebenen Asset wird für die aktuelle Iteration nicht berücksichtigt. Mid-Rolls für nachfolgende Assets werden jedoch importiert.
+					</li>
+					<li>
+						Wenn für einen Kanal die Mid-Roll-Importoption aktiviert ist und Asset A gerade wiedergegeben wird und er Mid-Roll-Cue-Points hat und wenn die Mid-Roll-Importoption jetzt deaktiviert ist, werden die Anzeigenplätze im aktuell wiedergegebenen Asset berücksichtigt auf Best-Effort-Basis. Einige Anzeigen-Slots, die sich so nahe an der Spielzeit des aktuell spielenden Assets befinden, können weiterhin Anzeigen abspielen.
+					</li>
+          <li>Das Hinzufügen/Entfernen von Cue-Punkten zu einem aktuell wiedergegebenen Asset wird basierend auf verschiedenen Faktoren gehandhabt. Faktoren wie die aktuelle Spielzeitposition, das Vorhandensein anderer Mid-Roll-Cue-Punkte usw. beeinflussen die Art und Weise, wie Cloud Playout das dynamische Hinzufügen/Entfernen von Cue-Punkten des aktuell wiedergegebenen Assets handhabt.</li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Identify assets with mid-rolls">Identifizieren Sie Assets mit Mid-Rolls</h2>
+		<p>Wenn der Mid-Roll-Cuepoint-Import aktiviert wurde, wird bei Videos mit gültigen Mid-Roll-Cuepoints ein grün gepunktetes Symbol neben dem Videotitel im Programm angezeigt:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-assets-with-midroll.png" alt="Videos with Mid-Roll Cuepoints">
+			<figcaption class="bcls-caption--image">Videos mit Mid-Roll-Cuepoints</figcaption>
+		</figure>
+		<p>Wenn der Kanal in a . ist <strong>LUFTZUG</strong> Status können Sie mit der Maus über das grün gepunktete Symbol fahren, um die Mid-Roll-Details anzuzeigen:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-draft-state.png" alt="Reveal Mid-Roll Details - DRAFT State">
+			<figcaption class="bcls-caption--image">Mid-Roll-Details aufdecken – ENTWURF-Zustand</figcaption>
+		</figure>
+		<p>Wenn der Kanal in a . ist <strong>LAUFEN</strong> Status können Sie auf das grün gepunktete Symbol klicken, um die Mid-Roll-Details anzuzeigen:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-running-state.png" alt="Reveal Mid-Roll Details - RUNNING State">
+			<figcaption class="bcls-caption--image">Mid-Roll-Details aufdecken – ENTWURF-Zustand</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+    <h2 id="Related_topics">Verwandte Themen</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Überblick: Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Hinzufügen von Stoßstangen zum Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">Statische Bildüberlagerungen</a></li>
+			<li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Überblick: EPG-API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG-API-Referenz</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Kanal-API-Referenz</a></li>
+    </ul>
+  </section>
+</article>

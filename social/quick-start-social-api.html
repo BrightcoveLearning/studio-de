@@ -1,0 +1,51 @@
+---
+title: 'Schnellstart:  sozialen API'
+description: Dieses Thema bietet einen schnellen Einstieg in die Verwendung der Social API.
+parent: Developers
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Einführung</h2>
+    <p>Mit der Social API können Sie den Status und den Verlauf der Freigabe von Videos auf Social Media-Plattformen abrufen. Mit diesem Schnellstart können Sie die verfügbaren Anforderungen und deren Antworten entweder über Ihr eigenes Konto oder über ein Brightcove Learning Services-Beispielkonto anzeigen.</p>
+    <h3>Hinweise zur Beispiel-App</h3>
+    <ul>
+      <li>Dies ist ein schneller Start, der Ihnen ein Modell für die Erstellung einer App rund um die Social API geben soll. Sie können grundlegende Anforderungen testen, verwenden jedoch keinen der Parameter, die diese Anforderungen verwenden können. Um diese zu sehen, schauen Sie sich die an <a href="https://apis.support.brightcove.com/social/references/reference.html">API-Referenz</a>.</li>
+      <li>Die App stellt auch einige Anfragen an die <span translate="No">CMS-API</span> um die Namen der Videos abzurufen, die von der ursprünglichen Anfrage nach dem Status des sozialen Teilens von Videos zurückgegeben wurden. Dies dient nur zum Auffüllen der Video-Selektoren für die anderen Anforderungen, da die Social API nur Video-IDs zurückgibt, nicht deren Namen.</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Dieses Beispiel und der zugehörige Code dienen als Leitfaden für Ihre Produktionsentwicklung. Der Code ist weder für die Verwendung in der Produktion zertifiziert noch offiziell unterstützt.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="getCredentials" class="bcls-expander-head">Anmeldeinformationen abrufen</h2>
+    <div class="bcls-expander-content">
+      <p>Um die Social API verwenden zu können, benötigen Sie die richtigen Anmeldeinformationen.</p>
+      <p>Der einfachste Weg, sie zu bekommen, ist die Verwendung des Studios <strong>Admin / API-Authentifizierung</strong> Abschnitt, klicken Sie <strong>Neue Anwendung registrieren</strong> und wählen Sie die sozialen Berechtigungen für Ihre Anmeldeinformationen aus:</p>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Social API Permissions" src="/assets/images/social/social-api-permissions.png" />
+        <figcaption class="bcls-caption--image">Social API-Berechtigungen</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="bcls-section" id="workingSample">
+    <h2>Schnellstart-App</h2>
+    <p>Hier finden Sie den gesamten Code, der diesem Beispiel zugeordnet ist <a href="https://github.com/BrightcoveLearning/18731-quick-start-social-api">GitHub-Repository</a>.</p>
+    <p class="codepen" data-height="1100" data-theme-id="34967" data-default-tab="result" data-user="rcrooks1969" data-slug-hash="QYVmRP" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Social API Quick Start"><span>Sehen Sie sich den Schnellstart der Pen <a href="https://codepen.io/team/rcrooks1969/pen/QYVmRP/"> Social API</a> von Brightcove Learning Services (<a href="https://codepen.io/rcrooks1969">@rcrooks1969</a>) auf <a href="https://codepen.io">CodePen an</a>.</span></p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script></section>
+  <section class="bcls-section">
+    <h2 id="Using_the_CodePen" class="bcls-expander-head">Verwenden des CodePen</h2>
+    <div class="bcls-expander-content">
+      <p>Hier sind einige Tipps, um den oben genannten CodePen effektiv zu nutzen:</p>
+      <ul>
+        <li>Schalten Sie die tatsächliche Anzeige des Players um, indem Sie auf klicken <strong>Ergebnis</strong> Taste.</li>
+        <li>Drücke den <strong>HTML / CSS / JS</strong> Schaltflächen zur Anzeige EINES der Codetypen.</li>
+        <li>Klicken <strong>Auf CodePen bearbeiten</strong> in der oberen rechten Ecke, um diesen CodePen in Ihr eigenes Konto einzugeben.</li>
+        <li>Hier finden Sie den gesamten Code, der diesem Beispiel zugeordnet ist <a href="https://github.com/BrightcoveLearning/18729-cms-api-sample-report-audio-only-content">GitHub-Repository</a>.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="proxy">Proxy-Code</h2>
+    <p>Um Ihre eigene Version der Beispiel-App auf dieser Seite zu erstellen, müssen Sie Ihren eigenen Proxy erstellen und hosten. (Die von Brightcove Learning Services verwendeten Proxys akzeptieren nur Anforderungen von Brightcove-Domänen.) Ein Beispiel-Proxy, der dem von uns verwendeten sehr ähnlich ist, jedoch ohne die Überprüfungen, die Anforderungen von Nicht-Brightcove-Domänen blockieren, befindet sich in <a href="https://github.com/BrightcoveLearning/sample-proxy-apps">dieses GitHub-Repository</a>. Dort finden Sie auch grundlegende Anweisungen zur Verwendung und eine ausführlichere Anleitung zum Erstellen von Apps rund um den Proxy in <a href="https://apis.support.brightcove.com/getting-started/learning-guide-using-rest-apis.html">Verwenden der REST-APIs</a>.</p>
+  </section>
+</article>

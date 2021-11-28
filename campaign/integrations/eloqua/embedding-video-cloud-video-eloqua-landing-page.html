@@ -1,0 +1,57 @@
+---
+title: Einbetten eines Video Cloud-Videos in eine Eloqua-Landingpage-
+description: In diesem Thema erfahren Sie, wie Sie ein Video Cloud-Video in eine Oracle Eloqua-Landingpage einbetten.
+parent: Eloqua 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul bietet die Möglichkeit, ein Video Cloud-Video zu Eloqua-Landingpages als eine Art von Cloud-Inhalt hinzuzufügen. Das Video wird einer Landing Page im WYSIWYG-Editor der Eloqua Landing Page hinzugefügt.</p>
+    <p>Um einer Eloqua-Landingpage ein Video hinzuzufügen, müssen die folgenden Schritte ausgeführt werden.</p>
+    <ol>
+      <li><a href="#landingpage">Erstellen Sie eine Landingpage in Eloqua</a></li>
+      <li><a href="#video">Wählen Sie ein Video und einen Player aus</a></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="landingpage">Erstellen einer Eloqua-Landingpage</h2>
+    <p>Eloqua-Zielseiten können als Ziel für Besucher verwendet werden, die sich von E-Mails aus Eloqua durchklicken. Führen Sie die folgenden Schritte aus, um eine Zielseite zu erstellen.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Vollständige Informationen zu Eloqua-Zielseiten finden Sie in der <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/LandingPages/LandingPages.htm">Oracle Eloqua-Dokumentation</a>.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem Video Cloud-Konto an. Wählen Sie das Konto mit dem Video aus, das Sie auf der Zielseite verwenden möchten. Dieses Konto muss auch Zugriff auf das Campaign-Modul haben.</li>
+      <li>Melden Sie sich bei Ihrem Eloqua-Konto an.</li>
+      <li>Navigieren Sie zu <strong>Vermögenswerte</strong> &gt; <strong>Startseiten</strong> und dann klicken <strong>Erstellen Sie eine Landing Page</strong>.</li>
+      <li>Klicken <strong>Leere HTML-Landingpage</strong> und dann klicken <strong>Wählen</strong>.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Cloud-Inhalt</strong>. Das Dialogfeld "Cloud-Inhalt" wird geöffnet.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16128-cloud-content.png" /></figure>
+      </li>
+      <li>Zieh den <strong>Brightcove-Video</strong> Objekt auf die HTML-Seite und legen Sie es zwischen den <code translate="No">&lt;body&gt;</code> Stichworte.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16128-drag-cloud-content.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Einer Landing Page können mehrere Spieler hinzugefügt werden, indem Sie einen Spieler zwischen die Landing Page ziehen und dort ablegen <code translate="No">&lt;body&gt;</code> Stichworte. Speichern Sie die Landingpage, nachdem Sie jeden Spieler hinzugefügt haben.</aside>
+      </li>
+    </ol>
+    <p>Die <strong>Konfiguration von Cloud-Inhalten</strong> Dialog wird geöffnet, wo Sie können <a href="#video">Wählen Sie ein Video und einen Player aus</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="video">Video und Player auswählen</h2>
+    <p>Im Dialogfeld "Konfiguration von Cloud-Inhalten" werden ein Video Cloud-Konto, ein Video und ein Player ausgewählt.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Verwenden Sie die Dropdown-Liste oben rechts, um das zu verwendende Video Cloud-Konto auszuwählen. Nachdem ein Konto ausgewählt wurde, wird der Dialog aktualisiert, um die Videos und Player des ausgewählten Kontos anzuzeigen.</li>
+      <li>Wählen Sie ein Video aus, das auf der Zielseite angezeigt werden soll. Die 20 neuesten Videos werden in der Liste angezeigt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16128-select-video.png" /></figure>
+      </li>
+      <li>Wählen Sie einen Spieler aus, der verwendet werden soll. Es werden nur kampagnenfähige Spieler angezeigt.</li>
+      <li>Stellen Sie die <strong>Spielergröße</strong>.</li>
+      <li>Klicken <strong>speichern</strong> um die Änderungen zu speichern.</li>
+      <li>Klicken <strong>X.</strong> um das Dialogfeld "Konfiguration von Cloud-Inhalten" zu schließen. Der HTML-Code wird mit dem Code aktualisiert, um den Player einzubetten.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16128-html.png" /></figure>
+      </li>
+      <li><strong>(Optional)</strong> Fügen Sie der Zielseite weitere Objekte hinzu.</li>
+      <li>Klicken <strong>speichern</strong> um die Landing Page zu speichern.</li>
+      <li>Geben Sie der Zielseite einen Namen und klicken Sie dann auf <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+</article>

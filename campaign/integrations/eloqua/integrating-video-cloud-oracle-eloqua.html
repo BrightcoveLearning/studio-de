@@ -1,0 +1,146 @@
+---
+title: Integrieren von Video Cloud in Oracle Eloqua 
+description: In diesem Thema wird erläutert, wie Sie das Campaign-Modul für die Verwendung mit Oracle Eloqua konfigurieren.
+parent: Eloqua 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul ermöglicht es Video Cloud, Anzeigedaten von Brightcove-Playern mit Oracle Eloqua zu synchronisieren. In Oracle Eloqua können diese Daten für Segmentierung, Kampagnenlogik, Berichte, Lead-Scoring und Personalisierung der Kommunikation verwendet werden. Die Integration des Campaign-Moduls mit Oracle Eloqua besteht aus zwei Hauptkomponenten:</p>
+    <ul>
+      <li>Ein Brightcove Player-Plug-In zum Verfolgen von Videoansichtsdaten</li>
+      <li>Ein Synchronisierungsprozess zum Senden von Tracking-Daten aus der Video Cloud an Oracle Eloqua</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">Bedarf</h2>
+    <p>Um das Campaign-Modul mit Oracle Eloqua zu verwenden, müssen Sie:</p>
+    <ul>
+      <li>Haben Sie ein professionelles oder Enterprise Video Cloud-Konto</li>
+      <li>Aktivieren Sie das Campaign-Modul für Ihr Konto, indem Sie die erforderlichen Informationen im Begrüßungsbildschirm eingeben, der beim Öffnen des Campaign-Moduls angezeigt wird</li>
+      <li>Klicken Sie sich bei der ersten Verwendung des Moduls durch den Servicevertrag</li>
+      <li>Verwenden Sie beim Veröffentlichen Ihres Players den Veröffentlichungscode "Advanced Embed" (In-Page). Der Veröffentlichungscode von Standard Embed (iframe) funktioniert nicht, da das Plugin in einem iframe ausgeführt wird und daher nicht auf URL-Parameter der übergeordneten Seite zugreifen kann und möglicherweise nicht die richtigen Cookies erhält</li>
+      <li>Halten Sie Oracle Eloqua 10 und Anmeldeinformationen bereit, um sich anzumelden: <a href="https://login.eloqua.com/">https://login.eloqua.com</a> <aside class="bcls-aside bcls-aside--information">Notiz: Diese Anmeldeinformationen werden auf einer Oracle Eloqua-Anmeldeseite eingegeben und nicht direkt an Brightcove weitergegeben.</aside>
+      </li>
+      <li>Der Berechtigungsnachweis, mit dem Sie sich bei Oracle Eloqua anmelden, sollte dem hinzugefügt werden <strong>Fortgeschrittene Benutzer - Marketing</strong> gruppieren und haben die folgenden Berechtigungen:
+        <ul>
+          <li>API verbrauchen</li>
+          <li>Installieren Sie Cloud-Anwendungen</li>
+          <li>Einrichten von Marketingkampagnen</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">Eigenschaften</h2>
+    <p>Einige der Hauptfunktionen der Integration von Video Cloud und Oracle Eloqua sind:</p>
+    <ul>
+      <li><strong>Bleiformulare</strong> - Erstellen Sie Eloqua-Formulare, die automatisch angezeigt werden, wenn Zuschauer Videos ansehen. Weitere Informationen finden Sie unter <a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Erstellen von benutzerdefinierten Lead-Formularen für Oracle Eloqua</a>.</li>
+      <li><strong>Datei Format</strong> - Videowolken-Anzeigedaten werden an ein benutzerdefiniertes Datenobjekt (CDO) in Oracle Eloqua gesendet. Die Daten, die auf Oracle Eloqua repliziert werden, lauten wie folgt:
+        <ul>
+          <li>Videoname</li>
+          <li>Video ID</li>
+          <li>Konto-ID (Video Cloud)</li>
+          <li>Seiten-URL (URL der verweisenden Seite)</li>
+          <li>Player ID (Video Cloud Player)</li>
+          <li>% Schaute</li>
+        </ul>
+      </li>
+      <li><strong>Datentransfer</strong> - Das Anzeigen von Daten wird stündlich synchronisiert und es kann 2-4 Stunden dauern, bis sie in Oracle Eloqua angezeigt werden.</li>
+      <li><strong>Vorratsdatenspeicherung</strong> - Die gesammelten Daten können optional bis zu 1 Monat in der Video Cloud gespeichert werden.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupConnection">Verbindung herstellen</h2>
+    <p>Bevor Sie die Integration mit Eloqua konfigurieren, empfehlen wir Ihnen, ein neues Browserfenster zu öffnen und sich manuell von Ihrem Eloqua-Konto abzumelden. Dadurch wird sichergestellt, dass Sie bei der Konfiguration der Integration aufgefordert werden, sich bei Ihrem Eloqua-Konto anzumelden, und Sie können bestätigen, dass Sie das richtige Konto verwenden.</p>
+    <p>Führen Sie die folgenden Schritte aus, um die Verbindung zwischen Video Cloud und Oracle Eloqua herzustellen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Kampagnenmodul und klicken Sie auf <strong>Datenverbindungen</strong> in der linken Navigation.</li>
+      <li>Klicken <strong>Neue Verbindung hinzufügen</strong>.</li>
+      <li>Wählen <strong>Eloqua</strong> als die Integration. <aside class="bcls-aside bcls-aside--information">Hinweis: Die verfügbaren Datenverbindungen basieren auf Ihrem Video Cloud-Abonnement.</aside>
+      </li>
+      <li>(Optional) Geben Sie a ein <strong>Verbindungsname</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select eloqua" src="/assets/images/campaign/integrations/eloqua/node15635-select-eloqua.png" /></figure>
+      </li>
+      <li>Klicken <strong>Verbinden</strong>.</li>
+      <li>Klicken <strong>Stellen Sie eine Verbindung zu Eloqua her</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connect to eloqua" src="/assets/images/campaign/integrations/eloqua/node15635-connect-to-eloqua.png" /></figure>
+      </li>
+      <li>Sie werden aufgefordert, sich bei Eloqua anzumelden. Geben Sie Ihren Eloqua <strong>Firmennamen</strong>, <strong>Benutzernamen</strong> und <strong>Ihr Passwort ein</strong>. Klicken <strong>Einloggen</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Eloqua login" src="/assets/images/campaign/integrations/eloqua/node15635-eloqua-login.png" /></figure>
+      </li>
+      <li>Wenn die Anmeldung erfolgreich ist, werden Sie aufgefordert, das zu installieren <strong>Brightcove Video Connect für Eloqua</strong> App. Klicken <strong>Akzeptieren und installieren</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="install app" src="/assets/images/campaign/integrations/eloqua/node15635-eloqua-install-app.png" /></figure>
+      </li>
+      <li>Sie werden aufgefordert, Eloqua für das Konto zu aktivieren. Klicken <strong>Aktivieren</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="confirm account" src="/assets/images/campaign/integrations/eloqua/node15635-confirm-enable-eloqua.png" /></figure>
+      </li>
+      <li>Sie werden aufgefordert, dies zuzulassen <strong>Brightcove Video Connect für Eloqua</strong> um auf Ihr Eloqua-Konto zuzugreifen. Klicken <strong>Einloggen</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="allow access to eloqua" src="/assets/images/campaign/integrations/eloqua/node15635-allow-access-eloqua.png" /></figure>
+      </li>
+      <li>Bestätigen Sie Ihren Firmennamen und Benutzernamen und klicken Sie auf <strong>Akzeptieren</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="allow access to eloqua" src="/assets/images/campaign/integrations/eloqua/node15635-confirm-account.png" /></figure>
+      </li>
+      <li>Sie werden aufgefordert, Eloqua einzurichten. Klicken <strong>Richten Sie Eloqua ein</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="setup eloqua" src="/assets/images/campaign/integrations/eloqua/node15635-setup-eloqua.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Integration konfigurieren</h2>
+    <p>Sobald die Verbindung zwischen Video Cloud und Oracle Eloqua hergestellt wurde, können Sie die Integration konfigurieren.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/eloqua/node15635-connected-options.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>Prüfen <strong>Synchronisieren Sie Videoansichten mit Eloqua als externe Aktivitäten</strong> Ansichten als externe Aktivitäten synchronisieren. Externe Aktivitäten sind ein weiterer Ort, um Informationen in Eloqua zu platzieren. Verlage können sich dafür entscheiden, Berichte zu erstellen oder Dinge in Eloqua mithilfe externer Aktivitäten auszulösen. Weitere Informationen finden Sie in der Eloqua <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/ExternalAssets/ExternalAssets.htm">Dokumentation</a>.</li>
+      <li>Standardmäßig ist die <strong>Verbindungsstatus</strong> wird sein <strong>aktiviert</strong>. Das <strong>Verbindungsstatus</strong> Legt fest, ob Video Cloud-Video-Engagement-Daten an Oracle Eloqua gesendet werden.
+        <ul>
+          <li><strong>Aktiviert</strong> - Daten werden gesammelt und an Eloqua gesendet</li>
+          <li><strong>Deaktiviert</strong> - Es werden keine Daten gesammelt (Integration ist deaktiviert)</li>
+        </ul>
+      </li>
+      <li>Standardmäßig, <strong>Verfolgen Sie Daten für unbekannte Zuschauer</strong> wird sein <strong>Deaktiviert</strong>. Diese Einstellung bestimmt, ob Video-Engagement-Daten in Video Cloud gespeichert werden, wenn der Viewer unbekannt ist. Nur Daten für bekannte Zuschauer werden an Eloqua gesendet.
+        <ul>
+          <li><strong>Aktiviert</strong> - Daten für alle Zuschauer werden in Video Cloud gesammelt und gespeichert</li>
+          <li><strong>Deaktiviert</strong> - Daten für unbekannte Zuschauer werden nicht in der Video Cloud gespeichert</li>
+        </ul>
+      </li>
+      <li>Wählen Sie eine Datenaufbewahrungsrichtlinie aus. Die Datenaufbewahrungsrichtlinie legt fest, wie lange die Anzeigedaten und Lead-Formulardaten (bei Verwendung eines Campaign-Lead-Formulars) in Ihrem Video Cloud-Konto aufbewahrt werden. Durch das Speichern von Daten in Video Cloud können Sie unterbrochene Synchronisierungen wiederherstellen. Außerdem versucht Campaign weiterhin Ereignisse, die nicht synchronisiert werden können (normalerweise weil der Zuschauer zum Zeitpunkt der Videowiedergabe kein bekannter Kontakt ist), bis das Ereignis den Zeitraum der Datenaufbewahrung überschritten hat. <strong>Sie sollten die Aufbewahrungseinstellungen gemäß Ihrer Datenschutzrichtlinie anpassen</strong> - Es ist nicht erforderlich, Benutzerdaten in der Video Cloud zu speichern. Daten werden nach dem Aufbewahrungszeitraum gelöscht.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/campaign/integrations/eloqua/node15635-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+    <p>Klicken Sie auf, um die Integration mit Oracle Eloqua zu entfernen <strong>Trennen</strong>. Unten auf der Seite werden alle für die Kampagne aktivierten Spieler und die zugehörigen Lead-Formulare aufgelistet.</p>
+    <p>Das Campaign-Modul unterstützt mehrere Verbindungen zu Marketingplattformen. Klicken <strong>Neue Verbindung hinzufügen</strong> um zusätzliche Integrationen zu konfigurieren.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="verify">Überprüfung der Integration</h2>
+    <p>Wenn die Integration konfiguriert ist, testen Sie die Integration, um zu bestätigen, dass Videoansichtsdaten an Eloqua gesendet werden. Informationen zum Überprüfen der Integration finden Sie in der <a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Eloqua Integrationstesthandbuch</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Erstellen eines kampagnenfähigen Players</h2>
+    <p>Video-Engagement-Daten werden nur dann an Eloqua gesendet, wenn Sie einen kampagnenfähigen Videoplayer verwenden. Informationen zum Erstellen eines kampagnenfähigen Brightcove-Players finden Sie unter <a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid">Übergabe einer Tracking-ID</h2>
+    <p>Das Campaign-Modul unterstützt die Möglichkeit, einen Tracking-ID-Wert an Eloqua zu übergeben. Die Tracking-ID kann beispielsweise zum Verfolgen einer Kampagnen-ID verwendet werden. Die Tracking-ID kann an die URL angehängt werden, die den für die Kampagne aktivierten Player anzeigt, oder dem Player-Einbettungscode hinzugefügt werden.</p>
+    <ul>
+      <li>Beispiel: An URL angehängt</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html?<strong>bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>Beispiel: Zum Einbettungscode des Players hinzugefügt</li>
+    </ul>
+    <pre>
+  &lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>data-bc-trackingid="12345"</strong> Kontrollen&gt;&lt; /Video&gt;&lt; script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /Skript&gt;</pre>
+    <p>Campaign leitet den Wert dann als weiteres synchronisiertes Feld an Eloqua weiter.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">Betrachter identifizieren</h2>
+    <p>Kampagnenaktivierte Spieler mit einer Eloqua-Integration rufen die APIs von Eloqua auf, um die Besucher-ID zu erhalten, die häufig als Eloqua-GUID bezeichnet wird. Diese ID wird in den Anzeigedaten des Campaign-Moduls erfasst und verwendet, um Anzeigedaten mit Eloqua zu synchronisieren.</p>
+    <p>Eloqua verwendet seinen eigenen Satz von Cookies. Wenn ein Brightcove Player mit einer Eloqua-Integration konfiguriert ist, erfasst Campaign die GUID im Eloqua-Cookie und kommuniziert mit Eloqua serverseitig, um herauszufinden, wer der Benutzer ist.</p>
+    <p>Die E-Mail-Adresse des Benutzers kann auch übergeben und zur Identifizierung des Betrachters verwendet werden. Weitere Informationen und ein Beispiel finden Sie unter <a href="/campaign/general/how-campaign-module-identifies-viewers.html#email">So identifiziert das Campaign-Modul Zuschauer</a>.</p>
+  </section>
+</article>

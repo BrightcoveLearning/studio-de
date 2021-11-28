@@ -1,0 +1,50 @@
+---
+title: Arbeiten mit UTM-Feldern in der Campaign-Modul
+description: In diesem Thema erfahren Sie, wie Sie UTM-Codes im Campaign-Modul verfolgen.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>UTM-Codes (auch als UTM-Parameter bezeichnet) sind einfache Textausschnitte, die Sie einer URL hinzufügen können, um den Erfolg Ihres Webinhalts zu verfolgen. Es gibt 5 Standardparameter, die Sie zu jeder URL hinzufügen können:</p>
+    <ul>
+      <li>Kampagne</li>
+      <li>Quelle</li>
+      <li>Mittel</li>
+      <li>Kontext</li>
+      <li>Begriff</li>
+    </ul>
+    <p>UTM-Codes werden üblicherweise an benutzerdefinierte URLs angehängt. Unten finden Sie ein Beispiel für UTM-Codes (fett gedruckt), die einer URL hinzugefügt wurden.</p>
+    <p><code translate="No">https://www.brightcove.com/en/blog/2018/08/define-your-video-strategy-3-simple-steps-1?<strong>utm_campaign=blogpost&amp;utm_medium=social&amp;utm_source=LinkedIn</strong></code></p>
+    <p>Mithilfe von UTM-Codes können Sie verfolgen, wie ein Blog-Beitrag, eine Internet-Anzeige oder eine E-Mail-Explosion funktioniert, ohne für jede Kampagne benutzerdefinierte Zielseiten erstellen zu müssen. Durch Erstellen eines eindeutigen UTM-Codes für Blog-Posts, Anzeigen und E-Mails können Sie Daten abrufen, die mehr Verkehr, Conversions usw. generieren.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Konfigurieren von Datenverbindungen für die Arbeit mit UTM-Feldern</h2>
+    <p>Campaign parst die UTM-Felder aus den URL-Argumenten. Auf die UTM-Daten kann dann über Ihre Marketing-Automatisierungssoftware oder über die Audience-API zugegriffen werden. Die erforderliche Campaign-Konfiguration basiert auf der verwendeten Marketing-Automation-Plattform.</p>
+    <ul>
+      <li><a href="#hubspot">HubSpot</a></li>
+      <li><a href="#salesforce">Zwangsversteigerung</a></li>
+      <li><a href="#eloqua">Eloqua</a></li>
+      <li><a href="#marketo">Marketo</a></li>
+    </ul>
+    <h3 id="hubspot">HubSpot</h3>
+    <p>Bei HubSpot-Datenverbindungen ist kein zusätzliches Setup erforderlich. Die UTM-Felder werden automatisch angezeigt.</p>
+    <h3 id="salesforce">Zwangsversteigerung</h3>
+    <p>Verwenden Sie bei Salesforce-Datenverbindungen a <strong>Zuordnungstyp</strong> von <strong>Fortgeschrittene</strong> Anschließend können die UTM-Felder den entsprechenden Datenobjekten in Salesforce zugeordnet werden.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node18655-salesforce.png" /></figure>
+    <h3 id="eloqua">Eloqua</h3>
+    <p>Bei Eloqua-Datenverbindungen ist keine zusätzliche Einrichtung erforderlich. Die UTM-Felder werden automatisch angezeigt.</p>
+    <h3 id="marketo">Marketo</h3>
+    <p> Aufgrund der Tatsache, dass nicht genügend Felder zur benutzerdefinierten Aktivität hinzugefügt werden können, die wir in Marketo erstellen, werden UTM-Felder bei Marketo-Verbindungen nicht unterstützt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">Exportieren von Daten mit dem Campaign-Modul</h2>
+    <p>UTM-Felder werden beim Exportieren von Kampagnendaten und beim Auswählen von . eingeschlossen <strong>Ereignisse anzeigen</strong>. Informationen zum Exportieren von Daten finden Sie unter <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportieren von Kampagnendaten aus dem Campaign-Modul</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="access">Zugriff auf UTM-Felder über die Audience-API</h2>
+    <p>Auf UTM-Felder kann über die Audience-API zugegriffen werden. Weitere Informationen finden Sie unter <a href="/campaign/develop/reference.html#tag/View_Events">Audience API-Dokumentation</a>.</p>
+  </section>
+</article>

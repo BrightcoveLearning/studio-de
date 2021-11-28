@@ -1,0 +1,95 @@
+---
+title: Erstellen von benutzerdefinierten Lead-Formularen für die Salesforce-
+description: In diesem Thema erfahren Sie, wie Sie mit einem Salesforce-Formular Leaddaten in einem Brightcove Player erfassen.
+parent: Salesforce 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul bietet die Möglichkeit, benutzerdefinierte Lead-Formulare zu erstellen, mit denen Sie Zuschauerinformationen erfassen können, während Videos in Brightcove-Playern abgespielt werden. Die Lead-Daten werden an Salesforce gesendet und von Salesforce verarbeitet.</p>
+    <p>Um ein benutzerdefiniertes Lead-Formular zu erstellen, müssen die folgenden Schritte ausgeführt werden.</p>
+    <ol>
+      <li><a href="#form">Erstellen Sie ein Formular in Salesforce</a></li>
+      <li><a href="#edit">Kopieren und bearbeiten Sie das Formular-HTML</a></li>
+      <li><a href="#leadform">Erstellen Sie ein benutzerdefiniertes Lead-Formular im Kampagnenmodul</a></li>
+      <li><a href="#player">Weisen Sie einem Spieler das Lead-Formular zu</a></li>
+      <li><a href="#formdata">Überprüfen Sie die Formulardaten in Salesforce</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Informationen zu Standard-Lead-Formularen, die Zuschauerinformationen erfassen und die Daten in Video Cloud speichern, finden Sie unter <a href="/campaign/general/creating-campaign-lead-form.html">Erstellen eines Kampagnen-Lead-Formulars</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">Erstellen eines Formulars in Salesforce</h2>
+    <p>Mit der Web-to-Lead-Funktion in Salesforce können Lead-Informationen von Website-Besuchern generiert werden. Diese Formulare können auch in Brightcove-Playern angezeigt werden. Mit den folgenden Schritten wird ein einfaches Formular zum Erfassen von Vorname, Nachname, E-Mail-Adresse, Unternehmen, Stadt und Bundesland / Provinz erstellt. Ausführliche Informationen zur Web-to-Lead-Funktion finden Sie in der <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=setting_up_web-to-lead.htm&amp;language=en">Salesforce-Dokumentation</a>.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich bei Ihrem Salesforce-Konto an.</li>
+      <li>Geben Sie unter <strong>Setup</strong> <code translate="No">Web-to-Lead</code> in das Feld Schnellsuche ein und klicken Sie dann auf <strong>Web-to-Lead</strong>.</li>
+      <li>Klicken <strong>Erstellen Sie ein Web-to-Lead-Formular</strong>.</li>
+      <li>Wählen Sie Felder aus, die in Ihr Web-to-Lead-Formular aufgenommen werden sollen. Verwenden Sie die Pfeile Hinzufügen und Entfernen, um Felder zwischen den zu verschieben <strong>Verfügbare Felder</strong> Liste und die <strong>Ausgewählte Felder</strong> Liste und verwenden Sie die Aufwärts- und Abwärtspfeile, um die Reihenfolge der Felder in Ihrem Formular zu ändern.
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16132-lead-setup.png" /></figure>
+      </li>
+      <li>Geben Sie ein <strong>Rückgabe-URL</strong>. In diesem Beispiel wird die Rückgabe-URL auf http://www.brightcove.com festgelegt. Dieser Wert wird ignoriert, wenn das Formular als benutzerdefiniertes Lead-Formular innerhalb des Campaign-Moduls verwendet wird.</li>
+      <li>Klicken <strong>Generieren</strong>. Das Formular HTML wird angezeigt.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Kopieren und Bearbeiten des Formular-HTML</h2>
+    <p>Um das Formular innerhalb des Campaign-Moduls zu verwenden, müssen Sie den HTML-Code des Formulars kopieren. Möglicherweise möchten Sie das Formular auch grundlegend gestalten. In den folgenden Schritten kopieren wir das Formular-HTML in einen HTML-Editor und nehmen dann einige Stiländerungen am Formular vor.</p>
+    <p>Wenn das Formular in einem Brightcove-Player angezeigt wird, wird das Formular standardmäßig auf einem transparenten Hintergrund über dem Player angezeigt. Verwenden Sie CSS, um die Hintergrundfarbe festzulegen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Kopieren Sie den HTML-Code in die Zwischenablage.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16132-lead-form-html.png" /></figure>
+      </li>
+      <li>Klicken <strong>Fertig</strong>.</li>
+      <li>Fügen Sie das Formular-HTML in den HTML-Editor Ihrer Wahl ein. Möglicherweise möchten Sie die Code-Formatierungsfunktion Ihres Editors verwenden, um den Code so zu formatieren, dass er leichter zu lesen ist.</li>
+      <li>Fügen Sie mit Ihrem HTML-Editor das folgende CSS hinzu, um die Hintergrundfarbe in Grau zu ändern.<br />
+        <code translate="No">&lt;style&gt;<br />
+        body {<br />
+        background-color: rgba(204,204,204,0.9);<br />
+        margin: 0;<br />
+        padding: 20px;<br />
+        height: 100%;<br />
+        }<br />
+        &lt;/style&gt;</code></li>
+      <li>(Optional) Um zu ermitteln, welche Leads von Campaign generiert werden, kann der folgende Code in das <code translate="No">&lt;form&gt;</code> Schild:<br />
+        <code translate="No">&lt;input type="hidden" name="lead_source" value="Video Cloud Campaign"&gt;</code></li>
+      <li>Kopieren Sie den HTML-Code in die Zwischenablage.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">Erstellen eines benutzerdefinierten Lead-Formulars im Campaign-Modul</h2>
+    <p>Nachdem das Formular-HTML in Salesforce generiert wurde, erstellen Sie ein benutzerdefiniertes Lead-Formular im Campaign-Modul und verknüpfen Sie das Lead-Formular mit einem Campaign-fähigen Player.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>Bleiformulare</strong> in der linken Navigation. Wenn Lead-Formulare erstellt wurden, werden diese angezeigt.</li>
+      <li>Klicken <strong>Lead-Formular erstellen</strong>.</li>
+      <li>Geben Sie dem Lead-Formular eine Beschreibung <strong>Name</strong>.</li>
+      <li>Wählen Sie a <strong>Formularsprache</strong>.</li>
+      <li>Wähle aus <strong>Formular-Timing</strong>. Das Formular-Timing bestimmt, wann das Lead-Formular angezeigt wird.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/campaign/integrations/salesforce/node16132-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>Setzen Sie den Formulartyp auf <strong>Benutzerdefiniertes Lead-Formular</strong>.</li>
+      <li>Einfügen in die <strong>Form HTML</strong> von Salesforce.</li>
+      <li><strong>(Optional)</strong> Einfügen in die <strong>Bestätigungs-HTML</strong>. Die Bestätigungsansicht wird 5 Sekunden lang angezeigt und das Video wird dann wieder abgespielt. Wenn kein Bestätigungs-HTML enthalten ist, wird das Video nach dem Absenden des Formulars wieder abgespielt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (2)" src="/assets/images/campaign/integrations/salesforce/node16132-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>(Optional)</strong> Klicken <strong>Vorschau des Formulars</strong> um eine Vorschau des Formulars zu öffnen.</li>
+      <li>Klicken <strong>speichern</strong> um das Lead-Formular zu speichern.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Zuweisen eines Lead-Formulars zu einem Spieler</h2>
+    <p>Sobald das Lead-Formular erstellt wurde, muss es einem Spieler zugewiesen werden. Befolgen Sie diese Schritte, um einem Spieler ein Lead-Formular zuzuweisen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken <strong>Kampagnenspieler</strong> in der linken Navigation.</li>
+      <li>Suchen Sie Ihren Player und verwenden Sie die <strong>Lead Form</strong> Dropdown-Liste zur Auswahl des Lead-Formulars.</li>
+    </ol>
+    <p>Das Setup ist jetzt abgeschlossen und Sie können Lead-Informationen erfassen. Wenn ein Video mit einem kampagnenfähigen Player veröffentlicht wird, wird das Lead-Formular gemäß den Formular-Timing-Einstellungen angezeigt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">Überprüfen der Formulardaten in Salesforce</h2>
+    <p>Mit dem benutzerdefinierten Lead-Formular erfasste Leads werden als Leads in Ihrem Salesforce-Konto hinzugefügt.</p>
+  </section>
+</article>

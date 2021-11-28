@@ -1,0 +1,61 @@
+---
+title: Anzeigen von Spielerereignissen in der Kampagnenmodul
+description: In diesem Thema erfahren Sie, wie Sie Spielerereignisse im Kampagnenmodul anzeigen.
+parent: General Information
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul bietet die Möglichkeit, View-Ereignisse zu verfolgen. Die Häufigkeit, mit der Aufrufereignisse an das Campaign-Modul gesendet werden, wird dynamisch basierend auf der Länge des Videos berechnet. Die Kampagne sendet mindestens 4 Ereignisse, eines pro Quartil.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Ereignisdaten anzeigen können mit der Option <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Daten exportieren</a> oder mithilfe der <a href="/campaign/develop/overview-audience-api.html">Audience-API exportiert werden</a>.</aside>
+    <p>Um die Ansichtsereignisse anzuzeigen, öffnen Sie das Campaign-Modul und klicken Sie auf&nbsp;<strong>Alle letzten Aktivitäten</strong> in der linken Navigation. Auf der Seite wird die Aktivität des Ansichtsereignisses der letzten 24 Stunden angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node15863-view-events.png" /></figure>
+    <p>Das <strong>Interaktionsereignisse anzeigen</strong> Link wird aktiviert, wenn <a href="#events">benutzerdefinierte Ereignisse oder Metriken</a> sind an ein Ansichtsereignis angehängt.</p>
+    <p>Auf der Seite werden die folgenden Informationen angezeigt.</p>
+    <ul>
+      <li><strong>Zeitstempel</strong> - Datum und Uhrzeit der Videoansicht</li>
+      <li><strong>Videoname und ID</strong> - Videoname und Video Cloud-Video-ID</li>
+      <li><strong>Prozent beobachtet</strong> - Der Punkt, an dem der Betrachter das Video nicht mehr ansieht, geteilt durch die Länge des Videos. Wenn ein Betrachter beispielsweise die ersten 5 Sekunden eines zweiminütigen Videos angesehen, dann zum 55-Sekunden-Punkt übersprungen, weitere 5 Sekunden angesehen und das Video gestoppt (oder die Seite verlassen) hat, wird der prozentuale Anteil als 50 aufgezeichnet %. <aside class="bcls-aside bcls-aside--information">Hinweis: Zum <strong>Live-Videos</strong> , ist es nicht möglich, den in der Kampagne angesehenen Prozentsatz zu verfolgen. Da es nicht möglich ist zu wissen, wie lange es dauern wird, verfolgt das Campaign-Modul nur die Gesamtzeit der angeschaut.</aside>
+      </li>
+      <li><strong>Zeit beobachtet</strong> - Gesamtzeit beobachtet</li>
+      <li><strong>Externe ID</strong> - Wert, der zur Identifizierung des Betrachters verwendet wird, z. B. die Eloqua-GUID, Marketo-GUID, HubSpot-GUID, SSO-GUID oder ein anderer eindeutiger Wert, der zur Identifizierung des Betrachters verwendet wurde.</li>
+      <li><strong>Status</strong> - Status des Ereignisses
+        <ul>
+          <li><strong>unverarbeitet</strong> - Die Veranstaltung wurde nicht mit der Marketing-Automatisierungsplattform synchronisiert</li>
+          <li><strong>synchronisiert</strong> - Die Veranstaltung wurde erfolgreich mit der Marketing-Automatisierungsplattform synchronisiert</li>
+          <li><strong>sync_disabled</strong> - Das Kampagnenmodul wurde mit deaktivierter Synchronisierung konfiguriert, sodass das Ereignis übersprungen wurde</li>
+          <li><strong>gescheitert</strong> - Fehlersynchronisation; Der Tooltip enthält einige Details zum aufgetretenen Fehler</li>
+          <li><strong>unbekannter_Kontakt</strong> - Unbekannter Benutzer, daher wurde das Ereignis nicht synchronisiert</li>
+          <li><strong>N / A</strong> - unzutreffend; wird angezeigt, wenn benutzerdefinierte, Kampagnen-Tracking- oder Marketo-Munchkin-Integrationen verwendet werden</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Ereignisdaten können auch über die Dropdown-Liste oben auf der Seite nach Status gefiltert werden.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node15863-filter.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="events">Anzeigen von Interaktionsereignissen</h2>
+    <p>Wenn benutzerdefinierte Metriken oder Ereignisse an ein Ansichtsereignis angehängt sind, wird die <strong>Interaktionsereignisse anzeigen</strong> Link wird aktiviert. Wenn Sie beispielsweise ein Galerie-In-Page-Erlebnis mit einem kampagnenfähigen Player verwenden und das Erlebnis mit . konfiguriert ist <a href="https://gallery.support.brightcove.com/experiences/inpage/adding-interactions-page-experience.html">Links, Karten oder andere interaktive Elemente</a> , sendet die Erfahrung Impressions- und Conversion-Ereignisse an das Campaign-Modul. Diese Ereignisse werden mithilfe der benutzerdefinierten Felder von Campaign an Campaign übergeben. Die Ereignisdaten erscheinen im Kampagnenmodul im Rahmen der <strong>Alle letzten Aktivitäten</strong>.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Interaktionsereignisse können auch auftreten, wenn benutzerdefinierte Kennzahlen und Ereignisse von <a href="/campaign/general/using-custom-metrics-and-events.html">Campaign verwendet</a>werden.</aside>
+    <p>Folgende Daten können übergeben werden:</p>
+    <ul>
+      <li><strong>Veranstaltung 1</strong> - Durch Kommas getrennte Liste von CTA-Namen, mit denen der Betrachter interagieren konnte (Impression)</li>
+      <li><strong>Ereignis 2</strong> - Durch Kommas getrennte Liste der CTA-Namen, die der Betrachter verwendet <strong>tat</strong> interagieren mit (Umwandlung)</li>
+      <li><strong>Metrik 1</strong> - Gesamtzahl der CTA-Impressionen</li>
+      <li><strong>Metrik 2</strong> - Gesamtzahl der CTA-Conversions, dh angeklickter Link, Formularübermittlung usw.</li>
+    </ul>
+    <p>Klicken Sie auf, um die Ereignisse anzuzeigen <strong>Interaktionsereignisse anzeigen</strong> Link in der Kopfzeile.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node15863-ipx-example.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewdata">Andere Optionen zur Datenanzeige</h2>
+    <p>Kampagnendaten können auf andere Weise angezeigt/exportiert werden:</p>
+    <ul>
+      <li><strong>Videoaktivität</strong> - Wird verwendet, um die Viewer-Aktivität per Video anzuzeigen. Weitere Informationen finden Sie unter <a href="/campaign/general/viewing-video-activity.html">Anzeigen von Videoaktivitäten</a>.</li>
+      <li><strong>Viewer-Profile</strong> - Dient zum Anzeigen der Videoaktivität durch den Betrachter. Weitere Informationen finden Sie unter <a href="/campaign/general/viewing-viewer-profile-information.html">Anzeigen von Viewer-Profilinformationen</a>.</li>
+      <li><strong>Export von Daten</strong> - Wird zum Exportieren von Videoansichten und Lead-Daten verwendet. Informationen finden Sie unter <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportieren von Kampagnendaten aus dem Campaign-Modul</a>.</li>
+      <li><strong>Zielgruppen-API</strong> - Die Audience-API kann zum programmgesteuerten Abrufen von Videoansichten und Lead-Daten verwendet werden. Weitere Informationen finden Sie unter <a href="/campaign/develop/overview-audience-api.html">Überblick: Zielgruppen-API</a>.</li>
+    </ul>
+  </section>
+</article>

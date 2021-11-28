@@ -1,0 +1,104 @@
+---
+title: Überprüfung der Social Analytics
+description: In diesem Thema erfahren Sie, wie Sie die Leistung Ihrer Videos in sozialen Netzwerken mit Brightcove Social überwachen.
+parent: Analytics
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Social bietet verschiedene Berichte, mit denen Sie die Leistung Ihrer Videos überwachen können, die auf Ihren Social Media-Konten veröffentlicht werden:</p>
+    <ul>
+      <li><strong>Instrumententafel</strong> - Bietet einen allgemeinen Überblick über die Videoleistung in Social Media-Konten. In diesem Thema behandelt.</li>
+      <li><strong>Soziale Ansichten</strong> - Bietet einen Überblick über die soziale Ansicht für Videos, die für Social Media-Konten freigegeben wurden. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-views-analytics.html">Überprüfen von Social Views Analytics</a>.</li>
+      <li><strong>Soziales Engagement</strong> - Bietet einen Überblick über das soziale Engagement (Likes, Shares, Retweets usw.) für Videos, die für Social Media-Konten freigegeben wurden. Weitere Informationen finden Sie unter <a href="/social/reviewing-social-engagement-analytics.html">Überprüfung der Analyse des sozialen Engagements</a>.</li>
+    </ul>
+    <p>Beginnen Sie mit <a href="#timespan">Auswahl einer Zeitspanne</a>. Um einen Bericht auszuwählen, klicken Sie oben auf der Seite auf eine Registerkarte. Das Dashboard wird standardmäßig angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report tabs" src="/assets/images/social/node16643-report-tabs.png" /></figure>
+    <p>Das Dashboard ist in folgende Abschnitte unterteilt:</p>
+    <ul>
+      <li><a href="#videoviews">Videoansichten auf einen Blick</a></li>
+      <li><a href="#topdest">Top Reiseziele</a></li>
+      <li><a href="#topvideos">Top Videos</a></li>
+      <li><a href="#trend">Videoansichten Trend</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="timespan">Auswahl einer Zeitspanne</h2>
+    <p>Um den Zeitraum für die Berichte festzulegen, können Sie auf ein schnelles Datum klicken oder das Kalendersteuerelement verwenden. Social Analytics-Daten verwenden immer die GMT-Zeitzone.</p>
+    <div class="BCL-subsection">
+      <h3>Verwenden Sie ein schnelles Datum</h3>
+      <p>Eine Reihe von schnellen Daten befindet sich oben auf der Seite. Die folgenden schnellen Daten sind verfügbar:</p>
+      <ul>
+        <li>Letzten 7 Tage</li>
+        <li>Letzte 30 Tage</li>
+        <li>Vorheriger Monat</li>
+        <li>Vor 2 Monaten</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="quick dates" src="/assets/images/social/node16643-quick-dates.png" /></figure>
+      <p>Klicken Sie auf ein schnelles Datum, um den Bericht zu aktualisieren.</p>
+    </div>
+    <div class="BCL-subsection">
+      <h3>Verwenden des Kalendersteuerelements</h3>
+      <p>Sie können auch ein Start- und Enddatum auswählen, indem Sie auf das Kalendersteuerelement klicken.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="date selector" src="/assets/images/social/node16643-date-picker.png" /></figure>
+      <p>Klicken <strong>Anwenden</strong> um den Bericht zu aktualisieren.</p>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="videoviews">Videoansichten auf einen Blick</h2>
+    <p>Im Abschnitt Videoansichten auf einen Blick werden die Anzahl der Videoansichten von Video Cloud-Playern, Facebook, YouTube und die Gesamtansichten für den ausgewählten Zeitraum angezeigt. Das Aktualisierungsdatum ist das späteste Datum, für das Video Cloud über Social Analytics-Daten verfügt. In der Regel gibt es eine Verzögerung von mehr als 24 bis 48 Stunden, bevor soziale Plattformen die Ansichten und Engagement-Daten in ihren APIs aktualisieren.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Mit der Schaltfläche "Beitrag mit Video erstellen" in der Facebook-Analyse wird ein neuer sekundärer Beitrag Ihres Videos erstellt, der dem von Brightcove Social erstellten hinzugefügt wird, wodurch zwei identische Video-Beiträge angezeigt werden. Brightcove Social Analytics wird nur die Daten aus dem ursprünglichen präsentieren.</aside>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="views at a glance" src="/assets/images/social/node16643-video-views.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die Twitter Insights-APIs melden keine Medienansichten, daher ist das Anzeigen von Daten im Rahmen der Social Analytics nicht verfügbar.</aside>
+    <p>Klicken Sie auf die <strong>MEINE SEITEN &amp; APPS</strong> Der Link öffnet den Video Cloud Analytics-Leistungsbericht.</p>
+    <p>Beachten Sie, dass Ansichten von jeder Social Media-Plattform unterschiedlich gezählt werden:</p>
+    <ul>
+      <li><strong>Meine Websites und Apps</strong> - Video Cloud zählt eine Videoansicht, wenn ein Video abgespielt wird</li>
+      <li><strong>Facebook</strong> - Die Videoansicht wird gezählt, wenn der Betrachter ein Video mindestens 3 Sekunden lang ansieht</li>
+      <li><strong>Youtube</strong> - Die Videoansicht wird gezählt, wenn der Betrachter ein Video "ungefähr" 30 Sekunden lang ansieht</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="topdest">Top Reiseziele</h2>
+    <p>Im Abschnitt Top-Ziele werden die Top-5-Ziele angezeigt, die für den ausgewählten Zeitraum die meisten Ansichten hatten.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="top destinations" src="/assets/images/social/node16643-top-dest.png" /></figure>
+    <p>Durch Klicken auf den Videotitel wird das geöffnet <a href="/social/reviewing-social-views-analytics.html">Analyse sozialer Ansichten</a> für das Video.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="topvideos2">Top Videos</h2>
+    <p>Im Bereich Top-Videos werden die Top-5-Videos mit den meisten Ansichten für den ausgewählten Zeitraum angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="top videos" src="/assets/images/social/node16643-top-videos.png" /></figure>
+    <p>Durch Klicken auf den Videotitel wird das geöffnet <a href="/social/reviewing-social-views-analytics.html">Analyse sozialer Ansichten</a> für das Video.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trend">Videoansichten Trend</h2>
+    <p>Das Trenddiagramm "Videoansichten" zeigt die Anzahl der Videoansichten für die Videos an, die für den ausgewählten Zeitraum auf Ihren Social Media-Konten veröffentlicht wurden. Wenn Sie den Mauszeiger über eine Linie im Diagramm bewegen, werden die Daten für dieses Datum angezeigt.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die Twitter Insights-APIs melden keine Medienansichten, daher ist das Anzeigen von Daten im Rahmen der Social Analytics nicht verfügbar.</aside>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video views trend" src="/assets/images/social/node16643-video-views-graph.png" /></figure>
+    <p>Mit der Legende rechts neben dem Diagramm können Sie den anzuzeigenden Detaillierungsgrad auswählen:</p>
+    <ul>
+      <li><strong>Meine Websites und Apps</strong> - Zeigen Sie die Anzahl der Videoansichten von Video Cloud-Playern und -Apps an</li>
+      <li><strong>Facebook</strong> - Zeigen Sie die Anzahl der Videoaufrufe auf Facebook an</li>
+      <li><strong>Youtube</strong> - Zeigt die Anzahl der Videoaufrufe auf YouTube an</li>
+      <li><strong>Gesamt</strong> - Zeigen Sie die Gesamtzahl der Videoansichten auf allen Plattformen an</li>
+    </ul>
+    <p>Die in den Analyseberichten angezeigten YouTube-Ansichten werden von der gesammelt <a href="https://youtube.com/analytics">YouTube Analytics-Übersicht</a> Bericht. YouTube garantiert nicht, dass es sich bei diesen Daten um Echtzeitdaten handelt. Daher kann es zu Verzögerungen von mehreren Tagen kommen, bevor die Ansichten und das Engagement in diesem Bericht angezeigt werden. Sobald die Daten in YouTube Analytics enthalten sind, werden sie von den nächtlichen Datensammlern für Brightcove Social Analytics erfasst.</p>
+    <p>Wenn Sie neuere Echtzeit-Anzeigedaten benötigen, bietet YouTube diese ebenfalls an <a href="https://support.google.com/youtube/answer/6096647">Echtzeitberichte</a> mit Schätzungen zum Anzeigen von Daten in den letzten 48 Stunden für Ihre 25 zuletzt veröffentlichten Videos. Sie finden den Echtzeitbericht für Ihren YouTube-Kanal <a href="https://www.youtube.com/analytics?o=U#r=realtime">Hier</a>. Brightcove Social Analytics sammelt diese Echtzeitdaten nicht, da es geschätzte Ansichten (im Gegensatz zu tatsächlichen) liefert und nur für aktuelle Videos gilt.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="deletedvideos">Gelöschte Videos</h2>
+    <p>Wie Social Analytics für gelöschte Videos angezeigt werden, hängt davon ab, wie das Video verteilt wurde und wie die AutoSync-Einstellungen waren, wenn das Video AutoSync-fähig war.</p>
+    <ul>
+      <li>Wenn das Video mithilfe der Social-Publish-Funktion verteilt wurde, wird es beim Löschen aus der Video Cloud nicht von der Social-Plattform entfernt, und Social sammelt weiterhin Analysen für das Video</li>
+      <li>Wenn das Video mit der AutoSync-Funktion verteilt wurde, kann das Löschen aus der Video Cloud das Video abhängig von den AutoSync-Einstellungen von der sozialen Plattform löschen:
+        <ul>
+          <li>Wenn die' Option „Verteiltes Video auf &lt;sozialer Plattform löschen“ ausgewählt worden wäre, hätte das Social-Modul das Video von der sozialen Plattform entfernt und würde aufhören, Analysedaten zu sammeln.</li>
+          <li>Wenn eine der Optionen ausgewählt wurde, mit denen das Video auf der sozialen Plattform belassen wird (die genauen Details dieser Optionen variieren von Plattform zu Plattform), versucht das Modul "Sozial" weiterhin, Analysen dafür zu sammeln.</li>
+        </ul>
+      </li>
+      <li>Social Analytics zeigt weiterhin alle vorhandenen Social Analytics-Daten für gelöschte Videos an</li>
+    </ul>
+  </section>
+</article>

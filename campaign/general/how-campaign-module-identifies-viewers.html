@@ -1,0 +1,74 @@
+---
+title: Wie das Campaign-Modul Zuschauer identifiziert 
+description: In diesem Thema erfahren Sie, wie das Campaign-Modul versucht, Zuschauer zu identifizieren.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul versucht, Zuschauer mithilfe einer Vielzahl von Datenquellen zu identifizieren:</p>
+    <ul>
+      <li><a href="#cookie">Kampagnen-Cookie</a></li>
+      <li><a href="#eloqua">Oracle Eloqua GUID</a></li>
+      <li><a href="#marketo">Marketo Munchkin-Keks</a></li>
+      <li><a href="#sfurl">Salesforce ID URL-Parameter</a></li>
+      <li><a href="#sfid">Salesforce ID HTML-Attribut</a></li>
+      <li><a href="#hubspot">HubSpot UTK-Cookie</a></li>
+      <li><a href="#email">E-Mail-Parameter</a></li>
+    </ul>
+    <p>Das Campaign-Modul hält sich an die Browsereinstellungen eines Benutzers in Bezug auf <a href="#dnt">Nicht verfolgen</a>.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn Sie eine benutzerdefinierte Integration verwenden, sind Sie für die Identifizierung des Viewers verantwortlich. Weitere Informationen finden Sie unter <a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Erstellen benutzerdefinierter Integrationen mit dem Kampagnenmodul</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="cookie">Kampagnen-Cookie</h2>
+    <p>Kampagnenfähige Spieler&nbsp;setzt ein Drittanbieter-Cookie und verwendet es, um die Anzeigedaten demselben Benutzer zuzuordnen, wenn das Kampagnen-Tracking für sein Konto aktiviert ist und der Spieler es verwendet. Wenn ein Nutzer jemals ein Campaign-Lead-Formular ausfüllt, erstellt Campaign ein Profil für diesen Zuschauer und alle seine Anzeigedaten werden mit diesem Profil verknüpft.</p>
+    <p>Das Cookie, das Campaign setzt, trägt den Namen <strong>_bc_uuid</strong>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="eloqua">Oracle Eloqua GUID</h2>
+    <p>Kampagnenaktivierte Spieler mit einer Eloqua-Integration rufen die APIs von Eloqua auf, um die Besucher-ID zu erhalten, die häufig als Eloqua-GUID bezeichnet wird. Diese ID wird in den Anzeigedaten des Campaign-Moduls erfasst und verwendet, um Anzeigedaten mit Eloqua zu synchronisieren.</p>
+    <p>Eloqua verwendet seinen eigenen Satz von Cookies. Wenn ein Brightcove Player mit einer Eloqua-Integration konfiguriert ist, erfasst Campaign die GUID im Eloqua-Cookie und kommuniziert mit Eloqua serverseitig, um herauszufinden, wer der Benutzer ist.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="marketo">Marketo Munchkin-Keks</h2>
+    <p>Kampagnenaktivierte Spieler mit einer Marketo-Integration verweisen auf das Munchkin-Cookie (_mkto_trk), das im Browser des Benutzers erstellt wird. Dieser Wert wird in den Anzeigedaten des Campaign-Moduls erfasst und verwendet, um Anzeigedaten mit Marketo zu synchronisieren.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sfurl">Salesforce ID URL-Parameter</h2>
+    <p>Bei Salesforce-Integrationen kann das Plugin versuchen, den Viewer zu identifizieren, indem es die URL für den aufgerufenen Parameter überprüft <strong>bcsfid</strong>. Auf diese Weise können Salesforce-Benutzer E-Mail-Kampagnen mit einer Zielseiten-URL senden, die eindeutig zu Nachverfolgungszwecken generiert wird, indem die Salesforce-ID des Leads in der URL angegeben wird.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sfid">Salesforce ID HTML-Attribut</h2>
+    <p>Wenn das Plugin bei Salesforce-Integrationen den Viewer nicht identifizieren kann, indem Sie nach dem suchen <strong>bcsfid</strong> URL-Parameter, es wird nach dem suchen <strong>data-bc-sfid</strong> Attribut auf der <code translate="No">&lt;video&gt; </code> Element des HTML-eingebetteten Veröffentlichungscodes für das Video und verwenden Sie dessen Wert als Salesforce-ID des Leads, falls dieser festgelegt ist.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="hubspot">HubSpot UTK-Cookie</h2>
+    <p>Für HubSpot-Integrationen fügt das Plugin den JavaScript-Tracking-Code von HubSpot ein, der a löscht <strong>Hubspotutk</strong> Cookie im Browser des Benutzers. Dieses Cookie wird verwendet, um die Identität eines Besuchers in HubSpot zu verfolgen und Brightcove-Anzeigedaten einem Kontakt zuzuordnen. Wenn der Benutzer bereits ein . hat <strong>Hubspotutk</strong> Wenn der Player geladen wird, stellt Campaign eine API-Anfrage an HubSpot und fragt, ob der Cookie-Wert einem bekannten Kontakt entspricht. Falls ja, ordnet Campaign diesem Benutzer Anzeigedaten zu.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="email">E-Mail-Parameter</h2>
+    <p>Dem Campaign-Modul kann auch über eine E-Mail-Adresse mitgeteilt werden, wer der Benutzer ist. Die Kampagne sucht nach einem URL-Parameter mit dem Titel <strong>bcemail</strong>. Dies ist nützlich bei E-Mail-Kampagnen mit einer Zielseiten-URL, die eindeutig für Tracking-Zwecke generiert wurde. Wenn Sie eine Batch-E-Mail an eine Liste senden, entweder von einer Marketingplattform oder von einem E-Mail-Dienst eines Drittanbieters wie MailChimp, müssen Sie den E-Mail-Parameter in den Einstellungen der Sendeplattform konfigurieren, um den Link, auf den Benutzer klicken, dynamisch zu aktualisieren. Campaign verwendet dann diesen E-Mail-Parameter, um die Serverseite des Benutzers nachzuschlagen und die Anzeigedaten zu synchronisieren. Der E-Mail-Parameter kann auch in den Player-Einbettungscode eingebettet werden.</p>
+    <h3>URL-Beispiel</h3>
+    <code translate="No">http://go.brightcove.com/be-video-hero-cust?<strong>bcemail</strong>=msmith@brightcove.com </code>
+    <p>Wenn das Campaign-Plugin keine E-Mail-Adresse über die <strong>bcemail</strong> URL-Parameter, überprüft es dann die <code translate="No">&lt;video&gt; </code> -Element des HTML-Einbettungsveröffentlichungscodes. Es wird nach dem suchen <strong>Daten-bc-E-Mail</strong> Attribut für das Videoelement und verwenden Sie dessen Wert als E-Mail-Adresse, wenn es festgelegt ist.</p>
+    <h3>Beispiel einbetten</h3>
+    <pre>
+&lt;video id="player" data-account="0000000001" data-player="default" data-video-id="0000000002" <strong> Daten-bc-E-Mail</strong>="msmith@brightcove.com" class="video-js" Steuerelemente&gt;&lt; /Video&gt;
+</pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="dnt">Nicht verfolgen</h2>
+    <p>Kampagnenfähige Spieler halten sich an&nbsp;durch die Browsereinstellung eines Betrachters in Bezug auf Do Not Track (DNT) und wird sein normales Cookie nicht verwenden oder setzen, wenn er sieht, dass Do Not Track aktiviert ist. Das Player-Plugin kann auch angewiesen werden, niemals zu verfolgen, falls ein Video Cloud-Kunde es für alle Zuschauer oder Benutzer für Benutzer deaktivieren möchte. Dies erfolgt mithilfe des Einbettungscodes auf der Seite und der Einstellung von <code translate="No">data-do-not-track </code> auf einen Wert von 1.</p>
+    <pre>
+&lt;video-js data-video-id="9240259371001" data-account="3491906377" <strong>data-do-not-track="1"</strong> data-player="7dccc39d-0e2d-4b27-bea9-af44b2166148" data-embed="default" class="video-js" Steuerelemente&gt;&lt; /video-js&gt;&lt; script src="https://players.brightcove.net/1486906377/7dccc39d-0e2d-4b27-bea9-af44b2166148_default/index.min.js"&gt;&lt; /Skript&gt;
+</pre>
+    <h3>Oracle Eloqua</h3>
+    <p>Eloqua hat angegeben, dass sie keine Anfragen verarbeiten (im Grunde genommen ignorieren) und keine Eloqua-GUID zurückgeben. Derzeit handhabt Campaign dies nicht auf besondere Weise, dh verwendet nicht die Eloqua JavaScript API, wenn Campaign DNT sieht. Eloqua unterstützt auch einen strengen Modus, der die Datenschutzanforderungen der EU erfüllt. Wenn dies für ein Eloqua-Konto aktiviert ist, werden Endbenutzer nur nachverfolgt, wenn sie sich über ein Formular anmelden.</p>
+    <h3>Marketo</h3>
+    <p>Marketo unterstützt DNT, überlässt es jedoch dem Kunden, es für sein bestimmtes Konto ein- und auszuschalten. Weitere Informationen finden Sie im Marketo-Dokument <a href="https://docs.marketo.com/pages/releaseview.action?pageId=6095047">Bearbeiten Sie die Browser-Support-Einstellungen "Nicht verfolgen"</a>.</p>
+    <h3>HubSpot</h3>
+    <p>HubSpot respektiert DNT gemäß <a href="https://knowledge.hubspot.com/getting-started-with-hubspot-v2/how-to-enable-a-privacy-policy-alert-if-you-are-doing-business-in-europe">dieses Dokument</a>.</p>
+  </section>
+</article>

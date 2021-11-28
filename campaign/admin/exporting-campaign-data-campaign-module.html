@@ -1,0 +1,73 @@
+---
+title: Exportieren von Kampagnendaten aus der Campaign-Modul
+description: In diesem Thema erfahren Sie, wie Sie Ansichtsereignisdaten und Lead-Formulardaten exportieren.
+parent: Administering Campaign
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>View-Ereignisse werden aufgezeichnet, während Videos mit kampagnenfähigen Playern angesehen werden. Lead-Daten werden erfasst, wenn Benutzer Daten in Campaign-Lead-Formulare eingeben. Das Campaign-Modul bietet zwei Arten von Lead-Formularen:</p>
+    <ul>
+      <li><strong>Lead-Formulare für Kampagnen</strong> - Diese Formulare werden durch Auswahl aus einer Reihe vordefinierter Felder im Campaign-Modul erstellt. Diese Formulare speichern Lead-Daten in Video Cloud. Informationen zum Erstellen von Kampagnen-Lead-Formularen finden Sie unter <a href="/campaign/general/creating-campaign-lead-form.html">Erstellen eines Kampagnen-Lead-Formulars</a>.</li>
+      <li><strong>Benutzerdefinierte Lead-Formulare</strong> - Diese Formulare werden mithilfe Ihrer Marketing-Automatisierungsplattform erstellt. Der Formulareinbettungscode wird dann im Campaign-Modul verwendet, um ein benutzerdefiniertes Lead-Formular zu erstellen. Diese Formulare senden Lead-Daten an die Marketing-Automatisierungsplattform. Informationen zum Erstellen von Lead-Formularen finden Sie im Dokument für Ihre Marketingplattform:
+        <ul>
+          <li><a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Eloqua</a></li>
+          <li><a href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Marketo</a></li>
+          <li><a href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html">Zwangsversteigerung</a></li>
+          <li><a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">HubSpot</a></li>
+        </ul>
+      </li>
+    </ul>
+    <p>Beim Exportieren von Lead-Daten aus dem Campaign-Modul werden nur Daten exportiert, die mit Campaign-Lead-Formularen erfasst wurden. Lead-Daten aus benutzerdefinierten Lead-Formularen werden in Ihrer Marketing-Automatisierungssoftware gespeichert.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node15862-export.png" /></figure>
+    <p>Gehen Sie folgendermaßen vor, um Daten zu exportieren:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>Kampagne exportieren&nbsp;Daten</strong> in der linken Navigation. <aside class="bcls-aside bcls-aside--information">Hinweis: Sie müssen ein Kontoadministrator sein, um auf das Menü Daten exportieren zugreifen zu können.</aside>
+      </li>
+      <li>Wählen Sie a <strong>Datenverbindung</strong> Daten aus exportieren. Das <strong>Datenverbindung</strong> In der Dropdown-Liste werden alle konfigurierten Integrationen aufgelistet.</li>
+      <li>Wählen Sie die zu exportierenden Daten aus.
+        <ul>
+          <li><strong>Ereignisse anzeigen</strong> - Aufgenommen von kampagnenfähigen Spielern</li>
+          <li><strong>Führt</strong> - Mit Lead-Formularen erfasst</li>
+        </ul>
+      </li>
+      <li>Verwenden Sie die Datumsauswahl, um a auszuwählen <strong>Anfangsdatum</strong> und <strong>Endtermin</strong>.</li>
+      <li>Wählen Sie eine&nbsp;<strong>Format exportieren</strong>.
+        <ul>
+          <li>Kommagetrennte Werte (CSV)</li>
+          <li>Excel (XLS)</li>
+        </ul>
+      </li>
+      <li>Klicken <strong>Export</strong> um die Lead-Daten herunterzuladen.</li>
+      <li>Das Lead-Formular und die Ansichtsereignisdaten werden in separaten Dateien heruntergeladen. <strong>Führt</strong> Die Daten enthalten die Daten, die auf dem Lead-Formular eingegeben wurden, sowie die folgenden Felder:
+        <ul>
+          <li><strong>externalId</strong> - Dies ist die externe ID, die auf der Seite Alle letzten Aktivitäten angezeigt wird. Im Fall von Oracle Eloqua ist dies die Eloqua-Richtlinie. Bei Marketo ist es der Marketo-Leitfaden</li>
+          <li><strong>playerId</strong> - Spieler-ID des Spielers, der verwendet wurde, als das Formular angezeigt wurde</li>
+          <li><strong>videoId</strong> - Video-ID des Videos, das abgespielt wurde, als das Formular angezeigt wurde</li>
+          <li><strong>pageUrl</strong> - Seiten-URL, die das Lead-Formular anzeigte (nur Galerie-Erlebnisse)</li>
+          <li><strong>hergestellt in</strong> - Datum und Uhrzeit der Datenerfassung</li>
+          <li><strong>experience</strong> - Galerie-Erlebnis, das die Daten gesammelt hat (nur Galerie-Erlebnisse)</li>
+        </ul>
+        <p><strong>Ereignisse anzeigen</strong> Daten enthalten die folgenden Felder:</p>
+        <ul>
+          <li><strong>externalId</strong> - Dies ist die externe ID, die auf der Seite Alle letzten Aktivitäten angezeigt wird. Im Fall von Oracle Eloqua ist dies die Eloqua-Richtlinie. Bei Marketo ist es der Marketo-Leitfaden</li>
+          <li><strong>videoId</strong> - Video ID des Videos</li>
+          <li><strong>videoName</strong> - Name des Videos</li>
+          <li><strong>schaute</strong> - Prozentsatz des angesehenen Videos (auf den nächsten Prozentsatz)</li>
+          <li><strong>timeWatched</strong> - Gesamtzeit beobachtet</li>
+          <li><strong>playerId</strong> - Spieler-ID des Spielers, mit dem das Video angesehen wurde</li>
+          <li><strong>pageUrl</strong> - URL der Seite mit Player</li>
+          <li><strong>hergestellt in</strong> - Datum und Uhrzeit der Datenerfassung</li>
+          <li><strong>aktualisiert am</strong> - Datum und Uhrzeit der letzten Speicherung des Ereignisses, was ungefähr bedeutet, wann der Betrachter aufgehört hat zu schauen; Wenn das Video nur eine Minute lang ist, werden CreateAt und UpdatedAt sehr nahe beieinander sein</li>
+          <li><strong>isSynced</strong> - Gibt an, ob dieses Ansichtsereignis automatisch in das Marketing-Automatisierungstool des Herausgebers exportiert wurde</li>
+          <li><strong>trackingId</strong> - Tracking-ID wurde als URL-Parameter übergeben. Informationen zum Arbeiten mit einer Tracking-ID finden Sie unter <a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Erstellen benutzerdefinierter Integrationen mit dem Campaign-Modul</a>.</li>
+          <li><strong>UTM-Felder</strong> - utmSource, utmMedium, utmCampaign, utmTerm und utmContent. Informationen zum Arbeiten mit UTM-Feldern finden Sie unter <a href="/campaign/general/working-utm-fields-campaign-module.html">Arbeiten mit UTM-Feldern im Campaign-Modul</a>.</li>
+          <li><strong>metric1-3</strong>, <strong>event1-3</strong> - Wird bei Verwendung <a href="/campaign/general/using-custom-metrics-and-events.html">benutzerdefinierter Metriken und Ereignisse verwendet</a></li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+</article>

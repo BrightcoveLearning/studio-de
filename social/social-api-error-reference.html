@@ -1,0 +1,84 @@
+---
+title: 'Soziale API:  Fehlerreferenz'
+description: Dieses Thema bietet eine Referenz für Social API-Fehler.
+parent: Developers
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="errorMessages">Allgemeine Fehlermeldungen</h2>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Status</th>
+          <th>Name</th>
+          <th>Botschaft</th>
+          <th>Ursache</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>401</td>
+          <td><code translate="No">UNAUTHORIZED</code></td>
+          <td><code translate="No">Permission denied.</code></td>
+          <td>Fehlendes oder ungültiges OAuth-Zugriffstoken. Wenn Sie ein Zugriffstoken angegeben haben, verfügt es möglicherweise nicht über den entsprechenden Umfang für diese Anforderung</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td><code translate="No">FORBIDDEN</code></td>
+          <td>&nbsp;</td>
+          <td>Sie haben keine Berechtigung zum Zugriff auf die Ressource. In den meisten Fällen liegt ein Fehler in der Anforderungs-URL vor.</td>
+        </tr>
+        <tr>
+          <td>404</td>
+          <td><code translate="No">RESOURCE_NOT_FOUND</code></td>
+          <td><code translate="No">Resource does not exist.</code></td>
+          <td>Sie haben eine Ressource angefordert, die nicht vorhanden ist. Überprüfen Sie Rechtschreib- und Pfadfehler.</td>
+        </tr>
+        <tr>
+          <td>422</td>
+          <td>&nbsp;</td>
+          <td><code translate="No">(Message varies according to the problem; examples: </code>
+            <ul>
+              <li><code translate="No">"Page size is not within the range(1-100) 200"</code></li>
+              <li><code translate="No">"The since parameter must be an ISO-8601 datetime string"</code></li>
+            </ul>
+            <code translate="No"> )</code></td>
+          <td>Überprüfen Sie die Abfrageparameter, um sicherzustellen, dass die Werte gültig sind</td>
+        </tr>
+        <tr>
+          <td>500</td>
+          <td>&nbsp;</td>
+          <td><code translate="No">an internal error occurred</code></td>
+          <td>Problem im Brightcove-System - versuchen Sie es später erneut.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="social_sharing_errors">Social-Sharing-Fehler</h2>
+    <p>Social-Sharing-Fehler werden nicht als separate Fehlerantwort auf die API-Anforderung zurückgegeben, sondern in einer <code translate="No">errors</code> Array in der normalen Antwort.</p>
+    <p>Wenn der Freigabevorgang fehlgeschlagen ist, meldet die API <code translate="No">"result": "ERROR"</code> und geben Sie ein Fehlerobjekt zurück, das Folgendes enthält:</p>
+    <ul>
+      <li><code translate="No">error_code</code>- Der vom Server zurückgegebene Fehlercode, falls vorhanden, von der sozialen Plattform aufgezeichnet.</li>
+      <li><code translate="No">error_message</code>- Die vom Server aufgezeichnete oder gegebenenfalls von der sozialen Plattform zurückgegebene Fehlermeldung.</li>
+      <li><code translate="No">platform_error</code>- JSON-Darstellung des von der sozialen Plattform zurückgegebenen Fehlerobjekts, falls vorhanden.</li>
+    </ul>
+    <p>Hier ist ein Beispiel</p>
+    <pre class="line-numbers">
+<code class="language-json" translate="No">"errors": [
+  {
+    "error_code": "UPLOAD_FAILURE",
+    "message": "Upload error: Received Facebook error response of type OAuthException: (#100) sponsor_id requires publishing profile/page to be verified or branding partner. (code 100, subcode null)"
+  }
+]</code></pre>
+    <p>Weitere Informationen zu den zurückgegebenen Fehlern finden Sie in der Dokumentation zur jeweiligen sozialen Plattform:</p>
+    <ul>
+      <li><a href="https://developers.google.com/youtube/v3/docs/errors">Youtube</a></li>
+      <li><a href="https://developers.facebook.com/docs/graph-api/video-uploads#errors">Facebook</a></li>
+      <li><a href="https://developer.twitter.com/en/docs/basics/response-codes.html">Twitter</a></li>
+    </ul>
+  </section>
+</article>

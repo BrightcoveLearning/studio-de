@@ -1,0 +1,44 @@
+---
+title: Veröffentlichen eines Videos per E-Mail mithilfe der Campaign-Moduls
+description: Dieses Thema bietet einen Überblick darüber, wie Sie ein Video mithilfe des Campaign-Moduls per E-Mail veröffentlichen.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Auf den meisten Plattformen ist das direkte Einbetten von Videos in E-Mails nicht möglich. Dies ist keine Einschränkung von Brightcove. Fast jedes moderne E-Mail-System entfernt aus Sicherheitsgründen den Einbettungscode für Videoplayer. Sie können jedoch das Bewusstsein und den Verkehr für Inhalte steigern, indem Sie eine E-Mail mit einem Teaser-Text und einem Poster-Bild erstellen. Das Campaign-Modul bietet die Möglichkeit, ein Video und einen Player auszuwählen und dann den HTML-Code zum Einbetten in eine E-Mail-Nachricht zu generieren.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Das Veröffentlichen eines Videos per E-Mail ist auch im Medienmodul verfügbar. Weitere Informationen finden Sie unter <a href="/publish/publishing-video-email.html">Veröffentlichen eines Videos in E-Mail</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <p>Gehen Sie folgendermaßen vor, um ein Video auf einer E-Mail-Zielseite zu veröffentlichen:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>In E-Mail veröffentlichen </strong> in der linken Navigation.</li>
+      <li>Wählen Sie a <strong>Landing Page</strong>. Die Dropdown-Liste enthält a <strong>Einfache Landing Page</strong> Dies ist eine vom System bereitgestellte, nicht gestaltete Beispiel-Landingpage. Die Liste enthält auch alle veröffentlichten Landingpage-Erlebnisse, die mit dem Galeriemodul erstellt wurden und einen für die Kampagne aktivierten Player verwenden. Die Verwendung einer Galerie-Zielseite bietet mehr Flexibilität hinsichtlich des Erscheinungsbilds und des Stils der Zielseite. Lead-Formulare können auch zum Erfassen von Viewer-Informationen verwendet werden. Weitere Informationen zum Erstellen von Zielseiten für Galerien finden Sie unter <a href="https://gallery.support.brightcove.com/experiences/landing/creating-landing-page-experience.html">Erstellen einer Landing Page-Erfahrung</a>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select landing page" src="/assets/images/campaign/general/node16418-landing-page-video.png" /></figure>
+      </li>
+      <li>Wählen Sie bis <strong>Video automatisch abspielen</strong>. Diese Option ist nur verfügbar, wenn Sie die Option auswählen <strong>Einfache Landing Page</strong>.</li>
+      <li>Wählen Sie a <strong>Videoplayer</strong>. Diese Option ist nur verfügbar, wenn Sie die Option auswählen <strong>Einfache Landing Page</strong>. Bei Galerie-Zielseiten wird der Player als Teil der zugewiesen <a href="https://gallery.support.brightcove.com/experiences/landing/creating-landing-page-experience.html">Eigenschaften erleben</a>.</li>
+      <li>Wählen Sie a <strong>Video</strong>. Suchbegriffe können verwendet werden, um die Videos in Ihrem Konto zu durchsuchen.</li>
+      <li>Stellen Sie die <strong>Bildgröße</strong>. Dies ist das Bild, das im Text der E-Mail angezeigt wird. Die Größe des Bildes kann durch Eingabe von Werten in das Bild angepasst werden <strong>Breite</strong> und <strong>Höhe</strong> Felder. Die Player-URL wird unter dem Posterbild angezeigt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="preview image" src="/assets/images/campaign/general/node16418-preview-image.png" /></figure>
+      </li>
+      <li>Wählen Sie die Anwendung aus, mit der die E-Mail gesendet werden soll. Die folgenden Optionen stehen zur Verfügung.
+        <ul>
+          <li>Andere</li>
+          <li>Eloqua</li>
+          <li>Zwangsversteigerung</li>
+          <li>HubSpot</li>
+          <li>Pardot</li>
+          <li>Marketo</li>
+          <li>MailChimp</li>
+        </ul>
+        <p>Der einzubettende HTML-Code ändert sich je nach ausgewählter Anwendung.</p>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="embed code" src="/assets/images/campaign/general/node16418-embed-code.png" /></figure>
+      </li>
+    </ol>
+    <p>Das Senden von E-Mail-Nachrichten von Marketing-Automatisierungsplattformen fällt nicht in den Geltungsbereich dieses Themas. Weitere Informationen finden Sie in der Dokumentation zu <a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/index.html#Help/EmailEditing/Tasks/EditingUploadedEmailsUsingTheHTMLEditor.htm?TocPath=Emails%7CEmail%20authoring%7C_____11">Eloqua</a>, <a href="https://docs.marketo.com/display/public/DOCS/Edit+an+Email's+HTML">Marketo</a>, <a href="https://knowledge.hubspot.com/email-user-guide-v2/how-to-create-and-send-emails">HubSpot</a> oder <a href="https://help.salesforce.com/HTViewHelpDoc?id=creating_html_email_templates.htm">Salesforce</a>.</p>
+  </section>
+</article>

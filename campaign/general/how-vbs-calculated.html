@@ -1,0 +1,32 @@
+---
+title: So wird der Video-Benchmark-Score berechnet
+parent: General Information
+description: In this topic you will learn how about the Video Benchmark Score and learn how it is calculated.
+---
+
+<article class="bcls-article">
+  <h1>Wie der Video-Benchmark-Score berechnet wird</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Der Video Benchmark Score (VBS) untersucht zwei wichtige Videokennzahlen:</p>
+    <ul>
+      <li>Spielrate</li>
+      <li>Durchschnittlicher Prozentsatz angezeigt</li>
+    </ul>
+    <p>Die Wiedergaberate wird berechnet, indem die Anzahl der Videoansichten durch die Häufigkeit des Ladens des Videos dividiert wird (Videoansichten / Videoladen). Wenn Sie eine Seite mit einem Video haben und diese Seite 10 Mal angesehen wird und die Zuschauer das Video auf 4 dieser Seitenaufrufe ansehen, hat das Video eine Wiedergaberate von 40%.  </p>
+    <p>Average Percent Viewed misst den Prozentsatz eines Videos, der tatsächlich angesehen wird. Beispielsweise sehen sich zwei Zuschauer ein 60-Sekunden-Video an. Der erste Betrachter schaut 5 Sekunden lang und der zweite Betrachter 25 Sekunden lang. Insgesamt haben diese Betrachter 30 Sekunden Anzeigezeit oder durchschnittlich 15 Sekunden gesammelt. Der durchschnittliche Prozentsatz der angesehenen Personen beträgt 25 % (5 Sekunden + 25 Sekunden)/(60 Sekunden * 2 Zuschauer).</p>
+    <p>Der VBS vergleicht zunächst die Wiedergaberate und den durchschnittlichen angesehenen Prozentsatz Ihres Videos mit allen Videos mit demselben Videoinhaltstyp (Produktübersicht, Produktdetails usw.). Wir bestimmen dann, wo Ihr Video innerhalb dieser Gruppierung rangiert: ist es im 10. Perzentil, 20. Perzentil usw. Diese beiden Perzentile werden dann gemittelt. Wenn sich Ihr Video also im 60.</p>
+    <p>Es gibt eine zusätzliche Abwärtsgewichtung des VBS, wenn entweder die Wiedergaberate oder der durchschnittliche Prozentsatz angeschaut bei oder unter dem 30. Perzentil liegt. Dies soll die schlechte Leistung und die Notwendigkeit der Verbesserung betonen.</p>
+    <p>Die Formel für die Abwärtsgewichtung lautet wie folgt, in Pseudocode geschrieben: </p>
+    <pre><code translate="No">
+If either rate is &lt;=30
+   lower_rate = smaller of the two rates
+   multiple = (1.1-(1/(lower_rate/10)))
+   If multiple &lt; .35
+     multiple = 0.35
+     score = (start_rate + percentage_watched)/2)*multiple
+   end if
+end if
+    </code></pre>
+  </section>
+</article>

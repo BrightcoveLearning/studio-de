@@ -1,0 +1,42 @@
+---
+title: Viewer-Daten verwalten
+description: In diesem Thema erfahren Sie, wie Sie Zuschauerdaten im Campaign-Modul verwalten.
+parent: Administering Campaign
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Mit der Option Viewer-Daten verwalten können Sie nach einem Benutzer suchen und diesen entweder entfernen oder die Daten dieses Benutzers exportieren.</p>
+    <aside class="bcls-aside bcls-aside--information">Anmerkungen:
+      <ul>
+        <li>Normalerweise wird bei der Integration mit einer Marketing-Automatisierungsplattform (MAP-Integration) die Einstellung der Datenaufbewahrungsdauer verwendet, um zu steuern, wie lange Daten aufbewahrt werden</li>
+        <li>Sie müssen ein Kontoadministrator sein, um auf das Menü "Viewer-Daten verwalten" zugreifen zu können</li>
+      </ul>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <p>Führen Sie die folgenden Schritte aus, um die Viewer-Daten zu verwalten.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Modul Kampagne.</li>
+      <li>Klicken <strong>Viewer-Daten verwalten</strong> in der linken Navigation.</li>
+      <li>Geben Sie den Benutzer ein, nach dem gesucht werden soll. In der Regel ist dies einer der folgenden Werte:
+        <ul>
+          <li><strong>Email</strong> - Bei Verwendung von Kampagnen-Tracking und Verwendung eines Kampagnen-Lead-Formulars oder mit SSO-Integrationen</li>
+          <li><strong>Benutzeridentifikation</strong> - Bei Verwendung von SSO oder benutzerdefinierten Integrationen</li>
+          <li><strong>Benutzerdefinierte GUID</strong> - Für anonyme Benutzer</li>
+          <li><strong>Externe GUID</strong> - Wenn eine MAP-Integration verwendet wird</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node18548-search.png" /></figure>
+      </li>
+      <li>Wenn eine Übereinstimmung gefunden wird, wählen Sie eine Aktion aus:
+        <ul>
+          <li><strong>Viewer-Daten löschen</strong> - Entfernen Sie Anzeige- und Lead-Daten für den Benutzer</li>
+          <li><strong>Viewer-Daten exportieren</strong> - Exportieren Sie den Lead und zeigen Sie Ereignisdaten für den Benutzer an. Die Lead-Daten enthalten die Daten, die in ein Campaign-Lead-Formular eingegeben wurden. Die Ansichtsereignisdaten enthalten alle Ansichtsereignisse für den Viewer.</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="export lead data" src="/assets/images/campaign/admin/node18548-select-action.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

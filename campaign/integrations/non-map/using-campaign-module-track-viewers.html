@@ -1,0 +1,67 @@
+---
+title: Verwenden des Kampagnenmoduls zum Verfolgen von Zuschauern
+description: In diesem Thema erfahren Sie, wie das Campaign-Modul verwendet werden kann, um die Zuschaueraktivität zu verfolgen.
+parent: Non-MAP 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul bietet die Möglichkeit, die Anzeigeaktivität zu verfolgen. In diesem Szenario werden die Anzeigedaten nicht an eine Marketing-Automatisierungsplattform gesendet. Ein häufiger Anwendungsfall hierfür wären interne Schulungsvideos. Mithilfe des Kampagnen-Trackings kann die Anzeigeaktivität interner Mitarbeiter nachverfolgt werden. Um das Kampagnen-Tracking zu verwenden, sind die folgenden Schritte erforderlich:</p>
+    <ol>
+      <li><a href="#enable">Konfigurieren Sie die Kampagnen-Tracking-Einstellungen</a></li>
+      <li><a href="#configure">Konfigurieren Sie ein Spieler- und Lead-Formular für das Kampagnen-Tracking</a></li>
+      <li><a href="#viewdata">Videodaten anzeigen</a></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="enable">Konfigurieren der Kampagnen-Tracking-Einstellungen</h2>
+    <p>Gehen Sie wie folgt vor, um die Tracking-Einstellungen für Kampagnen zu konfigurieren:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Kampagnenmodul und klicken Sie dann auf <strong>Datenverbindungen</strong> in der linken Navigation.</li>
+      <li>Suchen Sie die <strong>Kampagnenverfolgung</strong> Abschnitt und klicken Sie <strong>Zeigen</strong>.</li>
+      <li>Standardmäßig ist das Kampagnen-Tracking für alle Konten aktiviert. Bearbeiten Sie die Einstellungen nach Bedarf:
+        <ul>
+          <li><strong>Verbindungsname</strong> - Identifiziert die Verbindung</li>
+          <li><strong>Verbindungsstatus</strong> - Bestimmt, ob Video Cloud-Video-Engagement-Daten vom Campaign-Modul gespeichert werden.
+            <ul>
+              <li><strong>Aktiviert</strong> - Daten werden gesammelt</li>
+              <li><strong>Deaktiviert</strong> - Es werden keine Daten gesammelt (Verbindung ist deaktiviert)</li>
+            </ul>
+          </li>
+          <li><strong>Verfolgen Sie Daten für unbekannte Zuschauer</strong> - Legt fest, ob Tracking-Daten für unbekannte Zuschauer aufgezeichnet werden. Um Zuschauer bei der Verwendung von Kampagnen-Tracking zu identifizieren, und <a href="/campaign/general/creating-campaign-lead-form.html">Lead-Formular für Kampagnen</a> kann verwendet werden. <aside class="bcls-aside bcls-aside--information">Hinweis: Mit dem Kampagnen-Tracking werden bis zu 1.000 Zuschauer pro Zeitraum von 24 Stunden verfolgt.</aside>
+          </li>
+          <li><strong>Wie lange sollte Brightcove Daten aufbewahren?</strong> - Die Richtlinie zur Datenaufbewahrung legt fest, wie lange die Anzeigedaten und Lead-Formulardaten (bei Verwendung eines Campaign-Lead-Formulars) in Ihrem Video Cloud-Konto aufbewahrt werden. Sie sollten die Aufbewahrungseinstellungen gemäß Ihrer Datenschutzrichtlinie anpassen. Es ist nicht erforderlich, Benutzerdaten in Video Cloud aufzubewahren.</li>
+        </ul>
+      </li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="enable tracking" src="/assets/images/campaign/general/node18347-campaign-tracking.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Konfigurieren eines Spieler- und Lead-Formulars für das Kampagnen-Tracking</h2>
+    <p>Die Anzeigeaktivität kann nur verfolgt werden, wenn Videos in einem für die Kampagne aktivierten Videoplayer angesehen werden. Sie müssen einen kampagnenfähigen Player verwenden, wenn Sie das Kampagnen-Tracking verwenden. Lead-Formulare können während der Videowiedergabe angezeigt werden, um Viewer-Informationen zu erfassen. Lead-Formulare sind bei der Verwendung von Campaign-Tracking nicht erforderlich.</p>
+    <p>Führen Sie die folgenden Schritte aus, um das Kampagnen-Tracking mit einem kampagnenfähigen Player und einem Lead-Formular zu konfigurieren:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken <strong>Kampagnenspieler</strong> in der linken Navigation.</li>
+      <li>Bestimmen Sie, welchen kampagnenfähigen Player Sie verwenden möchten. Wenn keine kampagnenfähigen Player vorhanden sind, klicken Sie auf <strong>Spieler erstellen</strong> einen zu erstellen. Weitere Informationen zum Erstellen von kampagnenfähigen Playern finden Sie unter <a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a>.</li>
+      <li>Während ein Lead-Formular nicht erforderlich ist, können Lead-Formulare verwendet werden, um Informationen über den Viewer zu sammeln und anonyme Viewer in bekannte Viewer umzuwandeln. Klicken <strong>Bleiformulare</strong> und erstellen Sie ein Lead-Formular. Weitere Informationen zum Erstellen von Lead-Formularen finden Sie unter <a href="/campaign/general/creating-campaign-lead-form.html">Erstellen eines Kampagnen-Lead-Formulars</a>.</li>
+      <li>Klicken <strong>Kampagnenspieler</strong>.</li>
+      <li>Suchen Sie den für die Kampagne aktivierten Player, den Sie verwenden möchten. Stellen Sie die <strong>Verbunden mit</strong> Wert für den Spieler zu <strong>Kampagnenverfolgung</strong>.</li>
+      <li>Wenn ein Lead-Formular verwendet wird, wählen Sie das Lead-Formular aus <strong>Lead Form</strong> Dropdown-Liste.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="new player" src="/assets/images/campaign/general/node18347-player-lead-form.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewdata">Videodaten anzeigen</h2>
+    <p>Es gibt mehrere Optionen zum Anzeigen von Videodaten bei der Verwendung von Kampagnen-Tracking:</p>
+    <ul>
+      <li><strong>Zuschaueraktivitäten (Ereignisse)</strong> - Diese Option wird als Teil des Campaign-Moduls bereitgestellt und kann verwendet werden, um Videodaten innerhalb des Campaign-Moduls anzuzeigen. Informationen finden Sie unter <a href="/campaign/general/viewing-player-events-campaign-module.html">Anzeigen von Spielerereignissen im Kampagnenmodul</a>.</li>
+      <li><strong>Betrachterprofile</strong> - Diese Option wird als Teil des Campaign-Moduls bereitgestellt und kann verwendet werden, um Videodaten basierend auf einem Benutzerprofilwert innerhalb des Campaign-Moduls anzuzeigen. Weitere Informationen finden Sie unter <a href="/campaign/general/viewing-viewer-profile-information.html">Anzeigen von Viewer-Profilinformationen</a>.</li>
+      <li><strong>Export von Daten</strong> - Diese Option wird als Teil des Campaign-Moduls bereitgestellt und kann zum Exportieren von Videoansichts- und Lead-Daten verwendet werden. Informationen finden Sie unter <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportieren von Kampagnendaten aus dem Campaign-Modul</a>.</li>
+      <li><strong>Zielgruppen-API</strong> - Die Audience-API kann zum programmgesteuerten Abrufen von Videoansichten und Lead-Daten verwendet werden. Weitere Informationen finden Sie unter <a href="/campaign/develop/overview-audience-api.html">Überblick: Zielgruppen-API</a>.</li>
+    </ul>
+  </section>
+</article>

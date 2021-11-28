@@ -1,0 +1,62 @@
+---
+title: Einstellen des Datenschutzstatus für eine Video
+description: In diesem Thema wird beschrieben, wie Sie den Datenschutzstatus für Videos festlegen, die über Brightcove Social an YouTube verteilt werden.
+parent: General Information
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Wenn Sie ein YouTube-Veröffentlichungsziel erstellen, können Sie als Standardeigenschaften die Datenschutzeinstellung für YouTube festlegen. Standardmäßig gibt es drei Optionen: <strong>Öffentlich</strong>, <strong>Privat</strong> und <strong>Nicht gelistet</strong>. Wenn Videos auf YouTube veröffentlicht werden, wird die Datenschutzeinstellung für alle Videos auf die ausgewählte Einstellung festgelegt.</p>
+    <p>Möglicherweise haben Sie Fälle, in denen die YouTube-Datenschutzeinstellungen für jedes Video unterschiedlich sein sollten. In diesem Fall kann ein benutzerdefiniertes Feld, das dem Video zugeordnet ist, verwendet werden, um die Datenschutzeinstellung zu steuern, sodass jedes Video eine andere Datenschutzeinstellung haben kann. Wenn das Video mit Brightcove Social auf YouTube veröffentlicht wird, wird die Datenschutzeinstellung auf den Wert festgelegt, der durch den benutzerdefinierten Feldwert angegeben wird.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="customfield">Erstellen des benutzerdefinierten Felds</h2>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Benutzerdefinierte Felder sind nur für Professional- und Enterprise-Konten verfügbar.</aside>
+    <p>Fügen Sie Ihrem Konto zunächst ein benutzerdefiniertes Feld hinzu. <strong>yt_privacy_status</strong> vom Typ <strong>Aufführen</strong>. Informationen zum Hinzufügen benutzerdefinierter Felder zu einem Konto finden Sie unter <a href="/admin/creating-custom-metadata-fields.html">Benutzerdefinierte Metadatenfelder erstellen</a>. Durch Festlegen des Werts für dieses benutzerdefinierte Feld wird die Datenschutzeinstellung für YouTube-Videos gesteuert:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th scope="col"><strong>yt_privacy_status</strong></th>
+          <th scope="col">YouTube-Video-Datenschutzeinstellung</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Privat</td>
+          <td>Privat</td>
+        </tr>
+        <tr>
+          <td>Öffentlichkeit</td>
+          <td>Öffentlichkeit</td>
+        </tr>
+        <tr>
+          <td>nicht gelistet</td>
+          <td>nicht gelistet</td>
+        </tr>
+        <tr>
+          <td>Wert ist null oder unset</td>
+          <td>Öffentlichkeit</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="BCL-aside">Trinkgeld: Mit einem <strong>Aufführen</strong> Geben Sie für das benutzerdefinierte Feld ein. Benutzer können den Status mithilfe einer Dropdown-Liste auswählen, anstatt einen Wert eingeben zu müssen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-custom-field.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign">Zuweisen eines Werts zum benutzerdefinierten Feld</h2>
+    <p>Sobald das benutzerdefinierte Feld hinzugefügt wurde, kann der Wert über das Medienmodul festgelegt werden.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-set-status.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">Bearbeiten des Veröffentlichungsziels</h2>
+    <p>Bearbeiten Sie das YouTube-Veröffentlichungsziel und legen Sie das fest <strong>Privatsphäreeinstellung</strong> Standardmäßig auf <strong>Verwenden Sie das benutzerdefinierte Feld YT_Privacy_Status</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-visibility-default.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Video veröffentlichen</h2>
+    <p>Wenn ein Video ausgewählt und das YouTube-Ziel ausgewählt wird, hat es den Datenschutzstatus, der mithilfe des benutzerdefinierten Felds festgelegt wurde.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node15611-video-visibility.png" /></figure>
+  </section>
+</article>

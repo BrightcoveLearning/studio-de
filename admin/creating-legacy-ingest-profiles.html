@@ -1,0 +1,76 @@
+---
+title: Erstellen von Legacy-Aufnahmeprofilen
+parent: Administering Accounts
+description: This topic provides an overview of how to create custom ingest profiles for use with Legacy transcoding.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Auf der Seite zur Verwaltung von Aufnahmeprofilen können neue ältere Aufnahmeprofile erstellt werden. Aufnahmeprofile werden mit JSON definiert. Wenn Sie ein neues Legacy-Profil erstellen, ist es hilfreich, das zu überprüfen <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Standard-Aufnahmeprofile für die Legacy-Transcodierung</a> dokumentieren und suchen Sie ein Profil, das Ihren Anforderungen entspricht. In Studio können Sie das Profil dann einfach duplizieren und dann mit Ihren Änderungen bearbeiten.</p>
+    <p >Hinweis: Informationen zum Erstellen von Aufnahmeprofilen, die DRM verwenden, finden Sie in der <a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">MPEG-DASH-Video</a> Entwicklerdokument.</p>
+    <p >Hinweis: Jedes Profil kann maximal 25 Wiedergaben erstellen. &nbsp;Poster- und Miniaturbilder zählen maximal 25.&nbsp;</p>
+    <p>So erstellen Sie ein neues Legacy-Aufnahmeprofil:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Drücke den <strong>ADMINISTRATOR</strong> Link im Studio-Header.</li>
+      <li>Drücke den <strong>Profile aufnehmen</strong> Verknüpfung.</li>
+      <li>Suchen Sie ein Legacy-Profil zum Duplizieren. Klicken Sie auf den Profilnamen, um den Profileditor zu öffnen.</li>
+      <li>Klicken <strong>Profil duplizieren</strong>. Der Profileditor wird mit dem neuen Profil geöffnet.</li>
+      <li>Scrollen Sie zum Anfang des Profils. Bearbeiten Sie die <code translate="No"><strong>name</strong></code> Element, um dem Profil einen aussagekräftigen Namen zu geben. Dieser Name wird in Video Cloud Studio angezeigt.</li>
+      <li>Bearbeiten Sie die <code translate="No"><strong>description</strong></code> Element, um dem Profil eine aussagekräftige Beschreibung zu geben.
+        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png" /></figure>
+      </li>
+      <li>Bearbeiten Sie die Wiedergabeinformationen nach Bedarf. Die Standardgröße für die Poster- und Miniaturbilder befindet sich am Ende des Profils.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>Hinzufügen eines Wasserzeichens zu einem Profil</h3>
+      <p>Zu jeder Wiedergabe kann ein Wasserzeichen hinzugefügt werden, indem Sie das hinzufügen <code translate="No">watermarks</code> Element zu jedem <code translate="No">rendition</code>::</p>
+      <pre>
+       Wasserzeichen": [{ "y": -20, "x": -10, "width": "20%", "url": "http://www.mysite.com/companylogo.png" }]
+       </pre>
+      <p>Das <code translate="No">watermarks</code> Element hat die folgenden Parameter.</p>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="13%">Parameter</th>
+            <th width="14%">Typ</th>
+            <th width="73%">Beschreibung</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td ><code translate="No">url</code></td>
+            <td >Schnur</td>
+            <td >URL für das Wasserzeichenbild</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">width</code></td>
+            <td >Schnur</td>
+            <td >Breite in Pixel oder Prozent der Rahmenbreite; z. B. 20 oder 10%</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">height</code></td>
+            <td >Schnur</td>
+            <td >Höhe in Pixel oder Prozent der Rahmenbreite; z. B. 20 oder 10%</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">x</code></td>
+            <td >Schnur</td>
+            <td >Abstand von der linken Kante zur Bildmitte als Pixel oder Prozent der Bildbreite; z. B. 20 oder 10% (verwenden Sie negative Werte wie -10, um das Wasserzeichen relativ zur rechten Kante zu positionieren)</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">y</code></td>
+            <td >Schnur</td>
+            <td >Abstand von Oberkante zu Mitte wenn Bild als Pixel oder Prozent der Bild-Höhe; z. B. 20 oder 10% (verwenden Sie negative Werte wie -10, um das Wasserzeichen relativ zur Unterkante zu positionieren)</td>
+          </tr>
+        </tbody>
+      </table>
+      &nbsp;
+      <p>Ein Beispielprofil mit einem Wasserzeichen ist unten dargestellt:</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png" /></figure>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,120 @@
+---
+title: Hinzufügen von Inhalten zu einer Cloud Playout-Kanals
+description: In diesem Thema erfahren Sie, wie Sie Ihrem Cloud Playout-Kanal VOD-Elemente, Live-Ereignisse und Playlists hinzufügen.
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+		<h2 id="Introduction">Einführung</h2>
+		<p>Abhängig davon, wie Sie Ihren Cloud Playout-Kanal konfiguriert haben, können Sie Inhalte verschiedener Art hinzufügen. VoD-Inhalte und Wiedergabelisten können jedem Kanal hinzugefügt werden. Darüber hinaus können Sie Live-Ereignisse hinzufügen, wenn Sie den Kanal so konfiguriert haben, dass er dies unterstützt. In den folgenden Abschnitten finden Sie Schritte zum Hinzufügen der einzelnen Inhaltstypen.</p>
+		<aside class="bcls-aside bcls-aside--information">Beachten Sie, dass Sie auch <a href="/cloud-playout/adding-bumpers-to-vod.html">Stoßfänger hinzufügen</a> zu deinem Kanal und <a href="/cloud-playout/enabling-server-side-ads.html">serverseitige Anzeigen</a> , wenn der Kanal dafür konfiguriert wurde. Weitere Informationen dazu finden Sie in diesen Themen.</aside>
+	</section>
+  
+  <section class="bcls-section">
+    <h2 id="add_videos">Hinzufügen von VoD-Inhalten</h2>
+    <p>Nachdem Sie Ihren Kanal erstellt haben oder wenn Sie zu den Kanaldetails gehen, werden auf dem Bildschirm die Kanaleinstellungen angezeigt:</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-channel-details.png" alt="Channel Settings">
+      <figcaption class="bcls-caption--image">Kanaleinstellungen</figcaption>
+    </figure>
+    <p>Sie können Details bearbeiten, aber der nächste Hauptschritt ist das Hinzufügen von Inhalten zum Kanal.</p>
+    <h3>Schritte zum Hinzufügen von Videos (VOD)</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Klicken <span class="button-blue"><i data-feather="plus"></i> Videos hinzufügen</span> (Wenn Sie sich auf der Seite der Kanalliste befinden, klicken Sie auf den Kanalnamen, um die Seite mit den Kanaleinstellungen zu öffnen, und klicken Sie dann auf <span class="button-blue"><i data-feather="plus"></i> Videos hinzufügen</span>).
+      </li>
+      <li>Aktivieren Sie das Kontrollkästchen neben den Videos, die Sie dem Kanal hinzufügen möchten.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select videos" src="/assets/images/cloud-playout/playout-select-videos.png" /></figure>
+      </li>
+      <li>Klicken <span class="button-blue">Videos hinzufügen</span>)</li>
+      <li>Klicken <span class="button-blue"><i data-feather="save"></i> Sparen</span>.</li>
+      <li>
+        Die Programmliste für den Kanal wird angezeigt:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-vod-program-list.png" alt="Program List">
+          <figcaption class="bcls-caption--image">Programmliste</figcaption>
+        </figure>
+        <p>Beachten Sie, dass Start- und Endzeiten automatisch aus der Videodauer berechnet werden. Sie können Videos per Drag &amp; Drop in die Liste ziehen, um sie neu zu ordnen. Die Start- / Endzeiten werden automatisch angepasst.</p>
+      </li>
+    </ol>
+	</section>
+
+	<section class="bcls-section">
+		<h2 id="add_playlists">Fügen Sie Wiedergabelisten hinzu</h2>
+		<p>Sie können auch ganze Wiedergabelisten in Ihren Kanal importieren. Beachten Sie die folgenden Bedingungen:</p>
+		<ul>
+			<li>Sie können sowohl EXPLICIT (manuell) als auch intelligente Wiedergabelisten importieren.</li>
+			<li>EIN <strong>Schnappschuss</strong> der Wiedergabeliste in ihrem aktuellen Zustand wird importiert (was bedeutet, dass zukünftige Änderungen an der Wiedergabeliste vorgenommen werden <strong>nicht</strong> im Kanalinhalt reflektiert werden).</li>
+			<li>Es kann jeweils nur eine Wiedergabeliste importiert werden.</li>
+			<li>Wenn die importierte Wiedergabeliste ein Live-Ereignis enthält, wird ein identisches neues Live-Ereignis mit demselben Namen, derselben Beschreibung und derselben Dauer erstellt. Dies liegt daran, dass ein Live-Ereignis immer eine 1: 1-Beziehung zum Kanal hat.</li>
+			<li>Die Videos in der Wiedergabeliste werden hinzugefügt <strong>bis zum Ende</strong> des aktuellen Kanalprogramms.</li>
+			<li>Sie können sowohl VoD-Inhalte als auch Wiedergabelisten hinzufügen. Duplikate sind zulässig.</li>
+			<li>Es gibt eine Validierungsprüfung für das gesamte Asset-Limit (100). Wenn der Import das Asset-Limit von 100 überschreitet, schlägt der Import fehl.</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Hinweis: Wenn die Live-Eingabe für den Kanal nicht aktiviert ist, können Sie dennoch eine Wiedergabeliste importieren, die Live-Ereignisse enthält, indem Sie die Live-Ereignisse vom Import ausschließen möchten.</aside>
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Hinweis: Wenn dies ein SSAI-fähiger Kanal ist, sind Live-Events nicht zulässig. Sie können weiterhin eine Wiedergabeliste importieren, die Live-Events enthält, indem Sie die Live-Ereignisse vom Import ausschließen möchten.</aside>
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">Hinweis: Es werden nur die berechtigten Vermögenswerte mit einer MP4-Wiedergabe zugelassen. Eine Warnung zeigt an, welche Vermögenswerte nicht für den Import berechtigt sind - nach Bestätigung werden nur die zugelassenen Vermögenswerte importiert.</aside>
+			</li>
+		</ul>
+		<h3>Fügen Sie Wiedergabelistenschritte hinzu</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>Klicken <span class="button-blue"><i data-feather="plus"></i> Importiere Wiedergabelisten</span>.</li>
+			<li>Klicken <span class="blue-button">Importieren</span> für die Wiedergabeliste, die Sie importieren möchten.</li>
+			<li>Wenn Meldungen angezeigt werden, dass einige Elemente in der Wiedergabeliste nicht importiert werden können, klicken Sie auf <span class="blue-button">Vorgehen</span> Wenn Sie die unterstützten Videos importieren möchten.</li>
+      <li>Klicken <span class="button-blue"><i data-feather="save"></i> Sparen</span>.</li>
+			<li>
+				Wenn der Import erfolgreich war, wird er in Ihrer Programmliste angezeigt:
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/program-list-with-playlist-imports.png" alt="Program List with Playlist">
+					<figcaption class="bcls-caption--image">Programmliste mit Wiedergabeliste</figcaption>
+				</figure>
+			</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Add_Live_events">Fügen Sie Live-Ereignisse hinzu</h2>
+		<p>Hinweis: Dies gilt nur, wenn der Kanal für Live-Events aktiviert ist.</p>
+    <ol class="bcls-tasklist">
+        <li>Klicken <img src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="add live event" class="ui-image"></li>
+        <li>
+          Geben Sie im Dialogfeld „Live-Ereignis hinzufügen“ den <strong>Namen</strong>, die <strong>Dauer</strong> und die <strong>Beschreibung</strong> für das Live-Event ein:
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="Add Live Event">
+            <figcaption class="bcls-caption--image">Live-Event hinzufügen</figcaption>
+          </figure>
+          <p>Beachten Sie, dass die Mindestdauer für ein Live-Ereignis 5 Minuten beträgt und die Dauer nur in Intervallen von 5 Minuten erhöht oder verringert werden kann. Bei Bedarf kann die Dauer im Textfeld inline bearbeitet werden, um die Granularität der Zeit anzupassen. Die Dauer eines Live-Events kann jederzeit geändert werden, auch während es gerade abgespielt wird.</p>
+        </li>
+        <li>
+          Nachdem Sie Live-Ereignisse hinzugefügt haben, werden diese zusammen mit den VoD-Elementen in der Programmliste angezeigt:
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-live-event-program-list.png" alt="Program List">
+            <figcaption class="bcls-caption--image">Programmliste</figcaption>
+          </figure>
+        </li>
+        <li>Sie können Live-Ereignisse ziehen, um die Liste neu zu ordnen, genauso wie Sie Videos können. Sie können auch die <img src="/assets/images/cloud-playout/cloudplayout-quick-edit.png" alt="quick edit" class="ui-image"> Schaltfläche, um die Dauer eines Live-Ereignisses zu ändern.</li>
+    </ol>
+	</section>
+    <p>Siehe auch <a href="/cloud-playout/adding-bumpers-to-vod.html">Hinzufügen von Stoßstangen zum Inhalt</a> zum Hinzufügen von Stoßfängern zu VoD- oder Live-Event-Elementen.</p>
+  
+  <section class="bcls-section">
+    <h2 id="Related_topics">Verwandte Themen</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Überblick: Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Hinzufügen von Stoßstangen zum Cloud-Playout</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">Statische Bildüberlagerungen</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Überblick: EPG-API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG-API-Referenz</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Kanal-API-Referenz</a></li>
+    </ul>
+  </section>
+</article>

@@ -1,12 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="In diesem Thema erfahren Sie, wie Sie mit dem Medienmodul nach Videos suchen.">
   
-  <title>So suchen Sie im Medienmodul nach Videos und Wiedergabelisten</title>
+  <title>So suchen Sie in der Medienmodul nach Videos und Playlists</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,919 +18,712 @@
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-2728311-17');
+  window.dataLayer = window.dataLayer || []; Funktion gtag(){dataLayer.push(arguments);} gtag('js', neues Datum()); gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
 
 <header>
   <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="Produkt-Logo" style="max-height: 100px;max-width: 232px;"/></a>
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Video_Cloud_Logo_RGB_K.svg" alt="Brightcove"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Sprache auswählen</option><option value="en|en" translate="No">Englisch</option><option value="en|zh-TW" translate="No">繁體 中文</option><option value="en|fr" translate="No">Französisch</option><option value="en|de" translate="No">Deutsch</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Spanisch</option></select>
 
 <script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
+/*<![CDATA[ */ Funktion doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;} /*]]> */
 </script>
 
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Support kontaktieren</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> Systemstatus</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">Zuhause</a></li>
+        
+      <li class="breadcrumb-item"><a href="/media/">Managing Videos</a></li>
       
-      
-      
-      <li class="breadcrumb-item"><a href="/media/">Verwalten von Videos</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">So suchen Sie im Medienmodul nach Videos und Wiedergabelisten</li>
+      <li class="breadcrumb-item active" aria-current="page">So suchen Sie in der Medienmodul nach Videos und Playlists</li>
     </ol>
   </nav>
 </header>
 <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Weitere Brightcove Docs</option>
+					 
+							<option value="https://support.brightcove.com">Dokumentationsstartseite</option>
+						  
+							<option value="">-- VIDEO-CLOUD --</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player-Entwicklung</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;APIs der Video Cloud-Plattform</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud-Geräte-SDKs</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrationen und CMS-Konnektoren</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Allgemeine Informationen zu Video Cloud</option>
+						  
+							<option value="">-- VIDEO-ESSENTIALS --</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Leuchtfeuer</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						  
+							<option value="">-- VIDEO-CLOUD-ADD-ONS --</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Kampagne</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engagement</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Galerie</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+						 
+				</select>
         <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
+           
+            <h5><a href="/index.html">Zuhause</a></h5>
+              
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Einstieg</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
                     <li><a href="/get-started/getting-started-video-cloud-studio.html">Erste Schritte mit Video Cloud Studio</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-your-video-cloud-trial.html">Erste Schritte mit Ihrer Video Cloud-Testversion</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/navigating-brightcove-support-site.html">Navigieren auf der Brightcove Support-Site</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/quick-start-video-cloud.html">Schnellstart zur Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-video-cloud-studio-publishing-workflow.html">Schritt für Schritt: Video-Cloud-Veröffentlichungs-Workflow</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-video-cloud-analytics.html">Schulung: Einführung in Video Cloud Analytics</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-video-cloud.html">Schulung: Einführung in Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-video-cloud-basics.html">Schulung: Videocloud-Grundlagen</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/video-cloud-glossary.html">Video Cloud-Glossar</a></li>
-                  
-                
-                  
-                    <li><a href="/training/video-cloud-studio-training-videos.html">Video Cloud Studio-Schulungsvideos</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/basics/index.html">Lerne die Grundlagen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-activating-and-deactivating-video.html">Aktivieren und Deaktivieren eines Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-adding-user-video-cloud-account.html">Hinzufügen eines Benutzers zu einem Video Cloud-Konto</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html">Aufnehmen von Videoplakats und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-creating-manual-playlist.html">Erstellen einer manuellen Playlist</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-creating-player.html">Einen Spieler erstellen</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-creating-playlist-player.html">Erstellen eines Playlist-Players</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-creating-smart-playlist.html">Erstellen einer intelligenten Playlist</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-determining-how-much-video-being-watched.html">Bestimmen, wie viel von einem Video angesehen wird</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-determining-which-videos-have-most-views.html">Bestimmen, welche Videos die meisten Aufrufe haben</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-editing-basic-video-properties.html">Bearbeiten von grundlegenden Videoeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-editing-video-properties-multiple-videos.html">Bearbeiten von Videoeigenschaften für mehrere Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-organizing-videos-using-folders.html">Organisieren von Videos mithilfe von Ordnern</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-publishing-playlist-web.html">Veröffentlichen einer Playlist im Web</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-publishing-single-video-web.html">Veröffentlichen eines einzelnen Videos im Web</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-styling-player.html">Einen Spieler gestalten</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html">Hochladen von Videoplakats und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-uploading-videos.html">Videos werden hochgeladen</a></li>
-                  
-                
-                  
-                    <li><a href="/basics/video-cloud-basics-viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Allgemeine Informationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/adding-facebook-button-brightcove-player.html">Einen Facebook-Like Button zu einem Spieler hinzufügen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/best-practices-video-creating-transcoding-and-uploading-workflow.html">Best Practices: Transcoding und Hochladen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/content-delivery-options.html">Optionen zur Inhaltsbereitstellung</a></li>
-                  
-                
-                  
-                    <li><a href="/general/creating-audio-only-renditions-low-bandwidth-delivery.html">Erstellen von reinen Audio-Formatvarianten</a></li>
-                  
-                
-                  
-                    <li><a href="/general/domains-and-ports-must-be-accessible-video-cloud.html">Domains und Ports, die zugänglich sein müssen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/drm-output-protection-settings.html">Einstellungen für DRM-Ausgabeschutz</a></li>
-                  
-                
-                  
-                    <li><a href="/general/enabling-longer-videos-youtube.html">Aktivieren längerer Videos auf YouTube</a></li>
-                  
-                
-                  
-                    <li><a href="/general/making-your-video-content-indexable.html">Ihre Videoinhalte indexierbar machen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/optimal-video-dimensions.html">Optimale Videomaße</a></li>
-                  
-                
-                  
-                    <li><a href="/general/overview-context-aware-encoding.html">Überblick über Context Aware Codierung</a></li>
-                  
-                
-                  
-                    <li><a href="/general/overview-digital-rights-management-drm-video-cloud.html">Übersicht: Digitales Rechtemanagement (DRM)</a></li>
-                  
-                
-                  
-                    <li><a href="/general/overview-dynamic-delivery.html">Überblick über die dynamische Lieferung</a></li>
-                  
-                
-                  
-                    <li><a href="/general/protecting-videos-hls-encryption.html">Schützen von Videos mit HLS-Verschlüsselung</a></li>
-                  
-                
-                  
-                    <li><a href="/general/resetting-your-studio-password.html">Zurücksetzen Ihres Studiopassworts</a></li>
-                  
-                
-                  
-                    <li><a href="/general/sharing-videos-twitter-player-cards.html">Videos mit Twitter Player-Karten teilen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/studio-system-requirements.html">Studio-Systemanforderungen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Unterstützte Video- und Audioformate</a></li>
-                  
-                
-                  
-                    <li><a href="/general/tls-media-player-and-api-urls.html">TLS für Medien-, Player- und API-URLs</a></li>
-                  
-                
-                  
-                    <li><a href="/general/video-cloud-architecture-overview.html">Überblick über die Videocloud-Architektur</a></li>
-                  
-                
-                  
-                    <li><a href="/general/video-cloud-studio-cookies.html">Videocloud-Studio-Cookies</a></li>
-                  
-                
-                  
-                    <li><a href="/general/video-source-file-specifications-and-recommendations.html">Spezifikationen und Empfehlungen für Videoquelldateien</a></li>
-                  
-                
-                  
-                    <li><a href="/general/working-360deg-videos.html">Arbeiten mit 360° Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/general/working-audio-content.html">Arbeiten mit reinen Audio-Inhalten</a></li>
-                  
-                
-                  
-                    <li><a href="/general/working-multiple-video-cloud-accounts.html">Arbeiten mit mehreren Konten</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/media/index.html">Verwalten von Videos <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/media/adding-audio-tracks-videos-using-media-module.html">Hinzufügen von Audiospuren zu Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/media/adding-captions-videos-using-media-module.html">Hinzufügen von Untertiteln zu Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/media/adding-chapters-video.html">Hinzufügen von Kapiteln zu einem Video</a></li>
-                  
-                
-                  
-                    <li><a href="/media/capturing-poster-and-thumbnail-images.html">Aufnehmen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/media/configuring-video-availability.html">Konfigurieren der Videoverfügbarkeit</a></li>
-                  
-                
-                  
-                    <li><a href="/media/creating-and-managing-playlists.html">Erstellen und Verwalten von Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/media/downloading-videos-video-cloud.html">Herunterladen von Videos aus Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/media/editing-video-properties-using-media-module.html">Bearbeiten von Videoeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/media/editing-video-properties-using-quick-edit.html">Bearbeiten von Eigenschaften mit Quick Edit</a></li>
-                  
-                
-                  
-                    <li><a href="/media/exporting-video-data.html">Exportieren von Videodaten</a></li>
-                  
-                
-                  
-                    <li><a href="/media/getting-started-media-module.html">Erste Schritte mit dem Medienmodul</a></li>
-                  
-                
-                  
-                    <li><a href="/media/how-search-videos-and-playlists-media-module.html">So suchen Sie nach Videos und Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Die Qualität von Posterbildern erhöhen</a></li>
-                  
-                
-                  
-                    <li><a href="/media/introduction-playlists.html">Einführung in Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/media/media-sharing-using-media-module.html">Teilen von Medien</a></li>
-                  
-                
-                  
-                    <li><a href="/media/organizing-videos-using-folders.html">Organisieren von Videos mithilfe von Ordnern</a></li>
-                  
-                
-                  
-                    <li><a href="/media/overview-adding-captions-video.html">Übersicht: Hinzufügen von Untertiteln zu einem Video</a></li>
-                  
-                
-                  
-                    <li><a href="/media/replacing-video-source-file.html">Ersetzen einer Videoquelldatei</a></li>
-                  
-                
-                  
-                    <li><a href="/media/retranscoding-videos-using-media-module.html">Retranscodierungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/media/setting-required-fields-videos.html">Einstellen erforderlicher Felder</a></li>
-                  
-                
-                  
-                    <li><a href="/media/styling-captions.html">Stiling Bildunterschriften</a></li>
-                  
-                
-                  
-                    <li><a href="/media/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Thumbnail-Bildern</a></li>
-                  
-                
-                  
-                    <li><a href="/media/uploading-videos-using-upload-module.html">Videos werden hochgeladen</a></li>
-                  
-                
-                  
-                    <li><a href="/media/uploading-videos-remote-urls.html">Videos hochladen Remote-URLs</a></li>
-                  
-                
-                  
-                    <li><a href="/media/working-cue-points-media-module.html">Arbeiten mit Cue-Points</a></li>
-                  
-                
-                  
-                    <li><a href="/media/working-multi-lingual-metadata.html">Arbeiten mit mehrsprachigen Metadaten</a></li>
-                  
-                
-                  
-                    <li><a href="/media/working-remote-asset-videos.html">Arbeiten mit Remote-Asset-Videos</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/cloud-playout/index.html">Verwalten von Cloud-Playout-Kanälen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/cloud-playout/cloud-playout-overview.html">Übersicht: Cloud-Playout</a></li>
-                  
-                
-                  
-                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
-                  
-                
-                  
-                    <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
-                  
-                
-                  
-                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
-                  
-                
-                  
-                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
-                  
-                
-                  
-                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/players/index.html">Spieler verwalten <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/players/adding-thumbnail-seeking-player.html">Thumbnail Seeking hinzufügen</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Konfigurieren eines Player-Overlays</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-adobe-analytics-event-tracking.html">Konfigurieren von Ereignisverfolgung durch A</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-google-analytics-event-tracking.html">Konfigurieren von Google Analytics Event Tracking</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-advertising-using-players-module.html">Konfigurieren von Player-Werbung</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-content-restrictions.html">Konfigurieren von Player-Inhaltsbeschränkungen</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-controls.html">Konfigurieren von Player-S</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-endscreen.html">Konfigurieren des Player-Endscreens</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-localization.html">Konfigurieren der Player-Lokalisierung</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-playback-properties.html">Konfigurieren von Player-Wiedergabeeigenschaften</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-player-plugins.html">Konfigurieren von Player-Plugins</a></li>
-                  
-                
-                  
-                    <li><a href="/players/configuring-social-properties-player.html">Konfigurieren der Social Properties</a></li>
-                  
-                
-                  
-                    <li><a href="/players/generating-player-embed-code.html">Erstellen von Einbettungscode für Spieler</a></li>
-                  
-                
-                  
-                    <li><a href="/players/getting-started-players-module.html">Erste Schritte mit dem Spieler-Modul</a></li>
-                  
-                
-                  
-                    <li><a href="/players/setting-player-information-properties.html">Festlegen von Eigenschaften für Spieler</a></li>
-                  
-                
-                  
-                    <li><a href="/players/setting-player-properties.html">Festlegen von Player-</a></li>
-                  
-                
-                  
-                    <li><a href="/players/setting-player-update-mode-and-version.html">Einstellen des Player-Aktualisierungsmodus</a></li>
-                  
-                
-                  
-                    <li><a href="/players/styling-players.html">Styling-Spieler</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/publish/index.html">Veröffentlichen von Videos &amp; Spielern <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/publish/adding-3play-media-interactive-transcript-video.html">Hinzufügen eines interaktiven 3Play Media Transcript</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/adding-application-id-player-embed-code.html">Hinzufügen einer Anwendungs-ID zum Einbettungscode</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/adding-brightcove-player-facebook-fan-page.html">Einen Spieler zu einer Facebook-Fanpage hinzufügen</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/changing-video-player-without-changing-embed-code.html">Ändern eines Videos in einem Player</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/choosing-correct-embed-code.html">Auswahl des richtigen Einbettungscodes</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/creating-and-publishing-high-quality-screencasts.html">Erstellen und Veröffentlichen von hochwertigen Screencasts</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/deep-linking.html">Deep Linking</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/driving-video-views-through-email.html">Videoaufrufe per E-Mail</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/dynamically-assigning-videos-player.html">Dynamisches Zuweisen von Videos zu einem Spieler</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/embedding-brightcove-player-google-sites-page.html">Einbetten eines Spielers auf einer Google-Websites-Seite</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-brightcove-player-wordpress-page.html">Veröffentlichen eines Spielers auf einer Wordpress-Seite</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-brightcove-players-facebook-instant-articles.html">Veröffentlichen von Spielern in Facebook Instant Ar</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-brightcove-players-joomla.html">Spieler in Joomla veröffentlichen</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-video-email.html">Veröffentlichen eines Videos per E-Mail</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-videos-and-playlists-media-module.html">Veröffentlichen von Videos und Playlists</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/publishing-videos-page-experience.html">Veröffentlichen von Videos zu einem In-Page-Erlebnis</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/step-step-using-players-module-create-and-publish-player.html">Schritt für Schritt: Erstellen und Veröffentlichen eines Spielers</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/using-multiple-players-one-page.html">Verwendung mehrerer Spieler auf einer Seite</a></li>
-                  
-                
-                  
-                    <li><a href="/publish/using-reference-ids.html">Verwenden von Referenznummern</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/analytics/index.html">Überprüfen von Analytics <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/analytics/analytics-module-ui-glossary.html">Glossar zur Benutzeroberfläche des Analytics-Modul</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/analytics-report-reference.html">Analytics-Bericht Referenz</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/calculating-video-engagement-score.html">Berechnen des Video-Interaktions-Score</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/creating-custom-analytics-reports.html">Erstellen von benutzerdefinierten Analytics-Ber</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/engagement-report-reference.html">Referenz für Interaktionsberichte</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/exporting-data-analytics-module.html">Exportieren von Daten</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/faq-analytics-module.html">FAQ: Analytics-Modul</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/getting-started-analytics-module.html">Erste Schritte mit dem Analytics-Modul</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/how-search-videos-analytics-module.html">So suchen Sie nach Videos</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/managing-scheduled-reports.html">Verwalten von geplanten Berichten</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/performance-report-reference.html">Referenz zu Leistungsberichten</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Überprüfen von Spielereignissen in Google Analytics</a></li>
-                  
-                
-                  
-                    <li><a href="/analytics/trending-now-report-reference.html">Referenz zum Bericht „Jetzt Trends“</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Konten verwalten <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/admin/authenticating-studio-users-using-single-sign.html">Authentifizieren von Studio-Benutzern mit SSO</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/configuring-language-settings.html">Konfigurieren von Spracheinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/configuring-server-side-ad-settings.html">Konfigurieren der serverseitigen Anzeigeneinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/creating-custom-metadata-fields.html">Erstellen von benutzerdefinierten Metadatenfel</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Erstellen von Aufgaufriefiles für kontextbezogenes</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Erstellen von Aufgabe-Profilen für die dynamische Bereitstellung</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/ingest-profiles-best-practices.html">Best Practices für Profile aufnehmen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-information.html">Verwalten von Kontoinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-settings.html">Verwalten von Kontoeinstellungen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-api-authentication-credentials.html">Verwalten von Anmeldedaten für API-</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-ingest-profiles.html">Verwalten von Ingest-Profilen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten von Einstellungen für die gemeinsame Nutzung</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-profile-information.html">Verwalten von Profilinformationen</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standard-Ingest-Profile (DD &amp; CAE)</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/using-directed-migration-tool-migrate-brightcove-smart-players.html">Verwenden des Directed Migration Tools</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/viewing-billing-information.html">Anzeigen von Rechnungsinformationen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html">Schulung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/online-training-courses.html">Alle Online-Schulungen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/register-training.html">Registrieren Sie sich für Schulungen mit Kursleiter</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-video-cloud.html">Schulung: Einführung in Video Cloud</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-video-cloud-analytics.html">Schulung: Einführung in Video Cloud Analytics</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-video-cloud-basics.html">Schulung: Videocloud-Grundlagen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/video-cloud-studio-training-videos.html">Video Cloud Studio-Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Schulungskurse der Brightcove University</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/video-cloud-studio-release-notes.html">Video Cloud Studio Versionshinweise</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
                     
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
+                    <li><a href="/get-started/getting-started-your-video-cloud-trial.html">Erste Schritte mit Ihrer Video Cloud-Testversion</a></li>
+                    
+                    <li><a href="/get-started/navigating-brightcove-support-site.html">Navigieren auf der Brightcove-Support-Site</a></li>
+                    
+                    <li><a href="/get-started/quick-start-video-cloud.html">Schnellstart zur Video Cloud</a></li>
+                    
+                    <li><a href="/get-started/step-step-video-cloud-studio-publishing-workflow.html">Schritt für Schritt: Workflow zur Veröffentlichung von Video Cloud</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud-analytics.html">Ausbildung: Einführung in Video Cloud Analytics</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud.html">Ausbildung: Einführung in die Video Cloud</a></li>
+                    
+                    <li><a href="/training/training-demand-video-cloud-basics.html">Ausbildung: Video Cloud-Grundlagen</a></li>
+                    
+                    <li><a href="/get-started/video-cloud-glossary.html">Video Cloud-Glossar</a></li>
+                    
+                    <li><a href="/training/video-cloud-studio-training-videos.html">Video Cloud Studio-Schulungsvideos</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/basics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Lernen Sie die Grundlagen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/basics/video-cloud-basics-activating-and-deactivating-video.html">Video aktivieren und deaktivieren</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-adding-user-video-cloud-account.html">Hinzufügen eines Benutzers zu einem Video Cloud-Konto</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html">Aufnehmen von Video-Poster- und Miniaturbildern</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-creating-manual-playlist.html">Erstellen einer manuellen Wiedergabeliste</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-creating-player.html">Spieler erstellen</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-creating-playlist-player.html">Erstellen eines Playlist-Players</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-creating-smart-playlist.html">Erstellen einer intelligenten Wiedergabeliste</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-determining-how-much-video-being-watched.html">Bestimmen, wie viel von einem Video angesehen wird</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-determining-which-videos-have-most-views.html">Bestimmen, welche Videos die meisten Aufrufe haben</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-editing-basic-video-properties.html">Bearbeiten grundlegender Videoeigenschaften</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-editing-video-properties-multiple-videos.html">Bearbeiten der Videoeigenschaften für mehrere Videos</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-organizing-videos-using-folders.html">Organisieren von Videos mithilfe von Ordnern</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-publishing-playlist-web.html">Veröffentlichen einer Wiedergabeliste im Web</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-publishing-single-video-web.html">Veröffentlichen eines einzelnen Videos im Web</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-styling-player.html">Styling eines Players</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html">Hochladen von Video-Poster- und Miniaturbildern</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-uploading-videos.html">Videos hochladen</a></li>
+                    
+                    <li><a href="/basics/video-cloud-basics-viewing-brightcove-system-status-page.html">Anzeigen der Brightcove-Systemstatusseite</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Allgemeine Informationen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/general/adding-facebook-button-brightcove-player.html">Hinzufügen eines Facebook-Like-Buttons zu einem Player</a></li>
+                    
+                    <li><a href="/general/best-practices-video-creating-transcoding-and-uploading-workflow.html">Empfohlene Vorgehensweise: Transcodieren und Hochladen</a></li>
+                    
+                    <li><a href="/general/china-delivery-overview.html">China Lieferübersicht</a></li>
+                    
+                    <li><a href="/general/content-delivery-options.html">Optionen für die Inhaltsübermittlung</a></li>
+                    
+                    <li><a href="/general/creating-audio-only-renditions-low-bandwidth-delivery.html">Erstellen von Nur-Audio-Wiedergaben</a></li>
+                    
+                    <li><a href="/general/domains-and-ports-must-be-accessible-video-cloud.html">Domänen und Ports, die zugänglich sein müssen</a></li>
+                    
+                    <li><a href="/general/drm-output-protection-settings.html">DRM-Ausgangsschutzeinstellungen</a></li>
+                    
+                    <li><a href="/general/enabling-longer-videos-youtube.html">Längere Videos in YouTube aktivieren</a></li>
+                    
+                    <li><a href="/general/making-your-video-content-indexable.html">Indizierbare Videoinhalte</a></li>
+                    
+                    <li><a href="/general/optimal-video-dimensions.html">Optimale Videodimensionen</a></li>
+                    
+                    <li><a href="/general/overview-context-aware-encoding.html">Übersicht über die kontextbezogene Codierung</a></li>
+                    
+                    <li><a href="/general/overview-digital-rights-management-drm-video-cloud.html">Überblick: Verwaltung digitaler Rechte (DRM)</a></li>
+                    
+                    <li><a href="/general/overview-dynamic-delivery.html">Übersicht über die dynamische Zustellung</a></li>
+                    
+                    <li><a href="/general/protecting-videos-hls-encryption.html">Schützen von Videos mit HLS-Verschlüsselung</a></li>
+                    
+                    <li><a href="/general/resetting-your-studio-password.html">Zurücksetzen Ihres Studio-Passworts</a></li>
+                    
+                    <li><a href="/general/sharing-videos-twitter-player-cards.html">Teilen von Videos mit Twitter-Spielerkarten</a></li>
+                    
+                    <li><a href="/general/studio-system-requirements.html">Studio-Systemanforderungen</a></li>
+                    
+                    <li><a href="/general/supported-video-and-audio-formats-codecs-and-containers.html">Unterstützte Video- und Audioformate</a></li>
+                    
+                    <li><a href="/general/tls-media-player-and-api-urls.html">TLS für Medien-, Player- und API-URLs</a></li>
+                    
+                    <li><a href="/general/video-cloud-architecture-overview.html">Überblick über die Video Cloud-Architektur</a></li>
+                    
+                    <li><a href="/general/video-cloud-studio-cookies.html">Video Cloud Studio-Cookies</a></li>
+                    
+                    <li><a href="/general/video-source-file-specifications-and-recommendations.html">Spezifikationen und Empfehlungen für Videoquelldateien</a></li>
+                    
+                    <li><a href="/general/working-360deg-videos.html">Arbeiten mit 360 ° -Videos</a></li>
+                    
+                    <li><a href="/general/working-audio-content.html">Arbeiten mit Nur-Audio-Inhalten</a></li>
+                    
+                    <li><a href="/general/working-multiple-video-cloud-accounts.html">Arbeiten mit mehreren Konten</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/media/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Verwaltung Videos</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/media/adding-audio-tracks-videos-using-media-module.html">Hinzufügen von Audiospuren zu Videos</a></li>
+                    
+                    <li><a href="/media/adding-captions-videos-using-media-module.html">Hinzufügen von Untertiteln zu Videos</a></li>
+                    
+                    <li><a href="/media/adding-chapters-video.html">Hinzufügen von Kapiteln zu einem Video</a></li>
+                    
+                    <li><a href="/media/capturing-poster-and-thumbnail-images.html">Erfassen von Poster- und Miniaturbildern</a></li>
+                    
+                    <li><a href="/media/configuring-video-availability.html">Videoverfügbarkeit konfigurieren</a></li>
+                    
+                    <li><a href="/media/creating-and-managing-playlists.html">Erstellen und Verwalten von Wiedergabelisten</a></li>
+                    
+                    <li><a href="/media/downloading-videos-video-cloud.html">Herunterladen von Videos aus der Video Cloud</a></li>
+                    
+                    <li><a href="/media/editing-video-properties-using-media-module.html">Videoeigenschaften bearbeiten</a></li>
+                    
+                    <li><a href="/media/editing-video-properties-using-quick-edit.html">Bearbeiten von Eigenschaften mit Quick Edit</a></li>
+                    
+                    <li><a href="/media/exporting-video-data.html">Videodaten exportieren</a></li>
+                    
+                    <li><a href="/media/getting-started-media-module.html">Erste Schritte mit dem Medienmodul</a></li>
+                    
+                    <li><a href="/media/how-search-videos-and-playlists-media-module.html">So suchen Sie nach Videos und Wiedergabelisten</a></li>
+                    
+                    <li><a href="/media/increasing-quality-poster-and-thumbnail-images.html">Verbesserung der Qualität von Posterbildern</a></li>
+                    
+                    <li><a href="/media/introduction-playlists.html">Einführung in Wiedergabelisten</a></li>
+                    
+                    <li><a href="/media/media-sharing-using-media-module.html">Teilen von Medien</a></li>
+                    
+                    <li><a href="/media/organizing-videos-using-folders.html">Organisieren von Videos mithilfe von Ordnern</a></li>
+                    
+                    <li><a href="/media/overview-adding-captions-video.html">Überblick: Hinzufügen von Untertiteln zu einem Video</a></li>
+                    
+                    <li><a href="/media/replacing-video-source-file.html">Ersetzen einer Videoquelldatei</a></li>
+                    
+                    <li><a href="/media/retranscoding-videos-using-media-module.html">Videos neu transkodieren</a></li>
+                    
+                    <li><a href="/media/setting-required-fields-videos.html">Erforderliche Felder festlegen</a></li>
+                    
+                    <li><a href="/media/styling-captions.html">Bildunterschriften stylen</a></li>
+                    
+                    <li><a href="/media/uploading-poster-and-thumbnail-images.html">Hochladen von Poster- und Miniaturbildern</a></li>
+                    
+                    <li><a href="/media/uploading-videos-using-upload-module.html">Videos hochladen</a></li>
+                    
+                    <li><a href="/media/uploading-videos-remote-urls.html">Hochladen von Videos Remote-URLs</a></li>
+                    
+                    <li><a href="/media/working-cue-points-media-module.html">Arbeiten mit Cue-Punkten</a></li>
+                    
+                    <li><a href="/media/working-multi-lingual-metadata.html">Arbeiten mit mehrsprachigen Metadaten</a></li>
+                    
+                    <li><a href="/media/working-remote-asset-videos.html">Arbeiten mit Remote-Asset-Videos</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Verwalten von Cloud-Playout-Kanälen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">Überblick: Cloud-Playout</a></li>
+                    
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Erstellen eines Cloud-Playout-Kanals</a></li>
+                    
+                    <li><a href="/cloud-playout/cloud-playout-add-content.html">Hinzufügen von Inhalten zu einem Cloud-Playout-Kanal</a></li>
+                    
+                    <li><a href="/cloud-playout/static-image-overlays.html">Statische Bildüberlagerungen</a></li>
+                    
+                    <li><a href="/cloud-playout/using-channel-actions.html">Verwenden von Kanalaktionen</a></li>
+                    
+                    <li><a href="/cloud-playout/adding-bumpers-to-vod.html">Hinzufügen von Stoßstangen zum Cloud-Playout</a></li>
+                    
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">Cloud-Playout monetarisieren</a></li>
+                    
+                    <li><a href="/cloud-playout/mid-roll-ad-insertion.html">Hinzufügen von Mid-Roll-Anzeigen zu einem Kanal</a></li>
+                    
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">Generieren des Channel Embed Codes</a></li>
+                    
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Anzeigen der Kanalausgabe und -analyse</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/players/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Verwaltung Spieler</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">Thumbnail-Suche hinzufügen</a></li>
+                    
+                    <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">Konfigurieren eines Player-Overlays</a></li>
+                    
+                    <li><a href="/players/configuring-playlist-endscreen-using-plugin.html">Konfigurieren eines Playlist-Endbildschirms</a></li>
+                    
+                    <li><a href="/players/configuring-adobe-analytics-event-tracking.html">Konfigurieren der Adobe Analytics-Ereignisverfolgung</a></li>
+                    
+                    <li><a href="/players/configuring-google-analytics-event-tracking.html">Konfigurieren der Google Analytics-Ereignisverfolgung</a></li>
+                    
+                    <li><a href="/players/configuring-player-advertising-using-players-module.html">Spielerwerbung konfigurieren</a></li>
+                    
+                    <li><a href="/players/configuring-player-content-restrictions.html">Konfigurieren von Einschränkungen für Player-Inhalte</a></li>
+                    
+                    <li><a href="/players/configuring-player-controls.html">Player-Steuerelemente konfigurieren</a></li>
+                    
+                    <li><a href="/players/configuring-player-endscreen.html">Konfigurieren des Player-Endbildschirms</a></li>
+                    
+                    <li><a href="/players/configuring-player-localization.html">Konfigurieren der Player-Lokalisierung</a></li>
+                    
+                    <li><a href="/players/configuring-player-playback-properties.html">Konfigurieren der Player-Wiedergabeeigenschaften</a></li>
+                    
+                    <li><a href="/players/configuring-player-plugins.html">Player-Plugins konfigurieren</a></li>
+                    
+                    <li><a href="/players/configuring-social-properties-player.html">Konfigurieren der sozialen Eigenschaften</a></li>
+                    
+                    <li><a href="/players/generating-player-embed-code.html">Generieren von Player Embed Code</a></li>
+                    
+                    <li><a href="/players/getting-started-players-module.html">Erste Schritte mit dem Players-Modul</a></li>
+                    
+                    <li><a href="/players/setting-player-information-properties.html">Festlegen der Eigenschaften der Player-Informationen</a></li>
+                    
+                    <li><a href="/players/setting-player-properties.html">Festlegen der Player-Eigenschaften</a></li>
+                    
+                    <li><a href="/players/setting-player-update-mode-and-version.html">Einstellen des Player-Update-Modus</a></li>
+                    
+                    <li><a href="/players/styling-players.html">Styling-Spieler</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/publish/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Veröffentlichen von Videos und Playern</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/publish/adding-3play-media-interactive-transcript-video.html">Hinzufügen eines interaktiven 3Play Media-Transkripts</a></li>
+                    
+                    <li><a href="/publish/adding-application-id-player-embed-code.html">Hinzufügen einer Anwendungs-ID zum Einbettungscode</a></li>
+                    
+                    <li><a href="/publish/adding-brightcove-player-facebook-fan-page.html">Hinzufügen eines Spielers zu einer Facebook-Fanseite</a></li>
+                    
+                    <li><a href="/publish/changing-video-player-without-changing-embed-code.html">Ändern eines Videos in einem Player</a></li>
+                    
+                    <li><a href="/publish/choosing-correct-embed-code.html">Auswahl des richtigen Einbettungscodes</a></li>
+                    
+                    <li><a href="/publish/creating-and-publishing-high-quality-screencasts.html">Erstellen und Veröffentlichen hochwertiger Screencasts</a></li>
+                    
+                    <li><a href="/publish/deep-linking.html">Deep Linking</a></li>
+                    
+                    <li><a href="/publish/driving-video-views-through-email.html">Fahren von Videoansichten per E-Mail</a></li>
+                    
+                    <li><a href="/publish/dynamically-assigning-videos-player.html">Dynamisches Zuweisen von Videos zu einem Player</a></li>
+                    
+                    <li><a href="/publish/embedding-brightcove-player-google-sites-page.html">Einbetten eines Players in eine Google Sites-Seite</a></li>
+                    
+                    <li><a href="/publish/publishing-brightcove-player-wordpress-page.html">Veröffentlichen eines Players auf einer WordPress-Seite</a></li>
+                    
+                    <li><a href="/publish/publishing-brightcove-players-facebook-instant-articles.html">Veröffentlichen von Spielern in Facebook Instant Articles</a></li>
+                    
+                    <li><a href="/publish/publishing-brightcove-players-joomla.html">Spieler in Joomla . veröffentlichen</a></li>
+                    
+                    <li><a href="/publish/publishing-video-email.html">Veröffentlichen eines Videos per E-Mail</a></li>
+                    
+                    <li><a href="/publish/publishing-videos-and-playlists-media-module.html">Veröffentlichen von Videos und Wiedergabelisten</a></li>
+                    
+                    <li><a href="/publish/publishing-videos-page-experience.html">Veröffentlichen von Videos für eine In-Page-Erfahrung</a></li>
+                    
+                    <li><a href="/publish/step-step-using-players-module-create-and-publish-player.html">Schritt für Schritt: Erstellen und Veröffentlichen eines Players</a></li>
+                    
+                    <li><a href="/publish/using-multiple-players-one-page.html">Verwenden mehrerer Spieler auf einer Seite</a></li>
+                    
+                    <li><a href="/publish/using-reference-ids.html">Referenz-IDs verwenden</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/social/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Soziales Teilen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/social/creating-social-media-publishing-destinations.html">Erstellen von Veröffentlichungszielen</a></li>
+                    
+                    <li><a href="/social/creating-video-clip-using-brightcove-social.html">Erstellen eines Videoclips</a></li>
+                    
+                    <li><a href="/social/getting-started-brightcove-social.html">Erste Schritte mit Social</a></li>
+                    
+                    <li><a href="/social/publishing-videos-social-media-platforms.html">Veröffentlichen von Videos in sozialen Medien</a></li>
+                    
+                    <li><a href="/social/reviewing-social-analytics.html">Überprüfen von Social Analytics</a></li>
+                    
+                    <li><a href="/social/reviewing-social-engagement-analytics.html">Überprüfung der Analyse des sozialen Engagements</a></li>
+                    
+                    <li><a href="/social/reviewing-social-views-analytics.html">Überprüfen von Social Views Analytics</a></li>
+                    
+                    <li><a href="/social/setting-privacy-status-video.html">Festlegen des Datenschutzstatus für ein Video</a></li>
+                    
+                    <li><a href="/social/using-auto-sync-synchronize-videos-social-media-accounts.html">Verwenden der automatischen Synchronisierung</a></li>
+                    
+                    <li><a href="/social/viewing-videos-published-social-media.html">Anzeigen von veröffentlichten Videos</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/campaign/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Marketing-Automatisierung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/campaign/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Einstieg</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/campaign/get-started/getting-started-campaign-module.html">Erste Schritte mit der Kampagne</a></li>
+                            
+                            <li><a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a></li>
+                            
+                            <li><a href="/campaign/get-started/overview-video-content-types.html">Übersicht über Videoinhaltstypen</a></li>
+                            
+                            <li><a href="/campaign/get-started/using-hud.html">Verwenden der Chrome-Erweiterung</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/campaign/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Allgemeine Informationen</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/campaign/general/campaign-fields-and-data-definitions.html">Kampagnenfelder und Datendefinitionen</a></li>
+                            
+                            <li><a href="/campaign/general/configuring-campaign-settings.html">Kampagneneinstellungen konfigurieren</a></li>
+                            
+                            <li><a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a></li>
+                            
+                            <li><a href="/campaign/general/creating-campaign-lead-form.html">Erstellen eines Kampagnen-Lead-Formulars</a></li>
+                            
+                            <li><a href="/campaign/general/how-campaign-module-identifies-viewers.html">Wie Kampagne Zuschauer identifiziert</a></li>
+                            
+                            <li><a href="/campaign/general/how-vbs-calculated.html">Wie der Video-Benchmark-Score berechnet wird</a></li>
+                            
+                            <li><a href="/campaign/general/overview-video-content-types.html">Übersicht über Videoinhaltstypen</a></li>
+                            
+                            <li><a href="/campaign/general/publishing-video-email-using-campaign-module.html">Veröffentlichen eines Videos per E-Mail</a></li>
+                            
+                            <li><a href="/campaign/general/using-custom-metrics-and-events.html">Verwenden von benutzerdefinierten Metriken und Ereignissen</a></li>
+                            
+                            <li><a href="/campaign/general/viewing-player-events-campaign-module.html">Anzeigen von Spielerereignissen</a></li>
+                            
+                            <li><a href="/campaign/general/viewing-video-activity.html">Anzeigen von Videoaktivitäten</a></li>
+                            
+                            <li><a href="/campaign/general/viewing-viewer-profile-information.html">Anzeigen von Viewer-Profilinformationen</a></li>
+                            
+                            <li><a href="/campaign/general/working-utm-fields-campaign-module.html">Arbeiten mit UTM-Feldern</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/campaign/integrations/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Integrationen</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                          <li>
+                            <a href="/campaign/integrations/eloqua/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Eloqua</a>
+                            <ul class="sidenav-subsubmenu" style="display:none;">
+                              
+                              <li><a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">Erstellen von benutzerdefinierten Lead-Formularen</a></li>
+                              
+                              <li><a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Eloqua Integrationstesthandbuch</a></li>
+                              
+                              <li><a href="/campaign/integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html">Einbetten eines Videos in eine Landing Page</a></li>
+                              
+                              <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Integration mit Oracle Eloqua</a></li>
+                              
+                            </ul>
+                          </li>
+                            
+                          <li>
+                            <a href="/campaign/integrations/hubspot/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;HubSpot</a>
+                            <ul class="sidenav-subsubmenu" style="display:none;">
+                              
+                              <li><a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">Erstellen von benutzerdefinierten Lead-Formularen</a></li>
+                              
+                              <li><a href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot REST API-Testleitfaden</a></li>
+                              
+                              <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">Integration mit HubSpot (clientseitige APIs)</a></li>
+                              
+                              <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Integration mit HubSpot (REST-APIs)</a></li>
+                              
+                            </ul>
+                          </li>
+                            
+                          <li>
+                            <a href="/campaign/integrations/marketo/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Marketo</a>
+                            <ul class="sidenav-subsubmenu" style="display:none;">
+                              
+                              <li><a href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">Erstellen von benutzerdefinierten Lead-Formularen</a></li>
+                              
+                              <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Integration mit Marketo (Munchkin)</a></li>
+                              
+                              <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Integration mit Marketo (REST-APIs)</a></li>
+                              
+                              <li><a href="/campaign/integrations/marketo/marketo-rest-integration-testing-guide.html">Testhandbuch für Marketo REST-Integration</a></li>
+                              
+                            </ul>
+                          </li>
+                            
+                          <li>
+                            <a href="/campaign/integrations/non-map/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Nicht-MAP</a>
+                            <ul class="sidenav-subsubmenu" style="display:none;">
+                              
+                              <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">Erstellen von benutzerdefinierten Integrationen</a></li>
+                              
+                              <li><a href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">Integration mit Single Sign-On</a></li>
+                              
+                              <li><a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">Verwenden von Campaign zum Verfolgen von Zuschauern</a></li>
+                              
+                            </ul>
+                          </li>
+                            
+                          <li>
+                            <a href="/campaign/integrations/salesforce/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Zwangsversteigerung</a>
+                            <ul class="sidenav-subsubmenu" style="display:none;">
+                              
+                              <li><a href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html">Erstellen von benutzerdefinierten Lead-Formularen</a></li>
+                              
+                              <li><a href="/campaign/integrations/salesforce/creating-salesforce-object-pardot.html">Erstellen eines Salesforce-Objekts für Pardot</a></li>
+                              
+                              <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">Integration mit Salesforce</a></li>
+                              
+                            </ul>
+                          </li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/campaign/admin/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Kampagne verwalten</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportieren von Daten aus Campaign</a></li>
+                            
+                            <li><a href="/campaign/admin/exporting-gallery-lead-data.html">Exportieren von Galerie-Lead-Daten</a></li>
+                            
+                            <li><a href="/campaign/admin/managing-viewer-data.html">Viewer-Daten verwalten</a></li>
+                            
+                            <li><a href="/campaign/admin/troubleshooting-campaign-issues.html">Fehlerbehebung bei Kampagnenproblemen</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/campaign/develop/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Entwickler</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/campaign/develop/overview-audience-api.html">Überblick: Zielgruppen-API</a></li>
+                            
+                            <li><a href="/campaign/develop/reference.html">Zielgruppen-API-Referenz</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Analytics überprüfen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/analytics/analytics-module-ui-glossary.html">Glossar der Benutzeroberfläche des Analytics-Moduls</a></li>
+                    
+                    <li><a href="/analytics/analytics-report-reference.html">Referenz zu Analytics-Berichten</a></li>
+                    
+                    <li><a href="/analytics/calculating-video-engagement-score.html">Berechnen des Video-Engagement-Scores</a></li>
+                    
+                    <li><a href="/analytics/creating-custom-analytics-reports.html">Erstellen von benutzerdefinierten Analyseberichten</a></li>
+                    
+                    <li><a href="/analytics/engagement-report-reference.html">Referenz zum Engagement-Bericht</a></li>
+                    
+                    <li><a href="/analytics/exporting-data-analytics-module.html">Exportieren von Daten</a></li>
+                    
+                    <li><a href="/analytics/faq-analytics-module.html">FAQ: Analytics-Modul</a></li>
+                    
+                    <li><a href="/analytics/getting-started-analytics-module.html">Erste Schritte mit dem Analytics-Modul</a></li>
+                    
+                    <li><a href="/analytics/how-search-videos-analytics-module.html">So suchen Sie nach Videos</a></li>
+                    
+                    <li><a href="/analytics/managing-scheduled-reports.html">Geplante Berichte verwalten</a></li>
+                    
+                    <li><a href="/analytics/performance-report-reference.html">Referenz zum Leistungsbericht</a></li>
+                    
+                    <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">Überprüfen von Spielerereignissen in Google Analytics</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/admin/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Konten verwalten</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/admin/authenticating-studio-users-using-single-sign.html">Authentifizieren von Studio-Benutzern mit SSO</a></li>
+                    
+                    <li><a href="/admin/configuring-language-settings.html">Spracheinstellungen konfigurieren</a></li>
+                    
+                    <li><a href="/admin/configuring-server-side-ad-settings.html">Konfigurieren der serverseitigen Anzeigeneinstellungen</a></li>
+                    
+                    <li><a href="/admin/creating-custom-metadata-fields.html">Benutzerdefinierte Metadatenfelder erstellen</a></li>
+                    
+                    <li><a href="/admin/creating-ingest-profiles-context-aware-encoding.html">Erstellen von Aufnahmeprofilen für die kontextbezogene Codierung</a></li>
+                    
+                    <li><a href="/admin/creating-ingest-profiles-dynamic-delivery.html">Erstellen von Aufnahmeprofilen für die dynamische Zustellung</a></li>
+                    
+                    <li><a href="/admin/ingest-profiles-best-practices.html">Best Practices für die Aufnahme von Profilen</a></li>
+                    
+                    <li><a href="/admin/managing-account-information.html">Kontoinformationen verwalten</a></li>
+                    
+                    <li><a href="/admin/managing-account-settings.html">Kontoeinstellungen verwalten</a></li>
+                    
+                    <li><a href="/admin/managing-api-authentication-credentials.html">Verwalten von API-Authentifizierungsanmeldeinformationen</a></li>
+                    
+                    <li><a href="/admin/managing-ingest-profiles.html">Verwalten von Aufnahmeprofilen</a></li>
+                    
+                    <li><a href="/admin/managing-media-sharing-settings.html">Verwalten der Einstellungen für die Medienfreigabe</a></li>
+                    
+                    <li><a href="/admin/managing-profile-information.html">Profilinformationen verwalten</a></li>
+                    
+                    <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">Standardaufnahmeprofile (DD &amp; CAE)</a></li>
+                    
+                    <li><a href="/admin/managing-users.html">Benutzer verwalten</a></li>
+                    
+                    <li><a href="/admin/using-directed-migration-tool-migrate-brightcove-smart-players.html">Verwenden des Tools für die gezielte Migration</a></li>
+                    
+                    <li><a href="/admin/viewing-billing-information.html">Anzeigen von Rechnungsinformationen</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Ausbildung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/online-training-courses.html">Alle Online-Schulungen</a></li>
+                    
+                    <li><a href="/training/register-training.html">Registrieren Sie sich für ein von einem Kursleiter geführtes Training</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud.html">Ausbildung: Einführung in die Video Cloud</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-video-cloud-analytics.html">Ausbildung: Einführung in Video Cloud Analytics</a></li>
+                    
+                    <li><a href="/training/training-demand-video-cloud-basics.html">Ausbildung: Video Cloud-Grundlagen</a></li>
+                    
+                    <li><a href="/training/video-cloud-studio-training-videos.html">Video Cloud Studio-Schulungsvideos</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Brightcove University Schulungskurse</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Versionshinweise</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/video-cloud-studio-release-notes.html">Versionshinweise zu Video Cloud Studio</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Unterstützung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Brightcove-Systemstatusseite</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Öffnen eines Support-Falls</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">Setzen Sie Ihr Support-Portal-Passwort zurück</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">Wenden Sie sich an den Vertrieb</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
 
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
 <!-- in-page navigation for narrow screens -->
 <details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
+  <summary><h6 class="toc">Seiteninhalt</h6></summary>
   <nav id="centered_toc"></nav>
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
 <article class="bcls-article">
-  <h1>So suchen Sie im Medienmodul nach Videos und Wiedergabelisten</h1>
-  <summary>In diesem Abschnitt erfahren Sie, wie Sie mithilfe des Medienmoduls nach Videos suchen.</summary>
+  <h1>So suchen Sie in der Medienmodul nach Videos und Playlists</h1>
+  <summary>In diesem Thema erfahren Sie, wie Sie mit dem Medienmodul nach Videos suchen.</summary>
   <section class="bcls-section">
     <p>Das Medienmodul bietet a <strong>Suche...</strong> Feld, in dem Videos in einem Video Cloud-Konto gesucht werden können.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-search-videos.png"/></figure>
-    <p>Die folgenden Suchvorgänge stehen zur Verfügung:</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-search-videos.png" /></figure>
+    <p>Die folgenden Arten von Suchen können durchgeführt werden:</p>
     <ul>
       <li><a href="#videosearch">Videosuche</a></li>
-      <li><a href="#playlistsearch">Playlist-Suche</a></li>
+      <li><a href="#playlistsearch">Suche nach Wiedergabelisten</a></li>
       <li><a href="#advsearch">Erweiterte Suche</a></li>
-      <li><a href="#savedsearch">Suche gespeichert</a></li>
+      <li><a href="#savedsearch">Gespeicherte Suche</a></li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="videosearch">Videosuche</h2>
     <h3>Terminologie</h3>
-    <p>In diesem Abschnitt bedeutet der Begriff <strong>genau</strong> , dass die Suchzeichenfolge in Anführungszeichen eingeschlossen ist. Beispiel:</p>
+    <p>In diesem Abschnitt wird der Begriff <strong>genau</strong> bedeutet, dass die Suchzeichenfolge in Anführungszeichen eingeschlossen ist. Beispielsweise:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Exakte Suche</th>
-          <th>Nicht-exakte Suche</th>
+          <th>Genaue Suche</th>
+          <th>Nicht exakte Suche</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
@@ -944,10 +737,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
       </tbody>
     </table>
-    <p>Beachten Sie, dass „genau“ bedeutet, dass alle Begriffe innerhalb der Anführungszeichen übereinstimmen müssen, aber möglicherweise nicht genau übereinstimmen. Beispielsweise <code translate="No">"running water"</code> könnte eine Suche nach ein Video zurückgeben, das den Ausdruck <code translate="No">water runs downhill</code> im Titel oder in der Beschreibung enthält.</p>
-    <p>Um die Videos in Ihrem Konto zu durchsuchen, geben Sie einen Suchbegriff in die <strong>Suche ein...</strong> -Feld. Standardmäßig wird die Suche für Videos durchgeführt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-search-options.png"/></figure>
-    <p>Um nach mehreren Video-IDs zu suchen, verwenden Sie die folgende Syntax: <strong>id:xxx id:xxx id:xxx</strong>. Beispiel: <code translate="No">id:5985323381001 id:5715142164001</code>.</p>
+    <p>Beachten Sie, dass "genau" bedeutet, dass alle Begriffe in Anführungszeichen übereinstimmen müssen, aber möglicherweise nicht genau übereinstimmen. Zum Beispiel eine Suche nach <code translate="No">"running water"</code> könnte ein Video zurückgeben, das die Phrase hat <code translate="No">water runs downhill</code> im Titel oder in der Beschreibung.</p>
+    <p>Geben Sie einen Suchbegriff in das Feld ein, um die Videos in Ihrem Konto zu durchsuchen <strong>Suche...</strong> Feld. Standardmäßig wird die Suche für Videos durchgeführt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-search-options.png" /></figure>
+    <p>Verwenden Sie die folgende Syntax, um nach mehreren Video-IDs zu suchen: <strong>id: xxx id: xxx id: xxx</strong>. Beispielsweise, <code translate="No">id:5985323381001 id:5715142164001</code>.</p>
     <p>Es ist auch möglich zu suchen <a href="#playlistsearch">Wiedergabelisten</a> oder eingeben <a href="#advsearch">erweiterte Suchbegriffe</a>.</p>
     <p>Die folgenden Videofelder werden durchsucht:</p>
     <ul>
@@ -959,7 +752,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Referenz ID (<code translate="No">reference_id</code>)</li>
       <li>Benutzerdefinierte Felder (<code translate="No">custom_fields</code> oder <code translate="No">{field_name}</code>)</li>
     </ul>
-    <p>Die Unterstützung von Abfragen für Videofelder ist unterschiedlich. Abfragen mit Wortteilen und <a href="#stemming">Wortstämmen</a> werden von einigen, aber nicht allen Feldern unterstützt.</p>
+    <p>Die Abfrageunterstützung für Videofelder ist unterschiedlich. Einige Felder unterstützen die Suche nach Teilwörtern und <a href="#stemming">Eindämmung der Suche</a> und manche nicht.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -972,45 +765,45 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <tbody class="bcls-table__body">
         <tr>
           <td>Name und Beschreibungen</td>
-          <td><strong>exakte</strong> Übereinstimmungen für ein oder mehrere ganze Wörter <a href="#stemming">;</a> Unterstützung</td>
-          <td>keine Unterstützung von Wortteilen</td>
+          <td><strong>genau</strong> Übereinstimmungen für ein oder mehrere ganze Wörter; <a href="#stemming">Stemming</a> Unterstützung</td>
+          <td>keine Partial-Wort-Unterstützung</td>
           <td><ul>
-              <li><code translate="No">name:"great blue"</code> passt zusammen <code translate="No">"Great Blue Heron"</code></li>
-              <li><code translate="No">name:"great blu"</code> wird <strong>nicht</strong> übereinstimmen <code translate="No">"Great Blue Heron"</code></li>
-              <li><code translate="No">name:great blu</code> passt zusammen <code translate="No">"Great Blue Heron"</code></li>
+              <li><code translate="No">name:"great blue"</code> wird übereinstimmen <code translate="No">"Great Blue Heron"</code></li>
+              <li><code translate="No">name:"great blu"</code> werden <strong>nicht</strong> Spiel <code translate="No">"Great Blue Heron"</code></li>
+              <li><code translate="No">name:great blu</code> wird übereinstimmen <code translate="No">"Great Blue Heron"</code></li>
             </ul></td>
         </tr>
         <tr>
-          <td>Video-ID</td>
-          <td>nur exakte Übereinstimmungen</td>
-          <td>keine Unterstützung für partielles Wort oder <a href="#stemming">Stemming</a> </td>
-          <td><strong>5591838791001</strong> passt Video mit der ID 5591838791001 <strong>5591838791</strong> <strong>nicht</strong> mit diesem Video</td>
+          <td>Video ID</td>
+          <td>nur genaue Übereinstimmungen</td>
+          <td>kein Teilwort oder <a href="#stemming">Stemming</a> Unterstützung</td>
+          <td><strong>5591838791001</strong> wird das Video mit der ID 5591838791001 abgleichen <strong>5591838791</strong> werden <strong>nicht</strong> passe das Video an</td>
         </tr>
         <tr>
-          <td>Tags</td>
+          <td>Stichworte</td>
           <td>passt nur für ganze Wörter</td>
-          <td>keine Unterstützung für partielles Wort oder <a href="#stemming">Stemming</a> </td>
-          <td><code translate="No">tags:publ</code> passt <strong>keine</strong> Videos mit Tag <code translate="No">"public"</code></td>
+          <td>kein Teilwort oder <a href="#stemming">Stemming</a> Unterstützung</td>
+          <td><code translate="No">tags:publ</code> werden <strong>nicht</strong> Videos mit Tag abgleichen <code translate="No">"public"</code></td>
         </tr>
         <tr>
-          <td>Reference ID</td>
-          <td>Teilzeichenfolgenübereinstimmungen, die mit der Ref-ID (die ersten 3 Zeichen) beginnen, und Ganzzeichenfolgenübereinstimmungen</td>
-          <td>keine unvollständigen Zeichenfolgen, die nicht mit der Ref-ID beginnen</td>
+          <td>Referenz ID</td>
+          <td>partielle String-Übereinstimmungen, die mit der Ref-ID (ersten 3 Zeichen) beginnen und die ganze Zeichenfolge übereinstimmen</td>
+          <td>keine partiellen Strings, die nicht mit der Ref ID beginnen</td>
           <td><ul>
-              <li><code translate="No">reference_id:myv</code> stimmt Video mit Referenz-ID "myvid1" überein</li>
+              <li><code translate="No">reference_id:myv</code> stimmt mit Video mit der Referenz-ID „myvid1" überein</li>
               <li><code translate="No">reference_id:"myv"</code> tut <strong>nicht</strong> Video mit Referenz-ID abgleichen <code translate="No">"myvid1"</code></li>
             </ul></td>
         </tr>
         <tr>
           <td>Datumsfelder</td>
           <td>&nbsp;</td>
-          <td>nicht mit dem Textfeld durchsuchbar; durchsuchbar mit erweiterter Suche</td>
+          <td>nicht über das Textfeld durchsuchbar, durchsuchbar mit der erweiterten Suche</td>
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td>Benutzerdefinierte Felder mit individuellem Text</td>
+          <td>Individuelle benutzerdefinierte Textfelder</td>
           <td>passt zu einem oder mehreren ganzen Wörtern und <a href="#stemming">Stemming</a> Unterstützung; zum <strong>genau</strong> Suchzeichenfolgen, nur Ganzwortübereinstimmungen</td>
-          <td>keine Unterstützung von Wortteilen</td>
+          <td>keine Partial-Wort-Unterstützung</td>
           <td><ul>
               <li><code translate="No">custom_fields:place</code> wird Video mit einem benutzerdefinierten Feldwert von abgleichen <code translate="No">"places"</code></li>
               <li><code translate="No">custom_fields:plac</code> werden <strong>nicht</strong> Video mit einem benutzerdefinierten Feldwert von abgleichen <code translate="No">"places"</code></li>
@@ -1018,11 +811,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </ul></td>
         </tr>
         <tr>
-          <td>Benutzerdefinierte Felder mit individueller Liste</td>
-          <td>passt zu einem oder mehreren ganzen Wörtern und <a href="#stemming">Stemming</a> Unterstützung; <strong>genau</strong> Suchstiche, nur Ganzwortübereinstimmungen</td>
-          <td>keine Unterstützung von Wortteilen</td>
+          <td>Benutzerdefinierte Felder für einzelne Listen</td>
+          <td>passt zu einem oder mehreren ganzen Wörtern und <a href="#stemming">Stemming</a> Unterstützung; <strong>genau</strong> Suchstiche, nur Wortübereinstimmungen</td>
+          <td>keine Partial-Wort-Unterstützung</td>
           <td><ul>
-              <li><code translate="No">topic:place</code> Das Video wird mit einem benutzerdefinierten Feldwert vom Typ "Themenliste" für "Orte" abgeglichen.</li>
+              <li><code translate="No">topic:place</code> passt Video mit einem benutzerdefinierten Feldwert des Themenlistentyps von „places“</li>
               <li><code translate="No">topic:plac</code> werden <strong>nicht</strong> Video mit einem benutzerdefinierten Feldwert vom Typ Themenliste abgleichen von <code translate="No">"places"</code></li>
               <li><code translate="No">topic:"place"</code> werden <strong>nicht</strong> Video mit einem benutzerdefinierten Feldwert vom Typ Themenliste abgleichen von <code translate="No">"places"</code></li>
             </ul></td>
@@ -1030,19 +823,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </tbody>
     </table>
     <div class="BCL-subsection">
-      <h3 id="stemming">Was ist unter Erkennung von Wortstämmen zu verstehen?</h3>
-      <p>Videofelder, die das Erkennen von Wortstämmen unterstützen, erlauben die Suche nach Wörtern mit demselben Wortstamm wie das Suchwort. Darüber hinaus unterstützt das Stemming nur die Eingabe ganzer Wörter, nicht partieller Wörter:</p>
+      <h3 id="stemming">Was ist Stemming?</h3>
+      <p>Videofelder, die das Stemming von Rückgabewörtern unterstützen, die den Stamm des Suchworts gemeinsam haben. Darüber hinaus unterstützt Stemming die Eingabe nur ganzer Wörter, nicht von Teilwörtern:</p>
       <ul>
-        <li>Beispiel 1: Suchen auf <code translate="No">running</code> gibt Ergebnisse zurück, die Folgendes enthalten: <code translate="No">running</code> , <code translate="No">run</code> , <code translate="No">runs</code></li>
-        <li>Beispiel 2: Bei der Suche nach <code translate="No">vid</code> werden keine Ergebnisse zurückgegeben, die Folgendes enthalten <code translate="No">video</code></li>
+        <li>Beispiel 1: Bei der Suche nach <code translate="No">running</code> werden Ergebnisse zurückgegeben, die Folgendes enthalten: <code translate="No">running</code>, <code translate="No">run</code>, <code translate="No">runs</code></li>
+        <li>Beispiel 2: Suchen auf <code translate="No">vid</code> gibt keine Ergebnisse zurück, die Folgendes enthalten: <code translate="No">video</code></li>
       </ul>
     </div>
     <div class="BCL-subsection">
       <h3>Allgemeine Regeln</h3>
       <ul>
-        <li>Wenn Sie eine exakte Übereinstimmung wünschen, geben Sie die Zeichenfolge zwischen doppelten Anführungszeichen ("...") ein.</li>
-        <li>Video Cloud geht automatisch vom logischen Operator OR zwischen Wörtern aus.</li>
-        <li>Bei der Suche ist die Groß-/Kleinschreibung zu beachten.</li>
+        <li>Fügen Sie für eine genaue Übereinstimmung Zeichenfolgen in Anführungszeichen ein</li>
+        <li>Standardmäßig nimmt Video Cloud einen logischen ODER-Operator zwischen Wörtern an</li>
+        <li>Bei der Suche wird die Groß- und Kleinschreibung nicht berücksichtigt</li>
       </ul>
     </div>
     <div class="BCL-subsection">
@@ -1051,37 +844,37 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <thead class="bcls-table__head">
           <tr>
             <th width="236">Suchbegriff</th>
-            <th width="388">Ergebnis</th>
+            <th width="388">Kehrt zurück</th>
           </tr>
         </thead>
         <tbody class="bcls-table__body">
           <tr>
             <td><code translate="No">financial planning</code></td>
-            <td>alle Videos, die <code translate="No">financial</code> OR enthalten <code translate="No">planning</code></td>
+            <td>alle Videos, die enthalten <code translate="No">financial</code> ODER <code translate="No">planning</code></td>
           </tr>
           <tr>
             <td><code translate="No">"financial planning"</code></td>
-            <td>alle Videos, die <code translate="No">financial</code> AND enthalten <code translate="No">planning</code>. Beachten Sie, dass die Anführungszeichen sicherstellen, dass übereinstimmende Videos alle Begriffe haben, aber möglicherweise nicht die genauen Begriffe - zum Beispiel können die Suchbegriffe hier auch Videos mit <code translate="No">finance</code> und <code translate="No">plan</code> im Titel zurückgeben oder Beschreibung</td>
+            <td>alle Videos, die enthalten <code translate="No">financial</code> UND <code translate="No">planning</code>. Beachten Sie, dass die Anführungszeichen sicherstellen, dass übereinstimmende Videos alle Begriffe enthalten, möglicherweise jedoch nicht die genauen Begriffe. Beispielsweise können die Suchbegriffe hier auch Videos mit zurückgeben <code translate="No">finance</code> und <code translate="No">plan</code> im Titel oder in der Beschreibung</td>
           </tr>
           <tr>
-            <td>walk</td>
-            <td>alle Videos, die <strong>walk</strong>, <strong>walks</strong> oder <strong>walking</strong> enthalten.</td>
+            <td>gehen</td>
+            <td>alle Videos, die <strong>Gehen</strong>, <strong>Spaziergänge</strong> oder <strong>Gehen</strong> enthalten</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
   <section class="bcls-section">
-    <h2 id="playlistsearch">Playlist-Suche</h2>
+    <h2 id="playlistsearch">Suche nach Wiedergabelisten</h2>
     <p>Geben Sie einen Suchbegriff in das Feld ein, um die Wiedergabelisten in Ihrem Konto zu durchsuchen <strong>Suche...</strong> Feld und klicken Sie dann auf das <strong>Wiedergabelisten</strong> Möglichkeit.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-playlist-search.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-playlist-search.png" /></figure>
     <p>Eine Liste der Wiedergabelisten wird im Hauptteil der Seite angezeigt.</p>
   </section>
   <section class="bcls-section">
     <h2 id="advsearch">Erweiterte Suche</h2>
-    <p>Die erweiterte Suche ermöglicht die Suche nach Werten in bestimmten Feldern mit Suchkennzeichnern. Sie können beispielsweise angeben, dass nur die Felder mit dem Video-Namen oder Video-Tag durchsucht werden. Sie können auch Videos mit bestimmten Begriffen ausschließen. Sie können beispielsweise nach Videos suchen, die <strong>sports</strong> enthalten und gleichzeitig Videos ausschließen, die <strong>baseball</strong> enthalten. Klicken Sie auf den Link <strong>More Search Options</strong>, um das Dialogfeld „Advanced Search“ zu öffnen.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Erweiterte Suche" src="/assets/images/media/node15529-advanced-search.png"/></figure>
-    <p>Verwenden Sie folgende Optionen, um die Suche anzupassen:</p>
+    <p>Mit der erweiterten Suche können Sie mithilfe von Suchqualifizierern nach Werten in bestimmten Feldern suchen. Beispielsweise können Sie festlegen, dass nur die Videonamen- oder Tag-Felder durchsucht werden sollen. Sie können Videos auch mit bestimmten Begriffen ausschließen. Sie können beispielsweise nach Videos suchen, die enthalten <strong>Sport</strong> aber schließen Sie die Videos aus, die enthalten <strong>Baseball</strong>. Klicken Sie auf, um das Dialogfeld Erweiterte Suche zu öffnen <strong>Weitere Suchoptionen</strong> Verknüpfung.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Advanced Search" src="/assets/images/media/node15529-advanced-search.png" /></figure>
+    <p>Die folgenden Kriterien können verwendet werden, um die Suche anzupassen:</p>
     <ul>
       <li><a href="#tags">Stichworte</a></li>
       <li><a href="#daterange">Datumsbereich</a></li>
@@ -1090,112 +883,112 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#playable">Spielbar</a></li>
     </ul>
     <div id="tags" class="BCL-subsection">
-      <h3>Tags</h3>
-      <p>Verwenden Sie die erweiterte Suche, um Videos basierend auf dem Videotag zu suchen. Bei der Suche nach Tags haben Sie drei Optionen:</p>
+      <h3>Stichworte</h3>
+      <p>Die erweiterte Suche kann verwendet werden, um Videos basierend auf dem Video-Tag zurückzugeben. Bei der Suche mit Tags gibt es drei Möglichkeiten:</p>
       <ul>
-        <li><strong>Any</strong> – gibt Videos mit einem beliebigen Tag zurück (OR).</li>
-        <li><strong>All</strong> – gibt Videos mit allen Tags zurück (AND).</li>
-        <li><strong>None</strong> – gibt Videos zurück, die keines dieser Tags enthalten.</li>
+        <li><strong>Irgendein</strong> - Videos mit einem der Tags zurückgeben (ODER)</li>
+        <li><strong>Alle</strong> - Videos zurückgeben werden alle Tags (UND)</li>
+        <li><strong>Keiner</strong> - Geben Sie Videos zurück, die keine dieser Tags haben</li>
       </ul>
       <p>In diesem Beispiel werden alle Videos zurückgegeben, die mit einem der beiden Tags versehen sind <code translate="No">birds</code> oder <code translate="No">animals</code>.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-tag-example.png"/></figure>
-      <p>Zusätzliche Tags-Kriterien können über die Schaltflächen Löschen / Hinzufügen eingegeben werden (<img alt="" src="/assets/images/media/node15529-delete-add.png"/>).</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-tag-example.png" /></figure>
+      <p>Zusätzliche Tag-Kriterien können über die Schaltflächen Löschen/Hinzufügen (<img alt="" src="/assets/images/media/node15529-delete-add.png" />).</p>
     </div>
     <div id="daterange" class="BCL-subsection">
-      <h3>Date Range</h3>
-      <p>Verwenden Sie die erweiterte Suche, um Videos in einem bestimmten Datumsbereich zu suchen. Dabei kann nach folgenden Daten gesucht werden:</p>
+      <h3>Datumsbereich</h3>
+      <p>Die erweiterte Suche kann verwendet werden, um Videos basierend auf dem Datumsbereich zurückzugeben. Folgende Daten können gesucht werden:</p>
       <ul>
         <li>Hergestellt in (<code translate="No">created_at</code>)</li>
         <li>Aktualisiert am (<code translate="No">updated_at</code>)</li>
         <li>Geplante Starts um (<code translate="No">schedule.starts_at</code>)</li>
         <li>Geplante Enden um (<code translate="No">schedule.ends_at</code>)</li>
       </ul>
-      <p>Dieses Beispiel ergibt alle Videos, die zwischen dem 1. März 2016 und dem 31. März 2016 erstellt wurden.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-date-range-example.png"/></figure>
-      <p>Fügen Sie weitere Datumskriterien mit den Schaltflächen zum Löschen/Hinzufügen hinzu (<img alt="" src="/assets/images/media/node15529-delete-add.png"/>).</p>
+      <p>In diesem Beispiel werden alle Videos zurückgegeben, die zwischen dem 1. März 2016 und dem 31. März 2016 erstellt wurden.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-date-range-example.png" /></figure>
+      <p>Zusätzliche Datumsbereiche können über die Schaltflächen Löschen/Hinzufügen (<img alt="" src="/assets/images/media/node15529-delete-add.png" />).</p>
     </div>
     <div id="includetext" class="BCL-subsection">
-      <h3>Text to Include</h3>
-      <p>Verwenden Sie die erweiterte Suche, um Videos basierend auf Text in den Videometadaten zu suchen. Folgende Felder können durchsucht werden:</p>
+      <h3>Einschließender Text</h3>
+      <p>Die erweiterte Suche kann verwendet werden, um Videos basierend auf Text in Videometadaten zurückzugeben. Folgende Felder können durchsucht werden:</p>
       <ul>
-        <li>All</li>
+        <li>Alle</li>
         <li>Name</li>
-        <li>Name and Description</li>
-        <li>Reference ID</li>
+        <li>Name und Beschreibung</li>
+        <li>Referenz ID</li>
         <li>Benutzerdefinierte Felder</li>
         <li>Ein bestimmtes benutzerdefiniertes Feld</li>
       </ul>
-      <p>Angenommen, das Konto umfasst die beiden benutzerdefinierten Felder <strong>Year</strong> und <strong>Subject</strong>. Die folgende Suche ermittelt alle Videos, bei denen das benutzerdefinierte Feld <strong>Year</strong> <strong>2016</strong> entspricht und das benutzerdefinierte Feld <strong>Subject</strong> <strong>birds</strong> entspricht.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-text-example.png"/></figure>
-      <p>Fügen Sie weitere Kriterien mit den Schaltflächen zum Löschen/Hinzufügen hinzu (<img alt="" src="/assets/images/media/node15529-delete-add.png"/>).</p>
+      <p>Angenommen, das Konto verfügt über zwei benutzerdefinierte Felder. <strong>Jahr</strong> und <strong>Gegenstand</strong>. Dies würde alle Videos mit dem zurückgeben <strong>Jahr</strong> benutzerdefiniertes Feld gleich <strong>2016</strong> und der <strong>Gegenstand</strong> benutzerdefiniertes Feld gleich <strong>Vögel</strong>.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-text-example.png" /></figure>
+      <p>Über die Schaltflächen Löschen/Hinzufügen können weitere Kriterien eingegeben werden (<img alt="" src="/assets/images/media/node15529-delete-add.png" />).</p>
     </div>
     <div id="excludetext" class="BCL-subsection">
-      <h3>Text to Exclude</h3>
-      <p>Verwenden Sie die erweiterte Suche, um Videos basierend auf Text in den Videometadaten auszuschließen. Folgende Felder können durchsucht werden:</p>
+      <h3>Auszuschließender Text</h3>
+      <p>Die erweiterte Suche kann verwendet werden, um Videos basierend auf Text in Videometadaten auszuschließen. Folgende Felder können durchsucht werden:</p>
       <ul>
         <li>Name</li>
-        <li>Name and Description</li>
-        <li>Reference ID</li>
+        <li>Name und Beschreibung</li>
+        <li>Referenz ID</li>
         <li>Benutzerdefinierte Felder</li>
         <li>Ein bestimmtes benutzerdefiniertes Feld</li>
       </ul>
-      <p>Dieses Beispiel liefert keine Videos, die <strong>private</strong> im Feld für den Namen oder die Beschreibung enthalten.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-exclude-text-example.png"/></figure>
-      <p>Fügen Sie weitere Kriterien mit den Schaltflächen zum Löschen/Hinzufügen hinzu (<img alt="" src="/assets/images/media/node15529-delete-add.png"/>).</p>
+      <p>In diesem Beispiel werden keine Videos zurückgegeben, die über Folgendes verfügen <strong>Privatgelände</strong> in den Namens- oder Beschreibungsfeldern.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-exclude-text-example.png" /></figure>
+      <p>Über die Schaltflächen Löschen/Hinzufügen können weitere Kriterien eingegeben werden (<img alt="" src="/assets/images/media/node15529-delete-add.png" />).</p>
     </div>
     <div id="playable" class="BCL-subsection">
-      <h3>Playable</h3>
-      <p>Verwenden Sie die erweiterte Suche, um Videos basierend auf ihrem Status zu suchen.</p>
+      <h3>Spielbar</h3>
+      <p>Die erweiterte Suche kann verwendet werden, um Videos basierend auf ihrem Status zurückzugeben:</p>
       <ul>
-        <li>All</li>
-        <li>Playable</li>
-        <li>Not Playable</li>
+        <li>Alle</li>
+        <li>Spielbar</li>
+        <li>Nicht spielbar</li>
       </ul>
     </div>
-    <p>Nach der Eingabe der Suchkriterien erscheint die Syntax für die erweiterte Suche im Suchfeld.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-advanced-search-syntax.png"/></figure>
-    <p>Weitere Informationen finden Sie im Abschnitt <a href="#advsearchsyntax">Syntax für die erweiterte Suche</a>.</p>
+    <p>Nach Eingabe der Suchkriterien wird die erweiterte Suchsyntax im Suchfeld angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-advanced-search-syntax.png" /></figure>
+    <p>Siehe die <a href="#advsearchsyntax">Erweiterte Suchsyntax</a> Abschnitt für weitere Informationen.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="advsearchsyntax">Syntax für die erweiterte Suche</h2>
-    <p>Wenn das Dialogfeld "Erweiterte Suche" zum Suchen nach Videos verwendet wird, wird die Syntax der erweiterten Suche nach Eingabe der Suchkriterien im Suchfeld angezeigt. Dieser Abschnitt beschreibt die Syntax für die Suche. Die Syntax für die Suche kann ins Suchfeld auch ohne Verwendung des Dialogfelds „Advanced Search“ eingegeben werden. Klicken Sie auf den Link <strong>More Search Options</strong>, um das Dialogfeld „Advanced Search“ zu öffnen.</p>
-    <p>Um einen Suchbegriff als erforderlich (zurückgegebene Videos <strong>müssen</strong> übereinstimmen) oder als ausgeschlossen (zurückgegebene Videos <strong>dürfen nicht</strong> übereinstimmen) zu markieren, fügen Sie direkt nach dem Begriff ein <strong>+</strong>- oder <strong>-</strong>-Zeichen hinzu.</p>
-    <p>Folgende Suchkennzeichner und Werte werden unterstützt.</p>
+    <h2 id="advsearchsyntax">Erweiterte Suchsyntax</h2>
+    <p>Wenn das Dialogfeld "Erweiterte Suche" zum Suchen nach Videos verwendet wird, wird die Syntax der erweiterten Suche nach Eingabe der Suchkriterien im Suchfeld angezeigt. Dieser Abschnitt beschreibt die Suchsyntax. Die Suchsyntax kann auch ohne Verwendung des Dialogfelds Erweiterte Suche in das Suchfeld eingegeben werden. Klicken Sie auf, um das Dialogfeld Erweiterte Suche zu öffnen <strong>Weitere Suchoptionen</strong> Verknüpfung.</p>
+    <p>Um einen Suchbegriff nach Bedarf (zurückgegebene Videos <strong>müssen</strong> übereinstimmen) oder ausgeschlossen (zurückgegebene Videos <strong>dürfen nicht</strong> übereinstimmen) markieren, fügen Sie ein <strong>+</strong> oder <strong>-</strong> unterschreiben Sie unmittelbar vor dem Begriff.</p>
+    <p>Die folgenden Suchqualifizierer und -werte werden unterstützt.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th width="299">Kennzeichner</th>
+          <th width="299">Qualifikation</th>
           <th width="442">Gültige Werte</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td><code translate="No">name</code></td>
-          <td>Zeichenfolgen oder Zeichenfolgen in Anführungszeichen</td>
+          <td>Strings oder Anführungszeichenfolgen</td>
         </tr>
         <tr>
           <td>Text</td>
-          <td>Zeichenfolgen oder in Anführungszeichen gesetzte Zeichenfolgen (<code translate="No">name</code>)</td>
+          <td>Strings oder Strings in Anführungszeichen (<code translate="No">name</code>)</td>
         </tr>
         <tr>
           <td><code translate="No">tags</code></td>
-          <td>Zeichenfolgen oder Zeichenfolgen in Anführungszeichen</td>
+          <td>Strings oder Anführungszeichenfolgen</td>
         </tr>
         <tr>
           <td><code translate="No">reference_id</code></td>
-          <td>Zeichenfolgen oder Zeichenfolgen in Anführungszeichen</td>
+          <td>Strings oder Anführungszeichenfolgen</td>
         </tr>
         <tr>
           <td><code translate="No">custom_fields</code>- durchsucht alle benutzerdefinierten Felder</td>
-          <td>Zeichenfolgen oder Zeichenfolgen in Anführungszeichen</td>
+          <td>Strings oder Anführungszeichenfolgen</td>
         </tr>
         <tr>
-          <td>&lt;<code translate="No">custom_field_name</code>&gt; - sucht den angegebenen benutzerdefinierten Feldnamen</td>
-          <td>Zeichenfolgen oder Zeichenfolgen in Anführungszeichen</td>
+          <td>&lt;<code translate="No">custom_field_name</code>&gt; - durchsucht den angegebenen benutzerdefinierten Feldnamen</td>
+          <td>Strings oder Anführungszeichenfolgen</td>
         </tr>
         <tr>
           <td><code translate="No">state</code><sup>[1]</sup></td>
-          <td><code translate="No">ACTIVE</code>, <code translate="No">INACTIVE</code> , <code translate="No">PENDING</code></td>
+          <td><code translate="No">ACTIVE</code>, <code translate="No">INACTIVE</code>, <code translate="No">PENDING</code></td>
         </tr>
         <tr>
           <td><code translate="No">updated_at</code></td>
@@ -1224,14 +1017,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </tbody>
     </table>
     <div class="BCL-subsection">
-      <h3>Hinweise</h3>
-      <p><sup>[1]</sup> Ein Video befindet sich im Status PENDING, wenn es für ein Konto freigegeben, jedoch noch nicht akzeptiert wurde.</p>
+      <h3>Anmerkungen</h3>
+      <p><sup>[1]</sup> Ein Video befindet sich im Status PENDING, wenn es für ein Konto freigegeben, aber nicht akzeptiert wurde.</p>
       <p><sup>[2]</sup> Das Datum, an dem das Video zuletzt aktiviert wurde.</p>
-      <p><sup>[3]</sup> Ein Video hat den Abgeschlossen-Status true, wenn für das Video mindestens eine abspielbare Wiedergabeversion vorliegt. Dies schließt nicht ein, dass die gesamte Transcodierung abgeschlossen ist.</p>
+      <p><sup>[3]</sup> Ein Video hat den vollständigen Status "true", wenn das Video mindestens eine abspielbare Wiedergabeversion enthält. Dies bedeutet nicht unbedingt, dass alle Transcodierungen abgeschlossen sind.</p>
     </div>
     <div class="BCL-subsection">
-      <h3>Verwendung von Datumsfeldern</h3>
-      <p>Bei Verwendung von Datumsfeldern sind UTC-Zeitwerte (2012-08-01T00:00:00Z) oder ein relatives Format möglich:</p>
+      <h3>Arbeiten mit Datumsfeldern</h3>
+      <p>Bei der Arbeit mit Datumsfeldern können die Daten im UTC-Format (2012-08-01T00: 00: 00Z) vorliegen oder ein relatives Format verwenden:</p>
       <ul>
         <li><code translate="No">-1day</code></li>
         <li><code translate="No">-2days</code></li>
@@ -1250,7 +1043,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <thead class="bcls-table__head">
         <tr>
           <th width="385">Suchbegriff</th>
-          <th width="239">Ergebnis</th>
+          <th width="239">Kehrt zurück</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
@@ -1264,102 +1057,102 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td><code translate="No">+tags:birds</code></td>
-          <td>Alle Videos, die markiert sind <code translate="No">birds</code></td>
+          <td>alle Videos die getaggt sind <code translate="No">birds</code></td>
         </tr>
         <tr>
           <td><code translate="No">+tags:birds +state:inactive</code></td>
-          <td>Alle Videos, die markiert sind <code translate="No">birds</code> und haben einen Status von <code translate="No">inactive</code></td>
+          <td>alle Videos, die markiert sind <code translate="No">birds</code> und den Status von <code translate="No">inactive</code></td>
         </tr>
         <tr>
           <td><code translate="No">+tags:live,"now playing" +state:ACTIVE</code></td>
-          <td>Alle Videos, die markiert sind <code translate="No">live</code> und <code translate="No">now playing</code> und haben einen Status von <code translate="No">active</code></td>
+          <td>alle Videos, die markiert sind <code translate="No">live</code> <code translate="No">now playing</code> und den Status von <code translate="No">active</code></td>
         </tr>
         <tr>
           <td><code translate="No">+custom_fields:"2015"</code></td>
-          <td>Alle Videos mit einem Wert von <code translate="No">2015</code> im <strong>irgendein</strong> benutzerdefinierte Feld</td>
+          <td>alle Videos, die <code translate="No">2015</code> in <strong>jedem</strong> benutzerdefinierten Feld einen Wert von haben</td>
         </tr>
         <tr>
           <td><code translate="No">+subject:birds</code></td>
-          <td>Alle Videos, die einen Wert von <code translate="No">birds</code> in dem <code translate="No">subject</code> benutzerdefinierte Feld</td>
+          <td>alle Videos, die <code translate="No">birds</code> im <code translate="No">subject</code> benutzerdefinierten Feld Wert haben</td>
         </tr>
         <tr>
           <td><code translate="No">+producer:"Bob Bailey"</code></td>
-          <td>Alle Videos, die einen Wert von <code translate="No">Bob Bailey</code> in dem <code translate="No">producer</code> benutzerdefinierte Feld</td>
+          <td>alle Videos, die <code translate="No">Bob Bailey</code> im <code translate="No">producer</code> benutzerdefinierten Feld Wert haben</td>
         </tr>
         <tr>
           <td><code translate="No">+created_at:-3d</code></td>
-          <td>alle in den letzten drei Tagen erstellten Videos</td>
+          <td>alle Videos, die in den letzten 3 Tagen erstellt wurden</td>
         </tr>
         <tr>
           <td><code translate="No">+updated_at:-1d</code></td>
-          <td>alle am vorherigen Tag aktualisierten Videos</td>
+          <td>alle Videos wurden am letzten Tag aktualisiert</td>
         </tr>
         <tr>
           <td><code translate="No">+updated_at:-2d +state:INACTIVE</code></td>
-          <td>Alle Videos, die in den letzten zwei Tagen aktualisiert wurden und sind <code translate="No">inactive</code></td>
+          <td>alle Videos, die in den letzten zwei Tagen aktualisiert wurden und <code translate="No">inactive</code></td>
         </tr>
         <tr>
           <td><code translate="No">+schedule.starts_at:2015-06-01..2015-06-07</code></td>
-          <td>alle Videos, deren Start zwischen dem 1. Juni 2015 und dem 6. Juni 2015 vorgesehen ist</td>
+          <td>alle Videos, die zwischen dem 1. Juni 2015 und dem 6. Juni 2015 beginnen sollen</td>
         </tr>
         <tr>
           <td><code translate="No">+updated_at:2015-06-01T13:00:00Z..2015-06-01T15:00:00Z</code></td>
-          <td>alle Videos, die am 1. Juni 2015 zwischen 13 und 15 Uhr aktualisiert wurden</td>
+          <td>alle Videos, die am 1. Juni 2015 zwischen 13 und 15 Uhr aktualisiert wurden</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
     <h2 id="savedsearch">Suchen speichern</h2>
-    <p>Häufig ausgeführte Suchvorgänge können gespeichert werden, sodass sie schnell erneut ausgeführt werden können, ohne dass die Suchsyntax erneut eingegeben werden muss. Nachdem Sie die Suchsyntax eingegeben haben, die die gewünschten Videos zurückgibt, klicken Sie auf <strong>Sichere Suche</strong>. Geben Sie einen Namen für die gespeicherte Suche ein und klicken Sie dann auf <strong>sparen</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-saved-search.png"/></figure>
+    <p>Häufig ausgeführte Suchvorgänge können gespeichert werden, sodass sie schnell erneut ausgeführt werden können, ohne dass die Suchsyntax erneut eingegeben werden muss. Nachdem Sie die Suchsyntax eingegeben haben, die die Videos zurückgibt, die Sie sehen möchten, klicken Sie auf Suche <strong>speichern</strong>. Geben Sie einen Namen für die gespeicherte Suche ein und klicken Sie dann auf <strong>speichern</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-saved-search.png" /></figure>
     <p>Klicken Sie auf, um die gespeicherte Suche erneut auszuführen <strong>Gespeicherte Suche</strong> Verknüpfen Sie unter dem Suchfeld und klicken Sie auf die gespeicherte Suche, um sie auszuführen.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-saved-search-run.png"/></figure>
-    <p>Um eine der gespeicherten Suchanfragen zu löschen, klicken Sie auf das Löschsymbol (<img alt="" src="/assets/images/media/node15529-delete-icon.png"/> ) neben der Suche.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node15529-saved-search-run.png" /></figure>
+    <p>Um eine der gespeicherten Suchen zu löschen, klicken Sie auf das Löschsymbol (<img alt="" src="/assets/images/media/node15529-delete-icon.png" />) neben der Suche.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="Ignored_words">Ignorierte Worte</h2>
-    <p>Bestimmte Wörter werden in Suchzeichenfolgen ignoriert, da sie so häufig sind, dass sie wahrscheinlich viele Ergebnisse zurückgeben, die nichts mit dem zusammenhängen, wonach Sie tatsächlich suchen. Im Folgenden finden Sie eine Liste von Wörtern, die bei der Suche ignoriert werden:</p>
+    <h2 id="Ignored_words">Ignorierte Wörter</h2>
+    <p>Bestimmte Wörter werden in Suchzeichenfolgen ignoriert, da sie so häufig vorkommen, dass sie wahrscheinlich viele Ergebnisse zurückgeben, die nichts mit dem zu tun haben, wonach Sie tatsächlich suchen. Unten finden Sie eine Liste von Wörtern, die bei der Suche ignoriert werden:</p>
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
-          <td width="135">a</td>
-          <td width="135">eine</td>
+          <td width="135">ein</td>
+          <td width="135">ein</td>
           <td width="135">und</td>
         </tr>
         <tr>
           <td>sind</td>
           <td>wie</td>
-          <td>um</td>
+          <td>beim</td>
         </tr>
         <tr>
-          <td>sein</td>
+          <td>Sein</td>
           <td>aber</td>
-          <td>von</td>
+          <td>durch</td>
         </tr>
         <tr>
-          <td>für</td>
+          <td>zum</td>
           <td>wenn</td>
-          <td>in</td>
+          <td>im</td>
         </tr>
         <tr>
-          <td>ins</td>
+          <td>in</td>
           <td>ist</td>
           <td>es</td>
         </tr>
         <tr>
-          <td>Nein</td>
+          <td>nein</td>
           <td>nicht</td>
           <td>von</td>
         </tr>
         <tr>
-          <td>an</td>
+          <td>auf</td>
           <td>oder</td>
-          <td>so</td>
+          <td>eine solche</td>
         </tr>
         <tr>
+          <td>Das</td>
           <td>das</td>
-          <td>mehr</td>
           <td>ihr</td>
         </tr>
         <tr>
@@ -1368,26 +1161,25 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <td>diese</td>
         </tr>
         <tr>
-          <td>sie</td>
-          <td>dieses</td>
-          <td>bis</td>
+          <td>Sie</td>
+          <td>diese</td>
+          <td>zu</td>
         </tr>
         <tr>
           <td>war</td>
-          <td>wird</td>
+          <td>werden</td>
           <td>mit</td>
         </tr>
       </tbody>
     </table>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
       <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
+        <h6 class="toc">Seiteninhalt</h6>
         <ul id="in_page_nav" class="list-none"></ul>
       </nav>
       
@@ -1397,7 +1189,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Seite zuletzt aktualisiert am 28 Sep 2020
+  Seite zuletzt aktualisiert am 19 Apr 2021
 </div>
 
 
@@ -1406,32 +1198,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Brightcove Support-Service</h2>
+        <h2>Brightcove-Unterstützung</h2>
 
         <ul class="menu">
           <li>
             <a href="https://status.brightcove.com">Systemstatus</a>
           </li>
           <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktieren Sie Support</a>
           </li>
           <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
+            <a href="https://support.brightcove.com/">Dokumentation</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
 
-        <h2>Schulungen</h2>
+        <h2>Ausbildung</h2>
 
         <ul class="menu">
           <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Kurse</a>
           </li>
           <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Melden Sie sich für einen Kurs an</a>
           </li>
           <li>
             <a href="https://university.brightcove.com/">Brightcove Universität</a>
@@ -1441,11 +1234,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>Brightcove</h2>
+        <h2>Helle Bucht</h2>
 
         <ul class="menu">
           <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
           </li>
           <li>
             <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
@@ -1462,10 +1255,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td>
               <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
             </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privatsphäre</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; amp; Bedingungen</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -1478,19 +1271,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <script>
       
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
+  var searchBox = sajari.init({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }); searchBox("sub", "pipeline.search-sent", Funktion (_, Abfrage) { window.location = "/search.html?q=" + encodeURIComponent(query.q); });
   
 
 </script>
@@ -1503,6 +1284,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
   
   <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script> -->
   <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
   <script src="/assets/js/sites_nav.js"></script>
@@ -1512,32 +1294,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+  <script>
+    feder.replace()
+  </script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
   <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 { background-color: lightblue; } div.sj-tabs__tab { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } div.sj-tabs__tab.sj-tabs__tab--selected { border-bottom-color: crimson; background-color: #f8f8f8; } p.sj-results__result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text.css-31l7gp h3 { color: navy; font-size: 1.4rem; }
     </style>
 
 </body>

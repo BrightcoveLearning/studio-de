@@ -1,0 +1,119 @@
+---
+title: Erstellen benutzerdefinierter Integrationen mit der Campaign-Modul
+description: In diesem Thema wird erläutert, wie Sie das Campaign-Modul für eine benutzerdefinierte Integration konfigurieren.
+parent: Non-MAP 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p class="BCL-objective">Das Campaign-Modul ermöglicht Video Cloud die Synchronisierung von Anzeigedaten von Campaign-fähigen&nbsp;Brightcove Players zu beliebten Marketing-Automatisierungsplattformen. Das CampaignCampaign-Modul kann auch mit einer benutzerdefinierten Integration konfiguriert werden. Bei einer benutzerdefinierten Integration werden die Anzeigedaten lokal in der Video Cloud gespeichert und die Audience-API wird zum programmgesteuerten Extrahieren der Daten verwendet.</p>
+    <p>Die Integration des Campaign-Moduls besteht aus zwei Hauptkomponenten:</p>
+    <ul>
+      <li>Ein Brightcove Player-Plug-In zum Verfolgen von Videoansichtsdaten</li>
+      <li>Benutzerdefinierte Entwicklung, bei der die Audience-API zum Abrufen der Anzeigedaten verwendet wird</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">Bedarf</h2>
+    <p>Um das Campaign-Modul zu verwenden, müssen Sie:</p>
+    <ul>
+      <li>Haben Sie ein professionelles oder Enterprise Video Cloud-Konto</li>
+      <li>Aktivieren Sie das Campaign-Modul für Ihr Konto, indem Sie die erforderlichen Informationen im Begrüßungsbildschirm eingeben, der beim Öffnen des Campaign-Moduls angezeigt wird</li>
+      <li>Klicken Sie sich bei der ersten Verwendung des Moduls durch den Servicevertrag</li>
+      <li>Damit Leads gesammelt werden können, a <a href="/campaign/general/creating-campaign-lead-form.html">Lead-Formular muss konfiguriert werden</a> und einem Spieler zugewiesen</li>
+      <li>Verwenden Sie beim Veröffentlichen Ihres Players den erweiterten Einbettungscode (auf der Seite). Standard-Einbettungscode (Iframe) funktioniert nicht, da das Plugin in einem Iframe ausgeführt wird und daher nicht auf die URL-Parameter der übergeordneten Seite zugreifen kann</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupconnection">Verbindung herstellen</h2>
+    <p>Führen Sie die folgenden Schritte aus, um eine benutzerdefinierte Integration zu konfigurieren.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Öffnen Sie das Kampagnenmodul und klicken Sie auf <strong>Datenverbindungen</strong> in der linken Navigation.</li>
+      <li>Klicken <strong>Neue Verbindung hinzufügen</strong>.</li>
+      <li>Wählen <strong>Benutzerdefiniert</strong> als die Integration. <aside class="bcls-aside bcls-aside--information">Hinweis: Die verfügbaren Integrationen basieren auf Ihrem Video Cloud-Abonnement.</aside>
+      </li>
+      <li>(Optional) Geben Sie a ein <strong>Verbindungsname</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select custom" src="/assets/images/campaign/integrations/custom/node16577-select-custom.png" /></figure>
+      </li>
+      <li>Klicken <strong>Verbinden</strong>.</li>
+    </ol>
+    <p>Die benutzerdefinierte Verbindung ist jetzt eingerichtet und kann verwendet werden.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Integration konfigurieren</h2>
+    <p>Sobald die Verbindung hergestellt wurde, können Sie die Integration konfigurieren.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/custom/node16577-configure.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>Standardmäßig ist die <strong>Verbindungsstatus</strong> wird sein <strong>aktiviert</strong>. Das <strong>Verbindungsstatus</strong> Bestimmt, ob Video Cloud-Video-Engagement-Daten gespeichert werden.
+        <ul>
+          <li><strong>Aktiviert</strong> - Daten werden gesammelt und werden gespeichert</li>
+          <li><strong>Deaktiviert</strong> - Es werden keine Daten gesammelt (Integration ist deaktiviert)</li>
+        </ul>
+      </li>
+      <li>Wählen Sie eine Datenaufbewahrungsrichtlinie aus. Die Datenaufbewahrungsrichtlinie legt fest, wie lange die Anzeigedaten und Lead-Formulardaten (bei Verwendung eines Campaign-Lead-Formulars) in Ihrem Video Cloud-Konto aufbewahrt werden. <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn Sie auswählen <strong>Keine Aufbewahrung</strong> Es werden KEINE Daten gespeichert. Wenn Sie die API zum Herunterladen von Daten verwenden, wird es keine geben.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/campaign/integrations/custom/node16577-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Erstellen eines kampagnenfähigen Players</h2>
+    <p>Video-Engagement-Daten werden nur gespeichert, wenn&nbsp;Sie verwenden einen kampagnenfähigen Videoplayer. Informationen zum Erstellen eines kampagnenfähigen Brightcove-Players finden Sie unter <a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid">Übergabe einer Tracking-ID</h2>
+    <p>Das Campaign-Modul unterstützt die Möglichkeit, eine Tracking-ID zu übergeben. Die Tracking-ID kann beispielsweise zum Verfolgen einer Kampagnen-ID verwendet werden. Die Tracking-ID kann an die URL angehängt werden, die den für die Kampagne aktivierten Player anzeigt, oder dem Player-Einbettungscode hinzugefügt werden.</p>
+    <ul>
+      <li>Beispiel: An URL angehängt</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html?<strong>bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>Beispiel: Zum Einbettungscode des Players hinzugefügt</li>
+    </ul>
+    <pre>
+<code language="html">&lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>data-bc-trackingid="12345"</strong> Kontrollen&gt;&lt; /Video&gt;&lt; script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /Skript&gt; </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">Betrachter identifizieren</h2>
+    <p>Wenn Sie eine benutzerdefinierte Integration verwenden, sind Sie für die Identifizierung der Betrachter verantwortlich. Das Campaign-Plugin benötigt zwei wichtige Informationen:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Beschreibung</th>
+          <th>URL-Parameter</th>
+          <th>Parameter einbetten</th>
+          <th>Wert</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Ist der Betrachter bekannt (wird für die Lead-Form benötigt)?</td>
+          <td><code translate="No">bcknownuser</code></td>
+          <td><code translate="No">data-bc-known-user</code></td>
+          <td><code translate="No">0</code> oder <code translate="No">1</code></td>
+        </tr>
+        <tr>
+          <td>Was ist die GUID (wird für die Anzeige der Ereignisverfolgung benötigt)?</td>
+          <td><code translate="No">bccustomguid</code></td>
+          <td><code translate="No">data-bc-custom-guid</code></td>
+          <td><code translate="No">string</code></td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;
+    <p>Diese Werte können über URL-Parameter oder über den Player-Einbettungscode übergeben werden. Damit das Viewer-Tracking stattfinden kann, sollte die Benutzer-ID als URL-Parameter auf der Seite übergeben werden, auf der das Video angezeigt wird. Der bekannte Benutzerparameter ist für Lead-Formulare erforderlich (wenn das Lead-Formular für unbekannte Betrachter bedingt angezeigt werden soll).</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Damit der Player / das Plugin die URL-Parameter lesen kann, sollte der erweiterte Einbettungscode (auf der Seite) verwendet werden. Der Standard-Einbettungscode (iframe) funktioniert nicht, da das Plugin innerhalb eines Iframe ausgeführt wird und daher nicht auf die URL der übergeordneten Seite zugreifen kann, die den Parameter enthält.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewdata">Videodaten anzeigen</h2>
+    <p>Bei Verwendung einer benutzerdefinierten Integration stehen verschiedene Optionen zum Anzeigen von Videodaten zur Verfügung:</p>
+    <ul>
+      <li><strong>Zuschaueraktivitäten (Ereignisse)</strong> - Diese Option wird als Teil des Campaign-Moduls bereitgestellt und kann verwendet werden, um Videodaten innerhalb des Campaign-Moduls anzuzeigen. Informationen finden Sie unter <a href="/campaign/general/viewing-player-events-campaign-module.html">Anzeigen von Spielerereignissen im Kampagnenmodul</a>.</li>
+      <li><strong>Export von Daten</strong> - Diese Option wird als Teil des Campaign-Moduls bereitgestellt und kann zum Exportieren von Videoansichts- und Lead-Daten verwendet werden. Informationen finden Sie unter <a href="/campaign/admin/exporting-campaign-data-campaign-module.html">Exportieren von Kampagnendaten aus dem Campaign-Modul</a>.</li>
+      <li><strong>Zielgruppen-API</strong> - Die Audience-API kann zum programmgesteuerten Abrufen von Videoansichten und Lead-Daten verwendet werden. Weitere Informationen finden Sie unter <a href="/campaign/develop/overview-audience-api.html">Überblick: Zielgruppen-API</a>.</li>
+    </ul>
+  </section>
+</article>

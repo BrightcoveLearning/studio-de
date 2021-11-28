@@ -1,0 +1,113 @@
+---
+title: Integrieren von Video Cloud in HubSpot mithilfe der clientseitigen APIs
+description: In diesem Thema wird erläutert, wie Sie das Campaign-Modul für die Verwendung mit HubSpot mithilfe der clientseitigen APIs konfigurieren.
+parent: HubSpot 
+grandparent: Integrations
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Das Campaign-Modul ermöglicht Video Cloud, Anzeigedaten von Brightcove-Playern mit HubSpot zu synchronisieren. In HubSpot können diese Daten für Segmentierung, Kampagnenlogik, Berichte, Lead-Scoring und Personalisierung der Kommunikation verwendet werden.</p>
+    <p>Es gibt zwei Möglichkeiten, Video Cloud in HubSpot zu integrieren:</p>
+    <ul>
+      <li><strong>Verwenden der Standardmethode (REST API)</strong> - Bei dieser Methode erfasst Campaign nur die Anzeigedaten bekannter Zuschauer. Standardmäßig werden Lead-Formulare nur unbekannten Zuschauern angezeigt. Informationen zu dieser Art der Integration finden Sie unter <a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">Integration der Video Cloud in HubSpot mithilfe der REST-APIs</a>.</li>
+      <li><strong>Verwenden des High Volume (Client-Seite)</strong><strong> API) Methode</strong> - Mit dieser Methode verfolgt Campaign die Anzeigedaten für alle Zuschauer. Diese Methode wird in diesem Thema behandelt.</li>
+    </ul>
+    <p>Die Integration des Campaign-Moduls mit HubSpot besteht aus zwei Hauptkomponenten:</p>
+    <ul>
+      <li>Ein Brightcove Player-Plug-In zum Verfolgen von Videoansichtsdaten</li>
+      <li>Ein Synchronisierungsprozess zum Senden von Tracking-Daten aus der Video Cloud an HubSpot</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">Bedarf</h2>
+    <p>Um das Campaign-Modul mit HubSpot zu verwenden, müssen Sie:</p>
+    <ul>
+      <li>Haben Sie ein HubSpot-Konto</li>
+      <li>Haben Sie ein professionelles oder Enterprise Video Cloud-Konto</li>
+      <li>Aktivieren Sie das Campaign-Modul für Ihr Konto, indem Sie die erforderlichen Informationen im Begrüßungsbildschirm eingeben, der beim Öffnen des Campaign-Moduls angezeigt wird</li>
+      <li>Klicken Sie sich bei der ersten Verwendung des Moduls durch den Servicevertrag</li>
+      <li>Verwenden Sie beim Veröffentlichen Ihres Players den Veröffentlichungscode "Advanced Embed" (In-Page). Der Veröffentlichungscode von Standard Embed (iframe) funktioniert nicht, da das Plugin in einem iframe ausgeführt wird und daher nicht auf URL-Parameter der übergeordneten Seite zugreifen kann und möglicherweise nicht die richtigen Cookies erhält</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">Eigenschaften</h2>
+    <p>Einige der Hauptfunktionen der Video Cloud - HubSpot-Integration sind:</p>
+    <ul>
+      <li><strong>Bleiformulare</strong> - Erstellen Sie HubSpot-Formulare, die automatisch angezeigt werden, wenn Zuschauer Videos ansehen. Weitere Informationen finden Sie unter <a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">Erstellen von benutzerdefinierten Lead-Formularen für HubSpot</a>.</li>
+      <li><strong>Datei Format</strong> - Das Anzeigen von Daten wird benutzerdefiniert geliefert <a href="https://developers.hubspot.com/docs/methods/timeline/timeline-overview">Timeline-Ereignistyp</a>. Die Daten, die auf HubSpot repliziert werden, lauten wie folgt:
+        <ul>
+          <li>Videoname</li>
+          <li>Video ID</li>
+          <li>Konto-ID (Video Cloud)</li>
+          <li>Seiten-URL (URL der verweisenden Seite)</li>
+          <li>Player ID (Video Cloud Player)</li>
+          <li>% Beobachtet (25%, 50%, 75%, 95%)</li>
+        </ul>
+      </li>
+      <li><strong>Datentransfer</strong> - Das Anzeigen von Daten wird mithilfe eines automatisierten Prozesses an HubSpot gesendet. Das Aktualisieren einiger Berichte auf der HubSpot-Plattform kann jedoch einige Zeit in Anspruch nehmen</li>
+      <li><strong>Vorratsdatenspeicherung</strong> - Die gesammelten Daten können optional bis zu 6 Monate in der Video Cloud gespeichert werden</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupConnection">Verbindung herstellen</h2>
+    <p>Befolgen Sie diese Schritte, um die Verbindung zwischen Video Cloud und HubSpot herzustellen.</p>
+    <h3 id="establishConnection">Herstellen der Verbindung zwischen Video Cloud und HubSpot</h3>
+    <ol class="bcls-tasklist">
+      <li>Öffnen Sie das Kampagnenmodul und klicken Sie auf <strong>Datenverbindungen</strong> in der linken Navigation.</li>
+      <li>Klicken <strong>Neue Verbindung hinzufügen</strong>.</li>
+      <li>Wählen <strong>HubSpot</strong> als die Integration. <aside class="bcls-aside bcls-aside--information">Hinweis: Die verfügbaren Integrationen basieren auf Ihrem Video Cloud-Abonnement.</aside>
+      </li>
+      <li>(Optional) Geben Sie a ein <strong>Verbindungsname</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/campaign/integrations/hubspot/node18751-setup-section.png" /></figure>
+      </li>
+      <li>Klicken <strong>Verbinden</strong>.</li>
+      <li>Wählen <strong>Hohes Volumen (clientseitige API)</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connect to hubspot" src="/assets/images/campaign/integrations/hubspot/node18751-select-high-volume.png" /></figure>
+      </li>
+      <li>Klicken Sie auf<strong> Speichern</strong>.</li>
+    </ol>
+    <p>Die Video Cloud-Verbindung zu HubSpot ist jetzt eingerichtet.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">Integration konfigurieren</h2>
+    <p>Führen Sie die folgenden Schritte aus, um die Integration zu konfigurieren, nachdem die Verbindung zwischen Video Cloud und HubSpot hergestellt wurde.</p>
+    <ol class="bcls-tasklist">
+      <li>Für die Integration ist Ihre HubSpot-Konto-ID erforderlich. Drücke den <strong>leer </strong>Link, geben Sie Ihre HubSpot-Konto-ID ein und klicken Sie dann auf <strong>speichern</strong>. <aside class="bcls-aside bcls-aside--information">Hinweis: Es wird nicht unterstützt, mehrere HubSpot-Verbindungen mit derselben Konto-ID zu haben.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/hubspot/node18751-enter-account-id.png" /></figure>
+      </li>
+      <li>Standardmäßig ist die <strong>Verbindungsstatus</strong> wird sein <strong>aktiviert</strong>. Das <strong>Verbindungsstatus</strong> Legt fest, ob Video Cloud-Video-Engagement-Daten an HubSpot gesendet werden.
+        <ul>
+          <li><strong>Aktiviert</strong> - Daten werden gesammelt und an HubSpot gesendet</li>
+          <li><strong>Deaktiviert</strong> - Es werden keine Daten gesammelt (Integration ist deaktiviert)</li>
+        </ul>
+      </li>
+    </ol>
+    <p>Klicken Sie auf, um die Integration mit HubSpot zu entfernen <strong>Trennen</strong>. Das Campaign-Modul unterstützt mehrere Verbindungen zu Marketingplattformen. Klicken <strong>Neue Verbindung hinzufügen</strong> um zusätzliche Integrationen zu konfigurieren.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">Erstellen eines kampagnenfähigen Players</h2>
+    <p>Video-Engagement-Daten werden nur an HubSpot gesendet, wenn Sie einen kampagnenfähigen Videoplayer verwenden. Informationen zum Erstellen eines kampagnenfähigen Brightcove-Players finden Sie unter <a href="/campaign/general/creating-campaign-enabled-player.html">Erstellen eines kampagnenfähigen Players</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid">Übergabe einer Tracking-ID</h2>
+    <p>Das Campaign-Modul unterstützt die Möglichkeit, einen Tracking-ID-Wert an HubSpot zu übergeben. Die Tracking-ID kann beispielsweise zum Verfolgen einer Kampagnen-ID verwendet werden. Die Tracking-ID kann an die URL angehängt werden, die den für die Kampagne aktivierten Player anzeigt, oder dem Player-Einbettungscode hinzugefügt werden.</p>
+    <ul>
+      <li>Beispiel: An URL angehängt</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html?<strong>bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>Beispiel: Zum Einbettungscode des Players hinzugefügt</li>
+    </ul>
+    <pre>
+  &lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>data-bc-trackingid="12345"</strong> Kontrollen&gt;&lt; /Video&gt;&lt; script src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /Skript&gt;</pre>
+    <p>Campaign leitet den Wert dann als weiteres synchronisiertes Feld an HubSpot weiter.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">Betrachter identifizieren</h2>
+    <p>Für HubSpot-Integrationen fügt das Plugin den JavaScript-Tracking-Code von HubSpot ein, der a löscht <strong>Hubspotutk</strong> Cookie im Browser des Benutzers. Dieses Cookie wird verwendet, um die Identität eines Besuchers in HubSpot zu verfolgen und Brightcove-Anzeigedaten einem Kontakt zuzuordnen. Wenn der Benutzer bereits ein . hat <strong>Hubspotutk</strong> Wenn der Player geladen wird, stellt Campaign eine API-Anfrage an HubSpot und fragt, ob der Cookie-Wert einem bekannten Kontakt entspricht. Falls ja, ordnet Campaign diesem Benutzer Anzeigedaten zu.  </p>
+  </section>
+</article>

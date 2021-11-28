@@ -1,0 +1,173 @@
+---
+title: Wiedergaberechte verwalten
+parent: Administering Accounts
+description: In this topic you will learn how to create playback rights.
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Wiedergaberechte werden verwendet, um die Videowiedergabe einzuschränken. Nachdem Wiedergaberechte erstellt wurden, können sie mithilfe des Medienmoduls Videos zugewiesen werden.</p>
+    <p>Klicken Sie auf, um auf die Verwaltungsseite für Wiedergaberechte zuzugreifen <strong>ADMINISTRATOR</strong> Link und dann <strong>Wiedergaberechte</strong>. Eine Liste der Wiedergaberechte wird angezeigt.</p>
+    <p>
+      <aside class="bcls-aside bcls-aside--information">Hinweis: Um auf die Seite „Wiedergaberechte“ zugreifen zu können, müssen Sie ein Video Cloud Studio-Benutzer mit der Administratorrolle sein.</aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-list.png" /></figure>
+      Wiedergaberechte werden Videos im Internet zugewiesen <strong>Wiedergabebeschränkungen</strong> Abschnitt der Seite mit den Videoeigenschaften im Medienmodul. </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-assign.png" /></figure>
+    <p>Wiedergaberechte mit a <strong>Status</strong> von <strong>Inaktiv</strong> kann im Medienmodul keinen Videos zugewiesen werden.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Wiedergaberechte erstellen</h2>
+    <p>Führen Sie die folgenden Schritte aus, um Wiedergaberechte zu erstellen.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Melden Sie sich als Administrator bei Video Cloud Studio an.</li>
+      <li>Klicken Sie in der Navigationsüberschrift auf <strong>ADMINISTRATOR</strong> und dann <strong>Wiedergaberechte</strong>. Beachten Sie, dass Sie ein Kontoadministrator sein müssen, um auf das ADMIN-Menü zugreifen zu können.</li>
+      <li>Klicken <strong>Neue Wiedergaberechte</strong>.</li>
+      <li>Geben Sie ein <strong>Name der Wiedergaberechte</strong>.</li>
+      <li>Überprüfung <strong>Wiedergabe ohne Token zulassen</strong> ermöglicht die Wiedergabe von Anforderungen ohne JSON Web Token (JWT). <aside class="bcls-aside bcls-aside--information">Hinweis: Das Deaktivieren dieser Option wirkt sich nicht auf die für dieses Wiedergaberecht festgelegten Einschränkungen aus. Für die Wiedergabeanforderung ist jedoch eine gültige JWT erforderlich, die programmgesteuert auf Spielerebene festgelegt wird. Weitere Informationen finden Sie im Entwicklerdokument <a href="https://apis.support.brightcove.com/playback-authorization/guides/using-pas-with-bcp.html">Verwenden der Wiedergabeautorisierung DRM mit dem Brightcove Player</a>.</aside>
+      </li>
+      <li>Prüfen <strong>Standardmäßig verwenden</strong> um dies zur Standardwiedergabe zu machen. Dadurch werden die konfigurierten Einschränkungen für Wiedergaberechte auf hochgeladene Videos angewendet. <aside class="bcls-aside bcls-aside--information">Hinweis: Das Standardwiedergaberecht wird nicht zugewiesen, wenn ein Video erneut transcodiert wird.</aside>
+      </li>
+      <li>Klicken <strong>speichern</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-create.png" /></figure>
+      </li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die maximale Anzahl von Wiedergaberechten, die Sie in einem Konto haben können, beträgt 100. Wenn Sie das Limit erhöhen müssen, wenden Sie sich bitte an den <a href="https://supportportal.brightcove.com">Brightcove-Support</a>.</aside>
+    <p>Klicken Sie in der linken Navigation auf einen Einschränkungslink, um einer Wiedergabe rechts Einschränkungen hinzuzufügen:</p>
+    <ul>
+      <li><a href="#geo">Geografisch</a></li>
+      <li><a href="#domain">Domäne</a></li>
+      <li><a href="#proxy">Proxy</a></li>
+      <li><a href="#date">Zeit</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">Wiedergaberechte bearbeiten</h2>
+    <p>Gehen Sie folgendermaßen vor, um die Wiedergaberechte zu bearbeiten:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Nehmen Sie die erforderlichen Änderungen vor und klicken Sie auf <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="duplicate">Duplizieren von Wiedergaberechten</h2>
+    <p>Gehen Sie folgendermaßen vor, um ein Wiedergaberecht zu duplizieren:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken <strong>Duplikat</strong>.</li>
+      <li>Nehmen Sie die erforderlichen Änderungen vor und klicken Sie auf <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="activate">Wiedergaberechte aktivieren / deaktivieren</h2>
+    <p>Wiedergaberechte können nicht gelöscht werden, sie können jedoch deaktiviert werden, sodass sie im Medienmodul keinen Videos zugewiesen werden können. Gehen Sie folgendermaßen vor, um die Wiedergaberechte zu aktivieren / deaktivieren:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken <strong>aktivieren Sie</strong> um eine Wiedergabe richtig zu aktivieren oder <strong>Deaktivieren</strong> um eine Wiedergabe richtig zu deaktivieren. Deaktivierte Wiedergaberechte können Videos im Medienmodul nicht zugewiesen werden.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="geo">Zuweisen von geografischen Einschränkungen</h2>
+    <p>Geografische Einschränkungen ermöglichen es Ihnen, die Videowiedergabe basierend auf Land, Postleitzahl, IPs und ausgewiesenem Marktgebiet einzuschränken. Gehen Sie folgendermaßen vor, um einem Wiedergaberecht geografische Einschränkungen zuzuweisen:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Geografische Einschränkungen</strong>.</li>
+    </ol>
+    <p>Die <strong>Globale Regel</strong> kann eingestellt werden auf <strong>Alles erlauben</strong> oder <strong>Alles blockieren</strong>.</p>
+    <ul>
+      <li><strong>Alles erlauben</strong>
+        <ul>
+          <li>Wird verwendet, wenn Sie eine kleine Anzahl von Gruppen auf die schwarze Liste setzen möchten, die keinen Zugriff haben</li>
+          <li>Wählen Sie diese Option, um die Anzeige für alle zuzulassen, und fügen Sie dann eine Liste mit Ländern, Postleitzahlen, IPs und DMAs auf der schwarzen Liste hinzu, deren Anzeige verhindert ist</li>
+        </ul>
+      </li>
+      <li><strong>Alles blockieren</strong>
+        <ul>
+          <li>Wird verwendet, wenn Sie eine kleine Anzahl von Gruppen auf die Whitelist setzen möchten, die Zugriff haben</li>
+          <li>Wählen Sie diese Option, um die Anzeige für alle zu blockieren, und fügen Sie dann eine Liste mit Ländern, Postleitzahlen, IPs oder DMAs auf der weißen Liste hinzu, die sehen dürfen</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Geografische Beschränkungen können hinzugefügt werden, um die Anzeige zuzulassen/zu verhindern, basierend auf:</p>
+    <ul>
+      <li><a href="#countries">Länder</a></li>
+      <li><a href="#zip">Postleitzahlen</a></li>
+      <li><a href="#ip">IP-Einschränkungen</a></li>
+      <li><a href="#dma">Ausgewiesener Marktbereich (DMA)</a></li>
+    </ul>
+    <h3 id="countries">Beschränkung des Zugangs zu Ländern</h3>
+    <p>Länderwiedergaberechte können verwendet werden, um die Wiedergabe auf bestimmte Länder zu beschränken.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Wählen Sie die Länder aus, deren Anzeige verhindert (auf der schwarzen Liste) oder erlaubt (auf der weißen Liste) ist. Während der Eingabe wird die Auswahlliste gefiltert.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-countries.png" /></figure>
+      </li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+    <h3 id="zip">Beschränkung des Zugangs zu Postleitzahlen</h3>
+    <p>Die Wiedergaberechte für Postleitzahlen können verwendet werden, um die Anzeige auf bestimmte Postleitzahlen zu beschränken.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Geben Sie eine Liste mit Postleitzahlen ein, deren Anzeige verhindert (auf der schwarzen Liste) oder erlaubt (auf der weißen Liste) ist. Den Postleitzahlen sollte beispielsweise ein Großbuchstabe, eine aus zwei Buchstaben bestehende Landesvorwahl und ein Bindestrich vorangestellt werden. <strong>US-90045</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-zip.png" /></figure>
+      </li>
+    </ol>
+    <p>Es ist auch möglich, eine .csv-Datei mit Postleitzahlen hochzuladen. Klicken <strong>Laden Sie CSV hoch</strong> um eine hochzuladende Datei zu durchsuchen und auszuwählen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-upload-csv.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Durch das Hochladen einer .csv-Datei wird der Inhalt des Feldes <strong>Postleitzahlen-Feldes</strong> ersetzt.</aside>
+    <h3 id="ip">Einschränken des Zugriffs auf IPs</h3>
+    <p>IP-Wiedergaberechte können verwendet werden, um die Anzeige auf einen IP-Adressbereich zu beschränken.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Geben Sie einen Bereich von IP-Adressen ein, deren Anzeige verhindert (auf der schwarzen Liste) oder erlaubt (auf der weißen Liste) wird. <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR-Blocknotation</a> wird ebenfalls unterstützt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-ip.png" /></figure>
+      </li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+    <h3 id="dma">Einschränken des Zugriffs auf DMAs</h3>
+    <p>Ein Designated Market Area (DMA), auch als Medienmarkt bezeichnet, ist eine Region der Vereinigten Staaten, die verwendet wird, um Fernseh- und Radiomärkte zu definieren. Wiedergaberechte können verwendet werden, um die Anzeige basierend auf DMAs einzuschränken.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Geben Sie eine Liste von DMAs ein, deren Anzeige verhindert (auf der schwarzen Liste) oder erlaubt (auf der weißen Liste) ist
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-dma.png" /></figure>
+      </li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="domain">Zuweisen von Domäneneinschränkungen</h2>
+    <p>Mit Domäneneinschränkungen können Sie die Videowiedergabe basierend auf der Domäne einschränken. Gehen Sie folgendermaßen vor, um einem Wiedergaberecht Domäneneinschränkungen zuzuweisen:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Domain-Einschränkungen</strong>.</li>
+      <li>In dem <strong>Domains auf der schwarzen Liste</strong> Geben Sie in das Feld die Domänen ein, deren Anzeige verhindert werden soll. </li>
+      <li>In dem <strong>Whitelist-Domains</strong> Geben Sie im Feld die Domänen ein, die angezeigt werden dürfen.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-domain.png" /></figure>
+      </li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="proxy">Zuweisen von Proxy-Einschränkungen</h2>
+    <p>Mit Proxy-Einschränkungen können Sie die Videowiedergabe basierend auf bestimmten Verbindungstypen einschränken. Gehen Sie folgendermaßen vor, um einem Wiedergaberecht Proxy-Einschränkungen zuzuweisen:</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Da VPN-Anbieter ihre Dienste weiter verbessern, kann sich die Auflösung von IP-Adressen von dem unterscheiden, was Sie für blockierte IP-Adressen definiert haben. Aus diesem Grund ist die Proxyblockierung nicht zu 100% garantiert.</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Proxy-Einschränkungen</strong>.</li>
+      <li>Wählen Sie die zu blockierenden Proxy-Typen aus.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-proxy.png" /></figure>
+      </li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="date">Zeitbeschränkungen zuweisen</h2>
+    <p>Zeitbeschränkungen ermöglichen es Ihnen, die Videowiedergabe basierend auf einem bestimmten Startdatum zu begrenzen. Um einem Wiedergaberecht Zeitbeschränkungen zuzuweisen, gehen Sie folgendermaßen vor:</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken Sie rechts auf eine Wiedergabe.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Zeitbeschränkungen</strong>.</li>
+      <li>Klicken Sie auf das Kalendersteuerelement, um a auszuwählen <strong>Startdatum</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-date.png" /></figure>
+      </li>
+      <li>(Optional) Klicken <strong>Enddatum hinzufügen</strong> um ein Enddatum auszuwählen.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
+    </ol>
+  </section>
+</article>
