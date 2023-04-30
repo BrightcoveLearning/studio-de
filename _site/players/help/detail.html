@@ -1,0 +1,533 @@
+﻿<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Spieler-Details</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>Spieler-Details</h1>
+<article class="bcls-article">
+  <section class="bcls-section">
+    <p>Die Seite mit den Spielerdetails besteht aus</p>
+    <ul>
+      <li><a href="#toolbar">Symbolleisten-Schaltflächen</a></li>
+      <li><a href="#details">Spieler-Details</a></li>
+    </ul>
+  </section>
+  <hr/>
+  <section id="toolbar" class="bcls-section">
+    <h3>Symbolleisten-Schaltflächen</h3>
+    <details>
+      <summary>Löschen Sie den Player</summary>
+      <section class="bcls-section">
+        <ol class="bcls-tasklist-restart">
+          <li>Klicken <span class="button-red-text">Löschen</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Aktivieren/Deaktivieren des Players</summary>
+      <section class="bcls-section">
+        <p>Spieler, die aktiviert sind, können Videos abspielen, deaktivierte Spieler können keine Videos abspielen.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Klicken Sie auf <span class="button-blue-text-bordered">Aktivieren</span> oder <span class="button-blue-text-bordered">Deaktivieren</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Änderungen rückgängig machen</summary>
+      <section class="bcls-section">
+        <p>Wenn Sie Änderungen rückgängig machen, werden alle unveröffentlichten Änderungen an einem Spieler verworfen. Um Änderungen an einem Spieler rückgängig zu machen:</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Klicken Sie auf <span class="button-blue-text-bordered">Änderungen rückgängig machen</span>.</li>
+          <li>Klicken Sie auf <span class="button-red">Änderungen verwerfen</span>.</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>Vorschau des Players</summary>
+      <section class="bcls-section">
+        <p>Zeigen Sie eine Vorschau der Playeränderungen an, bevor sie veröffentlicht werden. Um eine Vorschau eines Players anzuzeigen, klicken Sie auf <span class="button-blue-text-bordered">Vorschau</span>. Das Vorschaudialogfeld wird angezeigt:</p>
+        <ul>
+          <li>Vorschau-URL</li>
+          <li>Standard- und erweiterter Player-Einbettungscode</li>
+        </ul>
+        <p>Beachten Sie, dass die Vorschau-URL und der Einbettungscode nicht auf Produktionsseiten verwendet werden sollten.</p>
+      </section>
+    </details>
+    <details>
+      <summary>Veröffentlichen &amp; Einbetten</summary>
+      <section class="bcls-section">
+        <p>Die Schaltfläche <strong>Veröffentlichen &amp; Einbetten</strong> dient zum Veröffentlichen des Players und zum Generieren des Player-Einbettungscodes und der URL für den veröffentlichten Player. So veröffentlichen Sie einen Player und erhalten den Einbettungscode:</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Klicken <span class="button-gray-border">Veröffentlichen &amp; Einbetten...</span>.</li>
+          <li>Klicken <span class="button-blue">Änderungen veröffentlichen</span>.</li>
+        </ol>
+      </section>
+    </details>
+  </section>
+  <section id="details" class="bcls-section">
+    <h3>Spieler-Details</h3>
+    <p>Anzeigen und Einstellen von Playerdetails, einschließlich Playerinformationen, Styling, Wiedergabe, Werbung und mehr.</p>
+    <details class="details-item">
+      <summary>Spielerinformationen</summary>
+      <section class="bcls-section">
+        <p>Verwenden Sie die Eigenschaften der Playerinformationen, um den Playernamen, die Größe, das Seitenverhältnis, die Abmessungen, den Aktualisierungsmodus und die Playerversion festzulegen.</p>
+        <ul>
+          <li><strong>Spieler-ID</strong> - Eindeutige Kennung des Spielers</li>
+          <li><strong>Name</strong> - Interner Spielername</li>
+          <li><strong>Playertyp</strong> - Legt fest, ob der Player ein einzelnes Video anzeigt oder eine Wiedergabeliste unterstützt
+            <ul>
+              <li><strong>Einzelvideo</strong> - Der Player zeigt ein einzelnes Video an</li>
+              <li><strong>Wiedergabeliste</strong> - Der Player wird Wiedergabelisten unterstützen
+                <aside class="bcls-aside bcls-aside--information">Wenn Sie <strong>Wiedergabeliste</strong> wählen, werden einige zusätzliche Eigenschaften in den Abschnitten <strong>Gestaltung</strong> und <strong>Wiedergabe</strong> aktiviert.</aside>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Kurzbeschreibung</strong> - Eine interne Beschreibung für Ihren Player</li>
+          <li><strong>Sizing</strong> - Einstellen der Playergröße
+            <ul>
+              <li><strong>Reaktionsschnell</strong> - Die Playergröße wird automatisch basierend auf der Browsergröße angepasst</li>
+              <li><strong>Fest</strong> - Die Playergröße basiert auf den Parametern Breite und Höhe</li>
+            </ul>
+          </li>
+          <li><strong>Seitenverhältnis</strong> - Das Verhältnis der Breite des Players zu seiner Höhe
+            <ul>
+              <li><strong>1:1, 3:2, 4:3, 16:9, 21:9 oder 9:16</strong> - Wenn ausgewählt, geben Sie die Breite des Players ein und die Höhe wird generiert</li>
+              <li><strong>Benutzerdefiniert</strong> - Geben Sie Werte für die Breite und Höhe des Players ein</li>
+            </ul>
+          </li>
+          <li><strong>Playerabmessungen</strong> - Steuern Sie die Breite und Höhe des Players; verbunden mit dem Seitenverhältnis </li>
+          <li><strong>Aktualisierungsmodus</strong> - Steuerung, wann der Player aktualisiert wird
+            <ul>
+              <li><strong>Automatisch</strong>
+                <ul>
+                  <li>Standardwert</li>
+                  <li>Der Player wird aktualisiert, wenn Brightcove eine neue Version des Players veröffentlicht</li>
+                </ul>
+              </li>
+              <li><strong>Handbuch</strong>
+                <ul>
+                  <li>Nicht empfohlen - Sie könnten Fehlerbehebungen und Verbesserungen verpassen</li>
+                  <li>Sperren eines Players für eine Version</li>
+                  <li>Player wird nicht automatisch aktualisiert</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Player Version</strong> - Bezogen auf den <strong>Aktualisierungsmodus</strong>. Einzelheiten finden Sie unter <a href="/players/properties/setting-player-update-mode-and-version.html" target="_blank">Einstellen des Player-Update-Modus und der Version <i data-feather="external-link"></i></a> dokumentieren </li>
+          <li><strong>Veröffentlichte Player-Version</strong> - Die aktuelle Version dieses Players</li>
+          <li><strong>Lokalisierung</strong> - Lokalisieren Sie die Elemente der Player-Benutzeroberfläche, damit sie in verschiedenen Sprachen erscheinen
+            <ul>
+              <li>Standard ist Englisch</li>
+              <li>Geben Sie die Sprache(n) an, die Sie für die Lokalisierung des Players verwenden möchten</li>
+            </ul>
+          </li>
+          <li>Klicken Sie auf <span class="button-blue">Speichern</span> , um Ihre Änderungen zu speichern</li>
+        </ul>
+        <p><a href="/players/properties/setting-player-information-properties.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Styling</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einige grundlegende Stylingoptionen für einen Player.</p>
+        <aside class="bcls-aside bcls-aside--information">Gehen Sie wie folgt vor, um die Optionen für die Gestaltung der Wiedergabeliste anzuzeigen:
+          <ul>
+            <li>Wählen Sie in der linken Navigation <strong>Spielerinformationen</strong></li>
+            <li>Wählen Sie als <strong>Playertyp</strong> <strong>Wiedergabeliste</strong></li>
+            <li>Klicken <span class="button-blue">speichern</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>Wiedergabelistentyp</strong> - Festlegen, wie die Wiedergabeliste angezeigt wird
+            <ul>
+              <li><strong>Horizontale Wiedergabeliste</strong> - Der Player zeigt eine horizontale Wiedergabeliste an</li>
+              <li><strong>Vertikale Wiedergabeliste</strong> - Der Player zeigt eine vertikale Wiedergabeliste an</li>
+              <li><strong>Versteckte Wiedergabeliste</strong> - Die Wiedergabeliste wird ausgeblendet</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information">Alle an einem Spieler vorgenommenen Änderungen können bis zu 5 Minuten dauern, bis sie bei veröffentlichten Spielern angezeigt werden.</aside>
+          </li>
+          <li>Wählen Sie <strong>Titel und Beschreibung anzeigen</strong> , um den Titel und die Beschreibung des Videos auf dem Player anzuzeigen</li>
+          <li><strong>Form der Wiedergabetaste</strong> - Steuert die Form der Wiedergabetaste:
+            <ul>
+              <li>Kreis</li>
+              <li>Quadrat</li>
+              <li>Rechteck</li>
+            </ul>
+          </li>
+          <li><strong>Position der Wiedergabetaste</strong> - Steuert die Position der Wiedergabetaste im Player:
+            <ul>
+              <li>Center</li>
+              <li>Oben links</li>
+              <li>Oben rechts</li>
+            </ul>
+          </li>
+          <li><strong>Farbthema</strong> - Steuert die im Player verwendeten Farben, einschließlich der Schaltflächen für Wiedergabe/Pause, abgelaufene Zeit, Lautstärke, Untertitel, Vollbild und Freigabesymbole. </li>
+          <li>&nbsp;<strong>Kehren Sie zum Standardthema des älteren Players zurück</strong> - Wählen Sie eine pinkfarbene Wiedergabeschaltfläche und einen Fortschrittsbalken</li>
+          <li><strong>Logo-Overlay</strong> - Fügen Sie ein Bild über dem Player hinzu:
+            <ul>
+              <li><strong>Ein</strong> - Laden Sie ein Bild hoch und positionieren Sie es:
+                <ul>
+                  <li>Unten rechts</li>
+                  <li>Unten links</li>
+                  <li>Oben rechts</li>
+                </ul>
+              </li>
+              <li><strong>Aus</strong> - Kein Bild</li>
+            </ul>
+          </li>
+          <li>Klicken Sie auf <span class="button-blue">Speichern</span> , um Ihre Änderungen zu speichern</li>
+        </ul>
+        <p><a href="/players/appearance/styling-players.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Wiedergabe</summary>
+      <section class="bcls-section">
+        <p>Legen Sie die Videowiedergabeeigenschaften für einen Player fest.</p>
+        <aside class="bcls-aside bcls-aside--information">Gehen Sie wie folgt vor, um die Optionen für die Wiedergabe von Wiedergabelisten anzuzeigen:
+          <ul>
+            <li>Wählen Sie in der linken Navigation <strong>Spielerinformationen</strong></li>
+            <li>Wählen Sie als <strong>Playertyp</strong> <strong>Wiedergabeliste</strong></li>
+            <li>Klicken <span class="button-blue">speichern</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>Automatische Videowiedergabe beim Laden des Players</strong> - Startet die Wiedergabe eines Videos, wenn der Player geladen wird
+            <ul>
+              <li>Die automatische Wiedergabe kann je nach Browser unterschiedlich funktionieren</li>
+              <li>Einzelheiten finden Sie unter <a href="https://player.support.brightcove.com/playback/autoplay-considerations.html" target="_blank">Überlegungen zur automatischen Wiedergabe <i data-feather="external-link"></i></a> dokumentieren</li>
+            </ul>
+          </li>
+          <li><strong>Stummschaltung</strong> - Ermöglicht die Stummschaltung der Videowiedergabe</li>
+          <li><strong>Video vor der Wiedergabe vorladen</strong> - Legt fest, ob der Player Videoinhalte vorlädt, bevor der Benutzer die Wiedergabe startet
+            <ul>
+              <li><strong>Video vorladen (am schnellsten)</strong> - Die gesamte Videodatei wird heruntergeladen, auch wenn sie nicht angesehen wird. Dies erhöht den Bandbreitenverbrauch, aber die Videos werden sofort abgespielt</li>
+              <li><strong>Metadaten vorladen</strong> - Standard: nur Video-Metadaten werden vorgeladen</li>
+              <li><strong>Nicht vorladen</strong> - Keines der Videos ist vorinstalliert</li>
+              <li>Einzelheiten finden Sie unter <a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html#preload_details" target="_blank">Details vorladen <i data-feather="external-link"></i></a> Abschnitt</li>
+            </ul>
+          </li>
+          <li><strong>DRM aktivieren</strong> - ermöglicht dem Player die Wiedergabe von DRM-geschützten Inhalten</li>
+          <li>Wiedergabelisteneigenschaften - Zusätzliche Eigenschaften, wenn im Abschnitt " <strong>Playerinformationen"</strong> der <strong>Playertyp</strong> " <strong>Wiedergabeliste</strong> " ausgewählt wurde:
+            <ul>
+              <li><strong>Zufällige Abspielreihenfolge</strong> - Die Videos werden in einer zufälligen Reihenfolge abgespielt</li>
+              <li><strong>Video abspielen, wenn ausgewählt</strong> - Ein Video abspielen, wenn es in einer Wiedergabeliste ausgewählt wird, auch wenn das vorherige Video angehalten wurde</li>
+              <li><strong>Kontinuierlicher Wiedergabemodus</strong> - Videos werden automatisch weitergeschaltet und unendlich oft wiederholt</li>
+              <li><strong>Video-Countdown</strong> - Aktiviert, wenn <strong>der Modus Kontinuierliche Wiedergabe</strong> aktiviert ist
+                <ul>
+                  <li><strong>Nächste Karte (Auto Advance)</strong> - Eine nächste Karte wird im Player angezeigt</li>
+                  <li><strong>Auf dem nächsten Endbildschirm (Countdown)</strong> - Im Player wird ein Countdown für den Endbildschirm angezeigt</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/properties/configuring-player-playback-properties.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Kontrollen</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie die Player-Kontrollleiste.</p>
+        <ul>
+          <li><strong>Qualitätsauswahl</strong> - Ermöglicht es dem Benutzer, während der Videowiedergabe manuell eine andere Wiedergabe zu wählen
+            <ul>
+              <li><strong>Auflösung anzeigen (z. B. 720p) </strong> - Die Wiedergaben werden nach Zeilen der horizontalen Auflösung angezeigt</li>
+              <li><strong>HD/SD anzeigen</strong> - Der Player verwendet Bitrateninformationen, um festzustellen, ob es sich um eine HD- oder SD-Wiedergabe handelt</li>
+            </ul>
+          </li>
+          <li><strong>Wiedergaberaten</strong> - Ermöglicht dem Benutzer die manuelle Auswahl einer anderen Wiedergaberate</li>
+          <li><strong>Vollbild</strong> - Aktiviert die Vollbildsteuerung, um die Größe des Players so zu ändern, dass er die gesamte Anzeige ausfüllt</li>
+          <li><strong>Vertikaler Lautstärkeregler</strong> - Zeigt den Lautstärkeregler vertikal an</li>
+          <li><strong>Thumbnail Seeking</strong> - Ermöglicht die Anzeige von Video-Miniaturbildern über dem Fortschrittsbalken</li>
+          <li><strong>Zum nächsten Video springen (Wiedergabeliste)</strong> - Aktiviert die Steuerung zum Überspringen, damit die Benutzer zum nächsten Video in der Wiedergabeliste springen können</li>
+        </ul>
+        <p><a href="/players/appearance/configuring-player-controls.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Sozial</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie die Eigenschaften der sozialen Freigabe für einen Player.</p>
+        <ul>
+          <li><strong>Freigabe aktivieren</strong> - Wenn diese Option aktiviert ist, wird ein Freigabesymbol angezeigt; wählen Sie die sozialen Medien aus, für die das Video freigegeben werden kann</li>
+          <li><strong>Player-Einbettungscode anzeigen</strong> - Wenn Optionen zur sozialen Freigabe angezeigt werden, kann der Benutzer den Player-Einbettungscode kopieren</li>
+          <li><strong>Direkten Link zum Player anzeigen</strong> - Wenn die Optionen zur Weitergabe in sozialen Netzwerken angezeigt werden, kann der Benutzer einen Link zu der Seite kopieren, in die der Player eingebettet ist</li>
+        </ul>
+        <p><a href="/players/appearance/configuring-social-properties-player.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Plugins</summary>
+      <section class="bcls-section">
+        <p>Hinzufügen von Player-Plugins, Stylesheets und/oder Skripts zu einem Brightcove-Player.</p>
+        <ul>
+          <li>Ein Plugin hinzufügen:
+            <ol class="bcls-tasklist-restart">
+              <li>Klicken Sie auf den Link <strong>Plugins</strong> .</li>
+              <li>Klicken Sie auf <span class="button-blue">Plugin hinzufügen</span> und dann auf einen Plugin-Typ:
+                <ul>
+                  <li><strong>Benutzerdefiniertes Plugin</strong> - Fügen Sie ein von Ihnen oder einem Drittanbieter entwickeltes Plugin hinzu</li>
+                  <li><strong>Brightcove-Plugin</strong> - Fügen Sie ein von Brightcove entwickeltes und bereitgestelltes Plugin hinzu</li>
+                </ul>
+              </li>
+              <li>Klicken Sie auf den Plugin-Namen, um die Plugin-Eigenschaften zu bearbeiten. Um das Plugin zu löschen, klicken Sie auf <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Symbol löschen"/></li>
+            </ol>
+          </li>
+          <li>Fügen Sie ein Stylesheet hinzu:
+            <ol class="bcls-tasklist-restart">
+              <li>Drücke den <strong>Stylesheets</strong> Verknüpfung.</li>
+              <li>Klicken <span class="button-blue">Fügen Sie ein Stylesheet hinzu</span>.</li>
+              <li>Fügen Sie Ihre CSS-URL hinzu.</li>
+              <li>Klicken <span class="button-blue">speichern</span></li>
+              <li>Klicken Sie zum Bearbeiten des Dateipfads auf den Dateinamen. Um die Datei zu löschen, klicken Sie auf <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Symbol löschen"/></li>
+            </ol>
+          </li>
+          <li>Fügen Sie ein Skript hinzu:
+            <ol class="bcls-tasklist-restart">
+              <li>Drücke den <strong>Skripte</strong> Verknüpfung.</li>
+              <li>Klicken <span class="button-blue">Fügen Sie ein Skript hinzu</span>.</li>
+              <li>Fügen Sie Ihre JavaScript-URL hinzu.</li>
+              <li>Klicken <span class="button-blue">speichern</span></li>
+              <li>Klicken Sie zum Bearbeiten des Dateipfads auf den Dateinamen. Um die Datei zu löschen, klicken Sie auf <img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="Symbol löschen"/></li>
+            </ol>
+          </li>
+        </ul>
+        <p><a href="/players/general/configuring-player-plugins.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Endbildschirme</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einen Player so, dass ein Endbildschirm angezeigt wird, wenn das Video endet.</p>
+        <ul>
+          <li><strong>Spieler-Endbildschirm</strong> - Wählen Sie eine Endbildschirm-Option:
+            <ul>
+              <li><strong>Keine</strong> - Es wird kein Endbildschirm angezeigt</li>
+              <li><strong>Sozial</strong> - Zeigen Sie den Social-Sharing-Dialog an, wenn das Video endet</li>
+              <li><strong>Benutzerdefiniert </strong> - Anzeige eines benutzerdefinierten Endbildschirms bei Videoende
+                <ol class="bcls-tasklist-restart">
+                  <li>Fügen Sie benutzerdefinierten HTML-Code hinzu, um zusätzlichen Text oder Bilder über dem Wiederholungs- und Freigabesymbol anzuzeigen.</li>
+                  <li>Klicken <span class="button-blue">speichern</span></li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/appearance/configuring-player-endscreen.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Werbung</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einen Player so, dass er clientseitige und/oder serverseitige Werbung unterstützt.</p>
+        <aside class="bcls-aside bcls-aside--tip">Wenn Sie sowohl clientseitige als auch serverseitige Anzeigen aktivieren, wird die Anzeigenausfallsicherung automatisch eingeschaltet. Das heißt, wenn Brightcove Player einen Anzeigenblocker im Browser erkennt, fordert der Player serverseitige Anzeigen an. Andernfalls verwendet es clientseitige Anzeigen.</aside>
+        <ul>
+          <li><strong>Client-seitige Werbung aktivieren (IMA)</strong> - Konfigurieren Sie die client-seitige Werbung für einen Player
+            <ul>
+              <li><strong>Anzeigen-Tag</strong> - Geben Sie Ihre Anzeigen-Tag-URL ein; wählen Sie zum Testen die Option <strong>Muster-Anzeigen-Tag einfügen</strong></li>
+              <li><strong>Anzeigen anfordern</strong> - Festlegen, wann Anzeigen angefordert werden
+                <ul>
+                  <li><strong>Beim Laden</strong> - Anzeigen werden sofort angefordert, wenn der Player geladen wird (normalerweise die beste Erfahrung für DFP / VPAID)</li>
+                  <li><strong>Bei Wiedergabe</strong> - Die erste Anzeigenanforderung wird verzögert, bis die Wiedergabe gestartet wird</li>
+                  <li><strong>Auf Anfrage</strong> - Alle Anzeigenanfragen werden programmgesteuert mithilfe von initiiert <code translate="No">player.ima3.adrequest()</code> Methode</li>
+                </ul>
+              </li>
+              <li><strong>VPAID-Modus</strong> - Der VPAID-Modus wird verwendet, um die VPAID-2-Unterstützung in IMA-Anzeigen zu aktivieren
+                <ul>
+                  <li><strong>Aktiviert</strong> - Wiedergabe von VPAID-Anzeigen in einem Iframe mit einer anderen Domäne</li>
+                  <li><strong>Unsicher</strong> - Spielen Sie VPAID-Anzeigen in einem Iframe mit derselben Domain ab</li>
+                  <li><strong>Deaktiviert</strong> - VPAID-Anzeigen werfen einen Fehler aus</li>
+                </ul>
+              </li>
+              <li><strong>Timeout</strong> - Die maximale Wartezeit in Millisekunden für die Initialisierung einer Anzeige vor dem Abspielen</li>
+              <li><strong>Harte Zeitüberschreitungen</strong> - Verhindert, dass langsam ladende Werbung angezeigt wird; das Deaktivieren dieser Option kann dazu führen, dass eine langsam ladende Werbung die Videowiedergabe unterbricht</li>
+              <li><strong>Maximale Anzahl von Umleitungen</strong> - Legen Sie die maximale Anzahl von Umleitungen fest, bevor nachfolgende Umleitungen verweigert werden und das Laden der Anzeige abgebrochen wird; die Anzahl der Umleitungen wirkt sich direkt auf die Latenzzeit und die Benutzerfreundlichkeit aus</li>
+              <li><strong>Plugin Version</strong> - Wählen Sie die zu verwendende IMA Plugin Version</li>
+              <li>Klicken <span class="button-blue">speichern</span></li>
+            </ul>
+          </li>
+          <li><strong>Serverseitige Werbung aktivieren (SSAI)</strong> - Serverseitige Werbung für einen Player konfigurieren
+            <aside class="bcls-aside bcls-aside--information">Die Option für serverseitige Werbung wird nur angezeigt, wenn Ihr Konto für serverseitige Werbung aktiviert wurde.</aside>
+            <aside class="bcls-aside bcls-aside--information">Um genaue Anzeigeneinblendungen zu erhalten, ändern Sie Ihre Einstellungen im Abschnitt <strong>Wiedergabe</strong> auf <strong>Nicht vorladen</strong>.</aside>
+            <ul>
+              <li><strong>Konfiguration auswählen</strong> - Wählen Sie eine Anzeigenkonfiguration aus, die mit diesem Player verknüpft werden soll</li>
+              <li><strong>Anzeigeninformations-Overlays aktivieren</strong> - Ermöglicht dem Player die Anzeige von Overlays über Ihren Anzeigen; dies umfasst Overlays für <strong>weitere Informationen</strong> und das Herunterzählen von Anzeigen</li>
+              <li>Klicken <span class="button-blue">speichern</span></li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/general/configuring-player-advertising-using-players-module.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Inhaltsbeschränkung</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einen Player, um die Wiedergabe auf bestimmte Domänen zu beschränken und die Anzeige aus bestimmten Ländern zuzulassen oder zu blockieren.</p>
+        <aside class="bcls-aside bcls-aside--tip">Domain-Einschränkung ist für alle Konten verfügbar. Die Geo-Beschränkung ist nur für Enterprise- und Professional-Konten verfügbar.</aside>
+        <ul>
+          <li><strong>Erlaubte Domains</strong> - Geben Sie eine oder mehrere Domain-URLs ein, um die Verfügbarkeit eines Players auf diese Domains zu beschränken
+            <ul>
+              <li>Sie müssen vollständige URLs ohne Wildcards verwenden</li>
+              <li>URLs dürfen nicht mit a enden <code translate="No">/</code> </li>
+              <li>Es werden nur Domänen und keine bestimmten Pfade unterstützt. Zum Beispiel:
+                <ul>
+                  <li>Ja: <code translate="No">https://www.brightcove.com</code></li>
+                  <li>NEIN: <code translate="No">https://www.brightcove.com/documentation</code></li>
+                </ul>
+              </li>
+              <li>Klicken <span class="button-blue">speichern</span></li>
+            </ul>
+          </li>
+          <li><strong>Geofilterung</strong> - Kontrolle, welche Länder einen Player nutzen können und welche nicht
+            <ol class="bcls-tasklist-restart">
+              <li>Wählen Sie eine aus:
+                <ul>
+                  <li><strong>Uneingeschränkt</strong></li>
+                  <li><strong>Einsichtnahme aus den folgenden Ländern erlauben</strong></li>
+                  <li><strong>Verhindern Sie die Anzeige aus den folgenden Ländern</strong></li>
+                </ul>
+              </li>
+              <li>Geben Sie die Ländernamen ein. Während der Eingabe wird die Länderliste gefiltert.</li>
+              <li>Klicken Sie auf ein Land und drücken Sie die Eingabetaste, um es hinzuzufügen.</li>
+              <li>Klicken Sie auf <span class="button-blue">Speichern</span>.</li>
+            </ol>
+          </li>
+        </ul>
+        <p><a href="/players/properties/configuring-player-content-restrictions.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Kampagne</summary>
+      <section class="bcls-section">
+        <p>Brightcove Campaign bietet eine Reihe von Tools, die Vermarkter bei der Lead-Generierung unterstützen.</p>
+        <p><a href="/campaign/index.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>JSON-Editor</summary>
+      <section class="bcls-section">
+        <p>Der JSON-Editor ermöglicht fortgeschrittenen Benutzern die Verwaltung von Playerkonfigurationen mithilfe von Name/Wert-Paaren.</p>
+        <p><a href="https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Google Analytik</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einen Player für die Ereignisverfolgung mit Google Analytics. Dadurch können Ereignisse und benutzerdefinierte Dimensionen zu Berichtszwecken an Ihr Google Analytics-Konto gesendet werden.</p>
+        <ol class="bcls-tasklist-restart">
+          <li> <strong>Aktivieren Sie Google Analytics aktivieren</strong>.</li>
+          <li>Klicken Sie auf <span class="button-blue">Bei Google-Konto anmelden</span>.</li>
+          <li>Melden Sie sich mit Ihren Anmeldedaten bei Ihrem Google-Konto an.</li>
+          <li>Klicken <strong>Erlauben</strong> damit Brightcove auf Ihr Google-Konto zugreifen kann.</li>
+          <li>Verwenden <strong>Sie die</strong> Dropdown-Liste Konto auswählen, um das Google-Konto auszuwählen, an das Tracking-Daten gesendet werden sollen.</li>
+          <li>Wählen Sie die <strong>Ereignisse für die Verfolgung aus</strong>.</li>
+          <li>Klicken Sie auf <span class="button-blue">Speichern</span>.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">Vergewissern Sie sich, dass Sie die Änderungen im Player veröffentlichen.</aside>
+        <p><a href="/players/general/configuring-google-analytics-event-tracking.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Adobe Analytics</summary>
+      <section class="bcls-section">
+        <p>Konfigurieren Sie einen Player für die Ereignisverfolgung mit Adobe Analytics. Dadurch können Tracking-Daten zu Berichtszwecken an Ihr Adobe Analytics-Konto gesendet werden.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>
+            <p>Melden Sie sich bei Ihrem Adobe Analytics-Konto an, und erstellen Sie benutzerdefinierte Erfolgsereignisse.</p>
+            <p>Jedes Brightcove-Ereignis, das verfolgt wird, muss als benutzerdefiniertes Erfolgsereignis in Adobe Analytics erstellt werden.</p>
+          </li>
+          <li>
+            <p>Erstellen Sie in Adobe Analytics Traffic-Variablen.</p>
+            <p>Jeder Brightcove-Parameter, der aufgezeichnet werden soll, muss als Verkehrsvariable erstellt werden.</p>
+          </li>
+          <li>Rückkehr zum Beacon Studio.</li>
+          <li> <strong>Aktivieren Sie Adobe Analytics aktivieren</strong>.</li>
+          <li>Geben Sie Ihre Adobe-Kontoinformationen ein.
+            <ul>
+              <li><strong>Suite-ID melden</strong></li>
+              <li><strong>Marketing Cloud Organisations-ID</strong></li>
+              <li><strong>Tracking-Server</strong></li>
+              <li><strong>CNAME aktiviert</strong></li>
+              <li><strong>Besucher-Namespace</strong></li>
+            </ul>
+          </li>
+          <li>Geben Sie für jedes Ereignis, das Sie verfolgen möchten, die Adobe Analytics-Ereignis-ID in das entsprechende Brightcove-Ereignisfeld ein.</li>
+          <li>
+            <p>Geben Sie für jeden Parameter, den Sie erfassen möchten, die Adobe Analytics-Parameternummer in das entsprechende Brightcove-Parameterfeld ein.</p>
+            <p>Verwenden Sie die <code translate="No">propX</code> formatieren wo <code translate="No">X</code> entspricht dem <strong>Eigentum #</strong> in Adobe Analytics.</p>
+            <p>Beispiel: <strong>Eigentum Nr. 1</strong> hätte einen Wert von <code translate="No">prop1</code>.</p>
+          </li>
+          <li>Klicken Sie auf <span class="button-blue">Speichern</span>.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">Vergewissern Sie sich, dass Sie die Änderungen im Player veröffentlichen.</aside>
+        <p><a href="/players/general/configuring-adobe-analytics-event-tracking.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+  </section>
+</article>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

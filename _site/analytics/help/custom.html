@@ -1,0 +1,214 @@
+﻿<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Benutzerdefinierte Berichte</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>Benutzerdefinierte Berichte</h1>
+<article class="bcls-article">
+    <section class="bcls-section">
+        <p>Erstellen Sie benutzerdefinierte Analyseberichte, die ausgewählte Daten und Metriken für einen bestimmten Zeitraum anzeigen.</p>
+   
+        <details class="details-item">
+          <summary>Zeitzone melden</summary>
+          <section class="bcls-section">
+            <p>Die Daten in benutzerdefinierten Berichten basieren auf der Berichtszeitzone des Kontos; konfigurieren Sie Ihre Zeitzone:</p>
+            <ol class="bcls-tasklist-restart">
+              <li>Erweitern Sie in Video Cloud Studio das Dropdown-Menü <strong>Verwaltung</strong> .</li>
+              <li>Wählen Sie <strong>Kontoeinstellungen</strong>.</li>
+              <li>Stellen Sie Ihre <strong>aktuelle Zeitzone</strong> ein.</li>
+              <li>Klicken Sie auf <span class="button-blue">Speichern</span>.</li>
+            </ol>
+            <aside class="bcls-aside bcls-aside--information">Eine Änderung der Meldezeitzone wirkt sich nur auf zukünftige Daten aus, und die Änderungen werden nicht rückwirkend angewendet.</aside>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#timezone" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Daten melden</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Konten einbeziehen</strong> - Daten aus dem aktuellen Video Cloud-Konto einbeziehen oder mehrere Konten auswählen</li>
+              <li><strong>Berichtstyp</strong> 
+                <ul>
+                  <li><strong>Einmalig</strong> - Bericht wird einmalig und sofort ausgeführt
+                  <li><strong>Datumsbereich</strong> - Geben Sie für einmalige Berichte den Zeitraum für Analysedaten an</li>
+                  </li>
+                  <li><strong>Wiederkehrend</strong> - Der Bericht kann für eine tägliche, wöchentliche oder monatliche Ausführung geplant werden
+                  <li><strong>Häufigkeit</strong> - Für wiederkehrende Berichte
+                    <ul>
+                      <li><strong>Täglich</strong> - Der Bericht umfasst einen ganzen Tag</li>
+                      <li><strong>Wöchentlich</strong> - Der Bericht umfasst eine ganze Woche, definiert als Montag bis Sonntag</li>
+                      <li><strong>Monatlich</strong> - Berichte decken einen ganzen Monat ab</li>
+                    </ul>
+                  </li>
+                  <aside class="bcls-aside bcls-aside--information">Wiederkehrende Berichte werden nach dem analytischen Abgleich ausgeführt, in der Regel 3 bis 5 Tage nach Ende eines Berichtszeitraums.</aside>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Datengruppen</strong> - Datengruppen bestimmen die im Bericht enthaltenen Datenfelder
+                <ul>
+                  <li>Die angezeigten Datenfelder basieren auf den von Ihnen ausgewählten Datengruppen</li>
+                  <li>Sie können mehrere Datengruppen auswählen, aber einige Kombinationen sind nicht gültig</li>
+                  <li>Mindestens eine Datengruppe muss ausgewählt werden</li>
+                </ul>
+              </li>
+              <li><strong>Datenfelder</strong> - Wenn Sie eine Datengruppe auswählen, sind die Datenfelder, die zurückgegeben werden können, auswählbar
+                <ul>
+                  <li>Ausgegraute Felder können für die ausgewählte Datengruppe nicht zurückgegeben werden</li>
+                </ul>
+              </li>
+            
+              
+              <li>Klicken Sie auf <span class="button-blue">Speichern</span> , um Ihre Änderungen zu speichern</li> 
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Berichtsfilter hinzufügen</summary>
+          <section class="bcls-section">
+            <p>Filter können hinzugefügt werden, um die zurückgegebene Datenmenge zu begrenzen.</p>
+            <ul>
+              <li>Bei Verwendung mehrerer Filter wird eine UND-Verknüpfung verwendet</li>
+              <li>Ein Filter wird nur dann in Ihrem Bericht angezeigt, wenn Sie die entsprechende Datengruppe ausgewählt haben
+                <ul>
+                  <li>Wenn Sie zum Beispiel nach <strong>Video-Tags</strong> filtern möchten, müssen Sie die Dimension <strong>Video</strong> auswählen</li>
+                </ul>
+              </li>
+            </ul>
+            <p>Sie können nach den folgenden Kriterien filtern:</p>
+            <ul>
+              <li><strong>Video</strong> - Eine oder mehrere aktive Video-IDs im Konto</li>
+              <li><strong>Video-Tag</strong> - Ein oder mehrere Video-Tags</li>
+              <li><strong>Benutzerdefinierte Felder</strong> - Ein oder mehrere benutzerdefinierte Felder im Konto</li>
+              <li><strong>Spieler</strong> - Geben Sie eine oder mehrere Spieler-IDs ein, getrennt durch ein Komma</li>
+              <li><strong>Quelle Typ</strong></li>
+              <li><strong>Gerätetyp</strong></li>
+              <li><strong>Gerätebetriebssystem</strong></li>
+              <li><strong>Gerätehersteller</strong></li>
+              <li><strong>Browsertyp</strong></li>
+              <li><strong>Suchbegriffe</strong></li>
+              <li><strong>Land</strong></li>
+              <li><strong>Zielbereich</strong></li>
+              <li><strong>Suchbegriffe</strong></li>
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#filter" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Vorschau Bericht</summary>
+          <section class="bcls-section">
+            <p>Die in der Berichtsvorschau angezeigten Daten sind Beispieldaten, keine tatsächlichen Daten aus Ihrem Video Cloud-Konto.</p>
+            <ul>
+              <li>Der Abschnitt <strong>Berichtsvorschau</strong> zeigt die ausgewählten Datenspalten, die mit Beispieldaten gefüllt sind</li>
+              <li>Klicken Sie auf <img class="ui-image" alt="Symbol löschen" src="/assets/images/admin/help/delete-icon.png"/> , um das zugehörige Datenelement zu löschen</li>
+              <li>Die Sortierreihenfolge der Vorschau hat keinen Einfluss auf die Sortierreihenfolge des heruntergeladenen Berichts</li>
+              <li>Sie können eine Tabellenkalkulation verwenden, um die heruntergeladenen Daten zu sortieren</li>
+            </ul>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#preview" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>Bericht konfigurieren und bereitstellen</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>Berichtsname</strong> - Geben Sie dem Bericht zunächst einen aussagekräftigen Namen</li>
+              <li><strong>Formatieren</strong> 
+                <ul>
+                  <li><strong>CSV</strong> - Komma-getrennte Werte </li>
+                  <li><strong>XLSX</strong> - Microsoft Excel</li>
+                </ul>
+              </li>
+              <li><strong>E-Mail an mich, wenn mein Bericht fertig ist</strong> - Lassen Sie sich per E-Mail benachrichtigen, wenn der Bericht fertig ist</li>
+              <li><strong>Andere benachrichtigen</strong> - E-Mail-Adressen durch ein Komma getrennt eingeben</li>
+              <li>In der E-Mail von Brighcove ist der Link zum Herunterladen des Berichts 90 Tage lang gültig</li>
+              
+              <li>Für einmalige Berichte, 
+                <ul>
+                  <li>Klicken Sie auf <span class="button-blue">Bericht anfordern</span></li>
+                  <li>Der Bericht wird heruntergeladen, sobald er vollständig ist</li>
+                </ul>
+              </li>
+              <li>Für wiederkehrende Berichte, 
+                <ul>
+                  <li>Klicken Sie auf <span class="button-blue">Zeitplanbericht</span></li>
+                  <li>Der Bericht wird in eine Warteschlange gestellt und ausgeführt, wenn die Daten bereit sind</li>
+                </ul>
+              </li>
+            </ul>
+            <li>Um alle geplanten Berichte anzuzeigen, klicken Sie in der linken Navigation auf <span class="button-blue">Geplante Berichte</span> </li>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#options" target="_blank">Mehr erfahren <i data-feather="external-link"></i></a></p>
+          </section>
+        </details> 
+   
+  </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>
